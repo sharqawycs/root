@@ -3,7 +3,6 @@
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=SharQawyCS&label=Profile%20views&color=000000&style=3d" alt="SharQawyCS" /> </p>
 
-- 🌱 I’m currently learning **Software Development**
 
 - 👨‍💻 All of my projects are available at [sharq.tech](https://sharq.tech)
 
