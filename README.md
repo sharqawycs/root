@@ -5,7 +5,7 @@
 
 - 🌱 I’m currently learning **Software Development**
 
-- 👨‍💻 All of my projects are available at [https://github.com/SharQawyCS/](https://github.com/SharQawyCS)
+- 👨‍💻 All of my projects are available at [sharq.tech](https://sharq.tech)
 
 - 📫 How to reach me **sharqawycs@gmail.com**
 
