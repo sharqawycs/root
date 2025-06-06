@@ -7,6 +7,4 @@
 
 - 👨‍💻 All of my projects are available at [sharq.tech](https://sharq.tech)
 
-- 📫 How to reach me **sharqawycs@gmail.com**, [sharqawycs](https://linkedin.com/in/sharqawycs) on LinkedIn
-
-- ⚡ Fun fact **I Think I am funny.**
+- 📫 How to reach me sharqawycs@gmail.com or [sharqawycs](https://linkedin.com/in/sharqawycs) on LinkedIn
