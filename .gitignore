@@ -1,0 +1,22 @@
+# OS junk
+.DS_Store
+Thumbs.db
+
+# VS Code settings
+.vscode/
+
+# node/npm stuff (if you ever use it later)
+node_modules/
+package-lock.json
+dist/
+build/
+
+# logs
+*.log
+
+# system files
+*.swp
+*.swo
+
+# Mac-specific
+._*
