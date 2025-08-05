@@ -1,6 +1,6 @@
 import { useLocation } from 'preact-iso';
 
-export function Sidebar() {
+export function Header() {
     const { url } = useLocation();
 
     const navItems = [
@@ -12,12 +12,12 @@ export function Sidebar() {
     ];
 
     return (
-        <aside class="sidebar">
-            <div class="sidebar-content">
-                <div class="sidebar-header">
-                    <h2>SharQawyCS</h2>
+        <header class="header">
+            <div class="header-content">
+                <div class="header-logo">
+                    <h1>SharQawyCS</h1>
                 </div>
-                <nav class="sidebar-nav">
+                <nav class="header-nav">
                     {navItems.map(({ path, label }) => (
                         <a
                             key={path}
@@ -28,6 +28,6 @@ export function Sidebar() {
                     ))}
                 </nav>
             </div>
-        </aside>
+        </header>
     );
 }

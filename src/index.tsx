@@ -6,12 +6,12 @@ import {
     prerender as ssr,
 } from 'preact-iso';
 
-import { Layout } from './components/Layout.js';
-import { Home } from './pages/Home/index.js';
-import { Write } from './pages/Write/index.js';
-import { Philosophy } from './pages/Philosophy/index.js';
-import { Content } from './pages/Content/index.js';
-import { Socials } from './pages/Socials/index.js';
+import { Layout } from './Layout.js';
+import { Home } from './pages/Home';
+import { Write } from './pages/Write';
+import { Philosophy } from './pages/Philosophy';
+import { Content } from './pages/Content';
+import { Socials } from './pages/Socials';
 import { NotFound } from './pages/_404.js';
 import './styles/globals.css';
 
