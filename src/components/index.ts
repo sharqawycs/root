@@ -13,4 +13,4 @@ export { CodeBlock } from './blocks/CodeBlock.js';
 export { Highlight } from './blocks/Highlight.js';
 
 // Layout Components
-export { Layout } from '../Layout.js';
+export { Layout } from '@/Layout.js';

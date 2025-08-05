@@ -8,7 +8,7 @@ import {
     CodeBlock,
     LinkCard,
     Highlight,
-} from '../../components/index.js';
+} from '@/components';
 
 export function Write() {
     return (
