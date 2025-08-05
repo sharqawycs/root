@@ -6,13 +6,7 @@ interface PostCardProps {
     readTime?: string;
 }
 
-export default function PostCard({
-    title,
-    excerpt,
-    date,
-    slug,
-    readTime,
-}: PostCardProps) {
+export default function PostCard({ title, excerpt, date, slug, readTime }: PostCardProps) {
     return (
         <article class="post-card">
             <a href={`/write/${slug}`} class="post-link">

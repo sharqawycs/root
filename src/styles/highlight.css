@@ -11,9 +11,7 @@
     cursor: pointer;
 
     /* Apply before styles */
-    background-color: rgba(
-        from var(--before-bg) r g b / var(--before-bg-opacity)
-    );
+    background-color: rgba(from var(--before-bg) r g b / var(--before-bg-opacity));
     color: rgba(from var(--before-text) r g b / var(--before-text-opacity));
 }
 
@@ -39,9 +37,7 @@
 
 /* Hover state - apply after styles */
 .highlight-v2:hover {
-    background-color: rgba(
-        from var(--after-bg) r g b / var(--after-bg-opacity)
-    );
+    background-color: rgba(from var(--after-bg) r g b / var(--after-bg-opacity));
     color: rgba(from var(--after-text) r g b / var(--after-text-opacity));
 }
 

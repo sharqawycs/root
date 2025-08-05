@@ -7,12 +7,7 @@ interface PostContentProps {
     children: ComponentChildren;
 }
 
-export default function PostContent({
-    title,
-    date,
-    readTime,
-    children,
-}: PostContentProps) {
+export default function PostContent({ title, date, readTime, children }: PostContentProps) {
     return (
         <article class="post-content">
             <header class="post-header">

@@ -20,24 +20,10 @@ interface HighlightProps {
     after: StyleVariant;
 
     // Animation style
-    animation?:
-        | 'slide-right'
-        | 'slide-left'
-        | 'fade'
-        | 'expand'
-        | 'underline'
-        | 'scale';
+    animation?: 'slide-right' | 'slide-left' | 'fade' | 'expand' | 'underline' | 'scale';
 }
 
-export default function Highlight({
-    children,
-    href,
-    target,
-    className = '',
-    before,
-    after,
-    animation = 'fade',
-}: HighlightProps) {
+export default function Highlight({ children, href, target, className = '', before, after, animation = 'fade' }: HighlightProps) {
     // Generate CSS custom properties
     const style = {
         // Before styles
@@ -49,28 +35,15 @@ export default function Highlight({
         // After styles
         '--after-bg': after.bgColor || before.bgColor || 'transparent',
         '--after-text': after.textColor || before.textColor || 'inherit',
-        '--after-bg-opacity': (after.bgOpacity !== undefined
-            ? after.bgOpacity
-            : before.bgOpacity || 1
-        ).toString(),
-        '--after-text-opacity': (after.textOpacity !== undefined
-            ? after.textOpacity
-            : before.textOpacity || 1
-        ).toString(),
+        '--after-bg-opacity': (after.bgOpacity !== undefined ? after.bgOpacity : before.bgOpacity || 1).toString(),
+        '--after-text-opacity': (after.textOpacity !== undefined ? after.textOpacity : before.textOpacity || 1).toString(),
     } as any;
 
-    const classes = ['highlight-v2', `highlight-v2--${animation}`, className]
-        .filter(Boolean)
-        .join(' ');
+    const classes = ['highlight-v2', `highlight-v2--${animation}`, className].filter(Boolean).join(' ');
 
     if (href) {
         return (
-            <a
-                href={href}
-                target={target}
-                rel={target === '_blank' ? 'noopener noreferrer' : undefined}
-                class={classes}
-                style={style}>
+            <a href={href} target={target} rel={target === '_blank' ? 'noopener noreferrer' : undefined} class={classes} style={style}>
                 {children}
             </a>
         );

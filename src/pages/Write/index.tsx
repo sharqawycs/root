@@ -1,23 +1,9 @@
-import {
-    PageHeader,
-    PostCard,
-    Section,
-    TextBlock,
-    ListBlock,
-    QuoteBlock,
-    CodeBlock,
-    LinkCard,
-    Highlight,
-} from '@/components';
+import { PageHeader, PostCard, Section, TextBlock, ListBlock, QuoteBlock, CodeBlock, LinkCard, Highlight } from '@/components';
 
 export default function Write() {
     return (
         <div class="page">
-            <PageHeader
-                title="Write"
-                subtitle="Where I write dumb stuff and random thoughts"
-                date="Last updated: Aug 6, 2025"
-            />
+            <PageHeader title="Write" subtitle="Where I write dumb stuff and random thoughts" date="Last updated: Aug 6, 2025" />
 
             <Section title="Recent Posts">
                 <PostCard
@@ -47,16 +33,9 @@ export default function Write() {
 
             <Section title="Component Showcase" className="showcase">
                 <TextBlock variant="h3">Text Block Examples</TextBlock>
-                <TextBlock size="large">
-                    This is large text for emphasis.
-                </TextBlock>
-                <TextBlock>
-                    This is normal paragraph text with proper spacing and
-                    readability.
-                </TextBlock>
-                <TextBlock size="small">
-                    This is smaller text for captions or notes.
-                </TextBlock>
+                <TextBlock size="large">This is large text for emphasis.</TextBlock>
+                <TextBlock>This is normal paragraph text with proper spacing and readability.</TextBlock>
+                <TextBlock size="small">This is smaller text for captions or notes.</TextBlock>
 
                 <TextBlock variant="h3">List Examples</TextBlock>
                 <ListBlock
@@ -71,24 +50,18 @@ export default function Write() {
 
                 <ListBlock
                     type="numbered"
-                    items={[
-                        'First, understand the problem',
-                        'Then, find the simplest solution',
-                        'Finally, make it work well',
-                    ]}
+                    items={['First, understand the problem', 'Then, find the simplest solution', 'Finally, make it work well']}
                 />
 
                 <TextBlock variant="h3">Quote Block</TextBlock>
                 <QuoteBlock author="Someone Wise" source="The Internet">
-                    The best code is the code you don't have to write. But when
-                    you do write it, make sure it's so simple that future you
+                    The best code is the code you don't have to write. But when you do write it, make sure it's so simple that future you
                     won't hate present you.
                 </QuoteBlock>
 
                 <TextBlock variant="h3">Code Block Examples</TextBlock>
                 <TextBlock>
-                    Here's some inline code:{' '}
-                    <CodeBlock code="const simple = true;" inline />
+                    Here's some inline code: <CodeBlock code="const simple = true;" inline />
                 </TextBlock>
 
                 <CodeBlock
@@ -110,10 +83,7 @@ export default function Write() {
                 />
 
                 <TextBlock variant="h3">Enhanced Highlight Examples</TextBlock>
-                <TextBlock>
-                    New flexible highlighting system with full control over
-                    before and after states:
-                </TextBlock>
+                <TextBlock>New flexible highlighting system with full control over before and after states:</TextBlock>
 
                 <TextBlock>
                     You can create{' '}
@@ -218,12 +188,8 @@ export default function Write() {
 
                 <TextBlock variant="h3">Old Highlight Examples</TextBlock>
                 <TextBlock>
-                    This is how you can use highlights within paragraphs. You
-                    can{' '}
-                    <Highlight
-                        before={{ bgOpacity: 0 }}
-                        after={{ bgColor: '#ff6b6b', bgOpacity: 0.8 }}
-                        animation="fade">
+                    This is how you can use highlights within paragraphs. You can{' '}
+                    <Highlight before={{ bgOpacity: 0 }} after={{ bgColor: '#ff6b6b', bgOpacity: 0.8 }} animation="fade">
                         highlight important text
                     </Highlight>{' '}
                     or create{' '}
@@ -244,10 +210,7 @@ export default function Write() {
 
                 <TextBlock>
                     Different animation styles:{' '}
-                    <Highlight
-                        before={{ bgOpacity: 0 }}
-                        after={{ bgColor: '#673ab7', bgOpacity: 0.8 }}
-                        animation="expand">
+                    <Highlight before={{ bgOpacity: 0 }} after={{ bgColor: '#673ab7', bgOpacity: 0.8 }} animation="expand">
                         expand
                     </Highlight>
                     ,{' '}
@@ -262,10 +225,7 @@ export default function Write() {
                         underline
                     </Highlight>
                     ,{' '}
-                    <Highlight
-                        before={{ bgOpacity: 0 }}
-                        after={{ bgColor: '#e74c3c', bgOpacity: 0.8 }}
-                        animation="slide-left">
+                    <Highlight before={{ bgOpacity: 0 }} after={{ bgColor: '#e74c3c', bgOpacity: 0.8 }} animation="slide-left">
                         slide-left
                     </Highlight>
                     , and{' '}
@@ -305,23 +265,13 @@ export default function Write() {
 
                 <TextBlock variant="h3">Mixed Content Example</TextBlock>
                 <TextBlock>
-                    This is how you can mix different components to create rich
-                    content. You can have paragraphs, followed by lists, quotes,
+                    This is how you can mix different components to create rich content. You can have paragraphs, followed by lists, quotes,
                     and code examples.
                 </TextBlock>
 
-                <ListBlock
-                    items={[
-                        'Flexible component system',
-                        'Notion-style blocks',
-                        'Clean and minimal design',
-                    ]}
-                />
+                <ListBlock items={['Flexible component system', 'Notion-style blocks', 'Clean and minimal design']} />
 
-                <QuoteBlock>
-                    "Simplicity is the ultimate sophistication." - Probably not
-                    Leonardo da Vinci, but it sounds good.
-                </QuoteBlock>
+                <QuoteBlock>"Simplicity is the ultimate sophistication." - Probably not Leonardo da Vinci, but it sounds good.</QuoteBlock>
             </Section>
         </div>
     );

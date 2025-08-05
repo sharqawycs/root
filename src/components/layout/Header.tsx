@@ -19,10 +19,7 @@ export default function Header() {
                 </div>
                 <nav class="header-nav">
                     {navItems.map(({ path, label }) => (
-                        <a
-                            key={path}
-                            href={path}
-                            class={url === path ? 'active' : ''}>
+                        <a key={path} href={path} class={url === path ? 'active' : ''}>
                             {label}
                         </a>
                     ))}

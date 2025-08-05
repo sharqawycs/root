@@ -5,12 +5,7 @@ interface CodeBlockProps {
     inline?: boolean;
 }
 
-export default function CodeBlock({
-    code,
-    language,
-    title,
-    inline = false,
-}: CodeBlockProps) {
+export default function CodeBlock({ code, language, title, inline = false }: CodeBlockProps) {
     if (inline) {
         return <code class="code-inline">{code}</code>;
     }

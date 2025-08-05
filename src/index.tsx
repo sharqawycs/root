@@ -1,10 +1,4 @@
-import {
-    LocationProvider,
-    Router,
-    Route,
-    hydrate,
-    prerender as ssr,
-} from 'preact-iso';
+import { LocationProvider, Router, Route, hydrate, prerender as ssr } from 'preact-iso';
 
 import Layout from '@/Layout.js';
 import Home from '@/pages/Home';
