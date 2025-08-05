@@ -1,0 +1,109 @@
+/* Highlight Component - Inline text highlighting */
+.highlight {
+    position: relative;
+    display: inline;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+    padding: 2px 4px;
+    margin: 0;
+    border: none;
+    background: transparent;
+    overflow: hidden;
+}
+
+.highlight::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--highlight-bg);
+    z-index: -1;
+    transition: all 0.2s ease;
+    border-radius: 2px;
+    opacity: 0;
+}
+
+/* Background Behaviors */
+.highlight--always::before {
+    opacity: 1 !important;
+}
+
+.highlight--none::before {
+    background: transparent;
+}
+
+.highlight--hover::before {
+    opacity: 0;
+}
+
+.highlight--hover:hover::before {
+    opacity: 1;
+}
+
+/* Animations */
+.highlight--slide-right::before {
+    width: 0%;
+    transform: translateX(0);
+    opacity: 1;
+    left: 0;
+}
+
+.highlight--slide-right:hover::before {
+    width: 100%;
+}
+
+.highlight--slide-left::before {
+    width: 0%;
+    transform: translateX(0);
+    opacity: 1;
+    right: 0;
+    left: auto;
+}
+
+.highlight--slide-left:hover::before {
+    width: 100%;
+}
+
+.highlight--fade::before {
+    opacity: 0;
+}
+
+.highlight--fade:hover::before {
+    opacity: 1;
+}
+
+.highlight--expand::before {
+    transform: scaleX(0);
+    transform-origin: left;
+    opacity: 1;
+}
+
+.highlight--expand:hover::before {
+    transform: scaleX(1);
+}
+
+.highlight--underline::before {
+    height: 2px;
+    bottom: 0;
+    top: auto;
+    transform: scaleX(0);
+    transform-origin: left;
+    opacity: 1;
+}
+
+.highlight--underline:hover::before {
+    transform: scaleX(1);
+}
+
+/* Link behavior */
+.highlight[href] {
+    color: var(--highlight-color);
+    cursor: pointer;
+}
+
+.highlight[href]:hover {
+    color: var(--highlight-color);
+}

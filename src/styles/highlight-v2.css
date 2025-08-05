@@ -1,0 +1,158 @@
+/* Enhanced Highlight Component - Full Style Control */
+.highlight-v2 {
+    position: relative;
+    display: inline;
+    text-decoration: none;
+    padding: 2px 4px;
+    margin: 0;
+    border: none;
+    overflow: hidden;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    
+    /* Apply before styles */
+    background-color: rgba(from var(--before-bg) r g b / var(--before-bg-opacity));
+    color: rgba(from var(--before-text) r g b / var(--before-text-opacity));
+}
+
+/* Fallback for browsers without rgba(from ...) support */
+.highlight-v2 {
+    background-color: var(--before-bg);
+    color: var(--before-text);
+    opacity: var(--before-text-opacity);
+}
+
+.highlight-v2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: all 0.2s ease;
+    border-radius: 2px;
+    pointer-events: none;
+}
+
+/* Hover state - apply after styles */
+.highlight-v2:hover {
+    background-color: rgba(from var(--after-bg) r g b / var(--after-bg-opacity));
+    color: rgba(from var(--after-text) r g b / var(--after-text-opacity));
+}
+
+/* Fallback for hover */
+.highlight-v2:hover {
+    background-color: var(--after-bg);
+    color: var(--after-text);
+    opacity: var(--after-text-opacity);
+}
+
+/* Animation: Fade */
+.highlight-v2--fade::before {
+    background-color: var(--after-bg);
+    opacity: 0;
+}
+
+.highlight-v2--fade:hover::before {
+    opacity: var(--after-bg-opacity);
+}
+
+.highlight-v2--fade:hover {
+    background-color: transparent;
+}
+
+/* Animation: Slide Right */
+.highlight-v2--slide-right::before {
+    background-color: var(--after-bg);
+    width: 0%;
+    left: 0;
+}
+
+.highlight-v2--slide-right:hover::before {
+    width: 100%;
+}
+
+.highlight-v2--slide-right:hover {
+    background-color: transparent;
+}
+
+/* Animation: Slide Left */
+.highlight-v2--slide-left::before {
+    background-color: var(--after-bg);
+    width: 0%;
+    right: 0;
+    left: auto;
+}
+
+.highlight-v2--slide-left:hover::before {
+    width: 100%;
+}
+
+.highlight-v2--slide-left:hover {
+    background-color: transparent;
+}
+
+/* Animation: Expand */
+.highlight-v2--expand::before {
+    background-color: var(--after-bg);
+    transform: scaleX(0);
+    transform-origin: center;
+    opacity: 1;
+}
+
+.highlight-v2--expand:hover::before {
+    transform: scaleX(1);
+}
+
+.highlight-v2--expand:hover {
+    background-color: transparent;
+}
+
+/* Animation: Underline */
+.highlight-v2--underline::before {
+    background-color: var(--after-bg);
+    height: 2px;
+    bottom: 0;
+    top: auto;
+    transform: scaleX(0);
+    transform-origin: left;
+    opacity: 1;
+}
+
+.highlight-v2--underline:hover::before {
+    transform: scaleX(1);
+}
+
+.highlight-v2--underline:hover {
+    background-color: var(--before-bg);
+}
+
+/* Animation: Scale */
+.highlight-v2--scale {
+    transform: scale(1);
+}
+
+.highlight-v2--scale::before {
+    background-color: var(--after-bg);
+    opacity: 0;
+}
+
+.highlight-v2--scale:hover {
+    transform: scale(1.05);
+    background-color: transparent;
+}
+
+.highlight-v2--scale:hover::before {
+    opacity: var(--after-bg-opacity);
+}
+
+/* Remove default link styles */
+.highlight-v2[href] {
+    text-decoration: none;
+}
+
+/* Non-link highlights should not show pointer cursor unless they have hover effects */
+.highlight-v2:not([href]) {
+    cursor: default;
+}

@@ -1,0 +1,168 @@
+/* Block Components */
+
+/* Text Block */
+.text-block {
+    margin: 1rem 0;
+}
+
+.text-small {
+    font-size: 14px;
+}
+
+.text-normal {
+    font-size: 16px;
+}
+
+.text-large {
+    font-size: 18px;
+}
+
+/* List Block */
+.list-block {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.list-block li {
+    margin-bottom: 0.5rem;
+}
+
+.list-bullet {
+    list-style-type: disc;
+}
+
+.list-numbered {
+    list-style-type: decimal;
+}
+
+/* Quote Block */
+.quote-block {
+    margin: 2rem 0;
+    padding: 1rem 1.5rem;
+    border-left: 4px solid #e9e9e7;
+    background: #f8f8f7;
+    font-style: italic;
+    font-family: 'Baskerville', 'Libre Baskerville', 'Times New Roman', serif;
+}
+
+.quote-content {
+    margin-bottom: 0.5rem;
+}
+
+.quote-attribution {
+    font-size: 14px;
+    color: #787774;
+    font-style: normal;
+}
+
+.quote-attribution .author::before {
+    content: '— ';
+}
+
+.quote-attribution .source::before {
+    content: ', ';
+}
+
+/* Code Block */
+.code-block {
+    margin: 1.5rem 0;
+}
+
+.code-title {
+    background: #f8f8f7;
+    padding: 0.5rem 1rem;
+    border: 1px solid #e9e9e7;
+    border-bottom: none;
+    font-size: 14px;
+    color: #787774;
+    border-radius: 6px 6px 0 0;
+}
+
+.code-pre {
+    background: #f8f8f7;
+    border: 1px solid #e9e9e7;
+    border-radius: 6px;
+    padding: 1rem;
+    overflow-x: auto;
+    font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas,
+        'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.code-title + .code-pre {
+    border-radius: 0 0 6px 6px;
+}
+
+.code-inline {
+    background: #f8f8f7;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas,
+        'Courier New', monospace;
+    font-size: 0.9em;
+}
+
+/* Link Block */
+.link-block {
+    display: flex;
+    border: 1px solid #e9e9e7;
+    border-radius: 6px;
+    text-decoration: none;
+    color: inherit;
+    overflow: hidden;
+    margin: 1.5rem 0;
+    transition: all 0.2s ease;
+}
+
+.link-block:hover {
+    border-color: #37352f;
+    transform: translateY(-1px);
+}
+
+.link-image {
+    width: 120px;
+    flex-shrink: 0;
+}
+
+.link-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.link-content {
+    padding: 1rem;
+    flex: 1;
+}
+
+.link-title {
+    margin-bottom: 0.5rem;
+    color: #37352f;
+    font-size: 1rem;
+    font-family: 'Baskerville', 'Libre Baskerville', 'Times New Roman', serif;
+}
+
+.link-description {
+    margin-bottom: 0.5rem;
+    color: #787774;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.link-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 12px;
+    color: #9b9a97;
+}
+
+.link-meta .favicon {
+    width: 16px;
+    height: 16px;
+}
+
+.link-meta .domain {
+    text-transform: uppercase;
+}
