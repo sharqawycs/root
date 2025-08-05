@@ -16,9 +16,7 @@ import { NotFound } from './pages/_404.js';
 import './styles/globals.css';
 import './styles/components.css';
 import './styles/blocks.css';
-import './styles/colorlink.css';
 import './styles/highlight.css';
-import './styles/highlight-v2.css';
 
 export function App() {
     return (

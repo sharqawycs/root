@@ -10,8 +10,6 @@ export { TextBlock } from './blocks/TextBlock.js';
 export { ListBlock } from './blocks/ListBlock.js';
 export { QuoteBlock } from './blocks/QuoteBlock.js';
 export { CodeBlock } from './blocks/CodeBlock.js';
-export { LinkBlock } from './blocks/LinkBlock.js';
-export { ColorLink } from './blocks/ColorLink.js';
 export { Highlight } from './blocks/Highlight.js';
 
 // Layout Components

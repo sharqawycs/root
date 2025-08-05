@@ -6,9 +6,7 @@ import {
     ListBlock,
     QuoteBlock,
     CodeBlock,
-    LinkBlock,
     LinkCard,
-    ColorLink,
     Highlight,
 } from '../../components/index.js';
 
@@ -104,12 +102,6 @@ export function Write() {
                 <CodeBlock language="bash" code="npm install && npm run dev" />
 
                 <TextBlock variant="h3">Link Blocks</TextBlock>
-                <LinkBlock
-                    url="https://preactjs.com"
-                    title="Preact: Fast 3kB alternative to React"
-                    description="Preact provides the thinnest possible Virtual DOM abstraction on top of the DOM. It's fast, and it's compatible with React."
-                />
-
                 <LinkCard
                     title="Vite - Next Generation Frontend Tooling"
                     description="Get ready for a development environment that can finally catch up with you."
@@ -119,54 +111,78 @@ export function Write() {
 
                 <TextBlock variant="h3">Enhanced Highlight Examples</TextBlock>
                 <TextBlock>
-                    New flexible highlighting system with full control over before and after states:
+                    New flexible highlighting system with full control over
+                    before and after states:
                 </TextBlock>
-                
+
                 <TextBlock>
                     You can create{' '}
-                    <Highlight 
+                    <Highlight
                         before={{ bgColor: '#f0f0f0', bgOpacity: 0.5 }}
-                        after={{ bgColor: '#ff6b6b', textColor: '#fff', bgOpacity: 1 }}
-                        animation="fade"
-                    >
+                        after={{
+                            bgColor: '#ff6b6b',
+                            textColor: '#fff',
+                            bgOpacity: 1,
+                        }}
+                        animation="fade">
                         subtle highlights
-                    </Highlight>
-                    {' '}that become bold on hover, or{' '}
-                    <Highlight 
+                    </Highlight>{' '}
+                    that become bold on hover, or{' '}
+                    <Highlight
                         href="https://preactjs.com"
                         target="_blank"
                         before={{ textColor: '#673ab7', bgOpacity: 0 }}
-                        after={{ bgColor: '#673ab7', textColor: '#fff', bgOpacity: 1 }}
-                        animation="slide-right"
-                    >
+                        after={{
+                            bgColor: '#673ab7',
+                            textColor: '#fff',
+                            bgOpacity: 1,
+                        }}
+                        animation="slide-right">
                         links with slide animations
-                    </Highlight>
-                    {' '}that reveal backgrounds.
+                    </Highlight>{' '}
+                    that reveal backgrounds.
                 </TextBlock>
 
                 <TextBlock>
                     Advanced examples:{' '}
-                    <Highlight 
-                        before={{ bgColor: '#4ecdc4', bgOpacity: 0.2, textColor: '#2c3e50' }}
-                        after={{ bgColor: '#2c3e50', textColor: '#4ecdc4', bgOpacity: 1 }}
-                        animation="expand"
-                    >
+                    <Highlight
+                        before={{
+                            bgColor: '#4ecdc4',
+                            bgOpacity: 0.2,
+                            textColor: '#2c3e50',
+                        }}
+                        after={{
+                            bgColor: '#2c3e50',
+                            textColor: '#4ecdc4',
+                            bgOpacity: 1,
+                        }}
+                        animation="expand">
                         color flip effect
                     </Highlight>
                     {', '}
-                    <Highlight 
+                    <Highlight
                         before={{ textColor: '#e74c3c', bgOpacity: 0 }}
-                        after={{ bgColor: '#e74c3c', textColor: '#fff', bgOpacity: 0.9 }}
-                        animation="underline"
-                    >
+                        after={{
+                            bgColor: '#e74c3c',
+                            textColor: '#fff',
+                            bgOpacity: 0.9,
+                        }}
+                        animation="underline">
                         underline reveal
                     </Highlight>
                     {', and '}
-                    <Highlight 
-                        before={{ bgColor: '#f39c12', bgOpacity: 1, textColor: '#fff' }}
-                        after={{ bgColor: '#27ae60', textColor: '#fff', bgOpacity: 1 }}
-                        animation="scale"
-                    >
+                    <Highlight
+                        before={{
+                            bgColor: '#f39c12',
+                            bgOpacity: 1,
+                            textColor: '#fff',
+                        }}
+                        after={{
+                            bgColor: '#27ae60',
+                            textColor: '#fff',
+                            bgOpacity: 1,
+                        }}
+                        animation="scale">
                         always visible changing colors
                     </Highlight>
                     .
@@ -174,21 +190,27 @@ export function Write() {
 
                 <TextBlock>
                     Same styles work for both highlights and links:{' '}
-                    <Highlight 
+                    <Highlight
                         before={{ bgColor: '#9b59b6', bgOpacity: 0.1 }}
-                        after={{ bgColor: '#9b59b6', textColor: '#fff', bgOpacity: 1 }}
-                        animation="fade"
-                    >
+                        after={{
+                            bgColor: '#9b59b6',
+                            textColor: '#fff',
+                            bgOpacity: 1,
+                        }}
+                        animation="fade">
                         just a highlight
                     </Highlight>
                     {' vs '}
-                    <Highlight 
+                    <Highlight
                         href="https://github.com"
                         target="_blank"
                         before={{ bgColor: '#9b59b6', bgOpacity: 0.1 }}
-                        after={{ bgColor: '#9b59b6', textColor: '#fff', bgOpacity: 1 }}
-                        animation="fade"
-                    >
+                        after={{
+                            bgColor: '#9b59b6',
+                            textColor: '#fff',
+                            bgOpacity: 1,
+                        }}
+                        animation="fade">
                         same style as link
                     </Highlight>
                     .
@@ -209,7 +231,11 @@ export function Write() {
                         href="https://preactjs.com"
                         target="_blank"
                         before={{ textColor: '#4ecdc4', bgOpacity: 0 }}
-                        after={{ bgColor: '#4ecdc4', textColor: '#fff', bgOpacity: 1 }}
+                        after={{
+                            bgColor: '#4ecdc4',
+                            textColor: '#fff',
+                            bgOpacity: 1,
+                        }}
                         animation="slide-right">
                         inline links
                     </Highlight>{' '}
@@ -218,21 +244,25 @@ export function Write() {
 
                 <TextBlock>
                     Different animation styles:{' '}
-                    <Highlight 
+                    <Highlight
                         before={{ bgOpacity: 0 }}
                         after={{ bgColor: '#673ab7', bgOpacity: 0.8 }}
                         animation="expand">
                         expand
                     </Highlight>
                     ,{' '}
-                    <Highlight 
+                    <Highlight
                         before={{ textColor: '#f39c12', bgOpacity: 0 }}
-                        after={{ bgColor: '#f39c12', textColor: '#fff', bgOpacity: 1 }}
+                        after={{
+                            bgColor: '#f39c12',
+                            textColor: '#fff',
+                            bgOpacity: 1,
+                        }}
                         animation="underline">
                         underline
                     </Highlight>
                     ,{' '}
-                    <Highlight 
+                    <Highlight
                         before={{ bgOpacity: 0 }}
                         after={{ bgColor: '#e74c3c', bgOpacity: 0.8 }}
                         animation="slide-left">
@@ -250,21 +280,21 @@ export function Write() {
 
                 <TextBlock>
                     You can also use different opacity levels:
-                    <Highlight 
+                    <Highlight
                         before={{ bgColor: '#9b59b6', bgOpacity: 0.1 }}
                         after={{ bgColor: '#9b59b6', bgOpacity: 0.3 }}
                         animation="fade">
                         {' '}
                         light highlight{' '}
                     </Highlight>
-                    <Highlight 
+                    <Highlight
                         before={{ bgColor: '#9b59b6', bgOpacity: 0.3 }}
                         after={{ bgColor: '#9b59b6', bgOpacity: 0.6 }}
                         animation="fade">
                         {' '}
                         medium highlight{' '}
                     </Highlight>
-                    <Highlight 
+                    <Highlight
                         before={{ bgColor: '#9b59b6', bgOpacity: 0.6 }}
                         after={{ bgColor: '#9b59b6', bgOpacity: 0.9 }}
                         animation="fade">
@@ -272,123 +302,6 @@ export function Write() {
                         strong highlight{' '}
                     </Highlight>
                 </TextBlock>
-
-                <TextBlock variant="h3">ColorLink Examples</TextBlock>
-                <TextBlock>Here are some flexible link examples:</TextBlock>
-
-                <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin: 1rem 0;">
-                    <ColorLink
-                        href="https://preactjs.com"
-                        color="#673ab7"
-                        bgBehavior="hover"
-                        animation="slide-right"
-                        variant="pill"
-                        target="_blank">
-                        Slide Right
-                    </ColorLink>
-
-                    <ColorLink
-                        href="https://vitejs.dev"
-                        color="#ff6b6b"
-                        bgBehavior="hover"
-                        animation="slide-up"
-                        variant="square"
-                        target="_blank">
-                        Slide Up
-                    </ColorLink>
-
-                    <ColorLink
-                        href="https://github.com"
-                        color="#4ecdc4"
-                        bgBehavior="hover"
-                        animation="expand"
-                        variant="pill"
-                        target="_blank">
-                        Expand
-                    </ColorLink>
-
-                    <ColorLink
-                        href="https://typescript.org"
-                        color="#007acc"
-                        bgBehavior="hover"
-                        animation="circle"
-                        variant="square"
-                        target="_blank">
-                        Circle
-                    </ColorLink>
-                </div>
-
-                <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin: 1rem 0;">
-                    <ColorLink
-                        href="https://example.com"
-                        color="#f39c12"
-                        bgBehavior="always"
-                        variant="pill"
-                        size="sm">
-                        Always Visible
-                    </ColorLink>
-
-                    <ColorLink
-                        href="https://example.com"
-                        color="#e74c3c"
-                        bgBehavior="hover"
-                        animation="glow"
-                        variant="ghost">
-                        Glow Effect
-                    </ColorLink>
-
-                    <ColorLink
-                        href="https://example.com"
-                        color="#9b59b6"
-                        bgBehavior="hover"
-                        animation="underline"
-                        variant="square">
-                        Underline
-                    </ColorLink>
-
-                    <ColorLink
-                        href="https://example.com"
-                        color="#27ae60"
-                        bgBehavior="hover"
-                        animation="scale"
-                        variant="outline"
-                        opacity={0.7}>
-                        Scale + Opacity
-                    </ColorLink>
-                </div>
-
-                <TextBlock>Different sizes and variants:</TextBlock>
-                <div style="display: flex; gap: 1rem; align-items: center; margin: 1rem 0;">
-                    <ColorLink
-                        href="#"
-                        color="#34495e"
-                        bgBehavior="hover"
-                        animation="fade"
-                        size="sm"
-                        variant="pill">
-                        Small
-                    </ColorLink>
-
-                    <ColorLink
-                        href="#"
-                        color="#34495e"
-                        bgBehavior="hover"
-                        animation="fade"
-                        size="md"
-                        variant="pill">
-                        Medium
-                    </ColorLink>
-
-                    <ColorLink
-                        href="#"
-                        color="#34495e"
-                        bgBehavior="hover"
-                        animation="fade"
-                        size="lg"
-                        variant="pill">
-                        Large
-                    </ColorLink>
-                </div>
 
                 <TextBlock variant="h3">Mixed Content Example</TextBlock>
                 <TextBlock>
