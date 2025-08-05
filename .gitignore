@@ -20,3 +20,8 @@ build/
 
 # Mac-specific
 ._*
+
+# env
+.env
+.env.local
+.env.*
