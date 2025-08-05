@@ -5,7 +5,7 @@ interface CodeBlockProps {
     inline?: boolean;
 }
 
-export function CodeBlock({
+export default function CodeBlock({
     code,
     language,
     title,

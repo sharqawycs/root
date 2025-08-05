@@ -6,7 +6,7 @@ interface TextBlockProps {
     variant?: 'p' | 'h1' | 'h2' | 'h3' | 'h4';
 }
 
-export function TextBlock({
+export default function TextBlock({
     children,
     size = 'normal',
     variant = 'p',

@@ -6,7 +6,11 @@ interface QuoteBlockProps {
     source?: string;
 }
 
-export function QuoteBlock({ children, author, source }: QuoteBlockProps) {
+export default function QuoteBlock({
+    children,
+    author,
+    source,
+}: QuoteBlockProps) {
     return (
         <blockquote class="quote-block">
             <div class="quote-content">{children}</div>

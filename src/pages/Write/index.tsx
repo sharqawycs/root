@@ -10,7 +10,7 @@ import {
     Highlight,
 } from '@/components';
 
-export function Write() {
+export default function Write() {
     return (
         <div class="page">
             <PageHeader
@@ -94,7 +94,7 @@ export function Write() {
                 <CodeBlock
                     language="tsx"
                     title="Simple Component Example"
-                    code={`export function Hello({ name }: { name: string }) {
+                    code={`export default function Hello({ name }: { name: string }) {
     return <h1>Hello, {name}!</h1>;
 }`}
                 />

@@ -6,7 +6,7 @@ interface SectionProps {
     className?: string;
 }
 
-export function Section({ title, children, className }: SectionProps) {
+export default function Section({ title, children, className }: SectionProps) {
     return (
         <section class={`section ${className || ''}`}>
             {title && <h2>{title}</h2>}

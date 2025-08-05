@@ -4,7 +4,7 @@ interface ListBlockProps {
     indent?: number;
 }
 
-export function ListBlock({
+export default function ListBlock({
     items,
     type = 'bullet',
     indent = 0,

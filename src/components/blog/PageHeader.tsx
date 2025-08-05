@@ -4,7 +4,7 @@ interface PageHeaderProps {
     date?: string;
 }
 
-export function PageHeader({ title, subtitle, date }: PageHeaderProps) {
+export default function PageHeader({ title, subtitle, date }: PageHeaderProps) {
     return (
         <header class="page-header">
             <h1>{title}</h1>

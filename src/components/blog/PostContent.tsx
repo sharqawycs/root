@@ -7,7 +7,7 @@ interface PostContentProps {
     children: ComponentChildren;
 }
 
-export function PostContent({
+export default function PostContent({
     title,
     date,
     readTime,

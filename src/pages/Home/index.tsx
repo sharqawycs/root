@@ -1,4 +1,4 @@
-export function Home() {
+export default function Home() {
     return (
         <section class="page">
             <h1>Hey, I'm SharQawyCS</h1>

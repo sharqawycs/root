@@ -1,4 +1,4 @@
-export function Socials() {
+export default function Socials() {
     return (
         <section class="page">
             <h1>Socials</h1>

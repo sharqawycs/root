@@ -6,19 +6,19 @@ import {
     prerender as ssr,
 } from 'preact-iso';
 
-import { Layout } from '@/Layout.js';
-import { Home } from '@/pages/Home';
-import { Write } from '@/pages/Write';
-import { Philosophy } from '@/pages/Philosophy';
-import { Content } from '@/pages/Content';
-import { Socials } from '@/pages/Socials';
-import { NotFound } from '@/pages/_404.js';
+import Layout from '@/Layout.js';
+import Home from '@/pages/Home';
+import Write from '@/pages/Write';
+import Philosophy from '@/pages/Philosophy';
+import Content from '@/pages/Content';
+import Socials from '@/pages/Socials';
+import NotFound from '@/pages/_404.js';
 import '@/styles/globals.css';
 import '@/styles/components.css';
 import '@/styles/blocks.css';
 import '@/styles/highlight.css';
 
-export function App() {
+export default function App() {
     return (
         <LocationProvider>
             <Layout>

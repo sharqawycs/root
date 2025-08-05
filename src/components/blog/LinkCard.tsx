@@ -5,7 +5,12 @@ interface LinkCardProps {
     domain?: string;
 }
 
-export function LinkCard({ title, description, url, domain }: LinkCardProps) {
+export default function LinkCard({
+    title,
+    description,
+    url,
+    domain,
+}: LinkCardProps) {
     return (
         <a
             href={url}

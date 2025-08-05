@@ -6,7 +6,7 @@ interface PostCardProps {
     readTime?: string;
 }
 
-export function PostCard({
+export default function PostCard({
     title,
     excerpt,
     date,

@@ -1,6 +1,6 @@
 import { useLocation } from 'preact-iso';
 
-export function Header() {
+export default function Header() {
     const { url } = useLocation();
 
     const navItems = [

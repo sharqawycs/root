@@ -1,4 +1,4 @@
-export function Philosophy() {
+export default function Philosophy() {
     return (
         <section class="page">
             <h1>Philosophy</h1>

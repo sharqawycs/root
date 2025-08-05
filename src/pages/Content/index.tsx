@@ -1,4 +1,4 @@
-export function Content() {
+export default function Content() {
     return (
         <section class="page">
             <h1>Content Worth Consuming</h1>
