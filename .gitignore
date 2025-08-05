@@ -1,27 +1,29 @@
-# OS junk
-.DS_Store
-Thumbs.db
-
-# VS Code settings
-.vscode/
-
-# node/npm stuff (if you ever use it later)
-node_modules/
-package-lock.json
-dist/
-build/
-
-# logs
+# Logs
+logs
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# system files
-*.swp
-*.swo
+node_modules
+dist
+dist-ssr
+*.local
 
-# Mac-specific
-._*
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
-# env
+# env vars
 .env
 .env.local
 .env.*

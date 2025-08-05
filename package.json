@@ -1,0 +1,24 @@
+{
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"preact": "^10.25.3",
+		"preact-iso": "^2.9.2",
+		"preact-render-to-string": "^6.5.13"
+	},
+	"devDependencies": {
+		"@preact/preset-vite": "^2.9.3",
+		"eslint": "^9.32.0",
+		"eslint-config-preact": "^2.0.0",
+		"typescript": "^5.9.2",
+		"vite": "^6.0.4"
+	},
+	"eslintConfig": {
+		"extends": "preact"
+	}
+}
