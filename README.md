@@ -5,6 +5,6 @@
 
 
 
-- 👨‍💻 All of my projects are available at [sharq.tech](https://sharq.tech)
+- 👨‍💻 All of my projects are available at [void.diran.app](https://void.diran.app)
 
 - 📫 How to reach me sharqawycs@gmail.com or [sharqawycs](https://linkedin.com/in/sharqawycs) on LinkedIn
