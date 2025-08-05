@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import preact from '@preact/preset-vite';
 import { resolve } from 'path';
+import { fileURLToPath, URL } from 'node:url';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -17,7 +18,7 @@ export default defineConfig({
 	],
 	resolve: {
 		alias: {
-			'@': resolve(import.meta.url, '../src'),
+			'@': fileURLToPath(new URL('./src', import.meta.url)),
 		},
 	},
 });
