@@ -2,7 +2,7 @@ import PageHeader from '@/components/blog/PageHeader';
 
 export default function Home() {
     return (
-        <div class="page">
+        <div className={'bg-red-200'}>
             <PageHeader title="iam sharqawy Write" />
 
             <h1>yo, i'm sharqawy!</h1>
