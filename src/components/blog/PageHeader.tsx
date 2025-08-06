@@ -6,10 +6,10 @@ interface PageHeaderProps {
 
 export default function PageHeader({ title, subtitle, date }: PageHeaderProps) {
     return (
-        <header class="page-header">
-            <h1>{title}</h1>
-            {subtitle && <p class="subtitle">{subtitle}</p>}
-            {date && <time class="date">{date}</time>}
+        <header class="mb-8">
+            <h1 class="text-3xl font-bold mb-2">{title}</h1>
+            {subtitle && <p class="text-lg text-gray-600 mb-2">{subtitle}</p>}
+            {date && <time class="text-sm text-gray-500">{date}</time>}
         </header>
     );
 }

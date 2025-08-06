@@ -1,4 +1,5 @@
 import { ComponentChildren } from 'preact';
+import '@/styles/highlight.css';
 
 interface StyleVariant {
     bgColor?: string;

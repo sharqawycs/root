@@ -8,9 +8,9 @@ interface SectionProps {
 
 export default function Section({ title, children, className }: SectionProps) {
     return (
-        <section class={`section ${className || ''}`}>
-            {title && <h2>{title}</h2>}
-            <div class="section-content">{children}</div>
+        <section class={`mb-8 ${className || ''}`}>
+            {title && <h2 class="text-2xl font-bold mb-4">{title}</h2>}
+            <div class="space-y-4">{children}</div>
         </section>
     );
 }
