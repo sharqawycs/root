@@ -14,7 +14,7 @@ export default function Header() {
         { path: '/socials', label: 'Socials', color: '#E91E63' },
     ];
 
-    const OPACITY = 0.2;
+    const OPACITY = 0.3;
 
     const toggleMobileMenu = () => {
         setMobileMenuOpen(!mobileMenuOpen);
@@ -30,7 +30,6 @@ export default function Header() {
                 <div class="flex justify-between items-center relative">
                     <Highlight
                         href="/"
-                        className={url === '/' ? 'font-medium' : ''}
                         before={url === '/' ? { bgColor: '#2196F3', bgOpacity: OPACITY } : {}}
                         after={{ bgColor: '#2196F3', bgOpacity: OPACITY }}>
                         Sharqawy
@@ -44,7 +43,6 @@ export default function Header() {
                                 <Highlight
                                     key={path}
                                     href={path}
-                                    className={isActive ? 'font-medium' : ''}
                                     before={isActive ? { bgColor: color, bgOpacity: OPACITY } : {}}
                                     after={{ bgColor: color, bgOpacity: OPACITY }}>
                                     {label}
@@ -54,7 +52,7 @@ export default function Header() {
                     </nav>
 
                     {/* Mobile Menu Toggle */}
-                    <button class="sm:hidden p-2 relative" onClick={toggleMobileMenu} aria-label="Toggle mobile menu">
+                    <button class="sm:hidden relative" onClick={toggleMobileMenu} aria-label="Toggle mobile menu">
                         <div class="w-6 h-5 relative z-50">
                             <span
                                 class={`block absolute h-0.5 w-full bg-gray-800 rounded-sm transition-all duration-300 ease-in-out ${
@@ -97,7 +95,6 @@ export default function Header() {
                             onClick={closeMobileMenu}>
                             <Highlight
                                 href={path}
-                                className={isActive ? 'font-medium' : ''}
                                 before={isActive ? { bgColor: color, bgOpacity: OPACITY } : {}}
                                 after={{ bgColor: color, bgOpacity: OPACITY }}>
                                 {label}
