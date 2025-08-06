@@ -9,8 +9,3 @@
   status = 404
   force = true
   
-[[redirects]]
-  from = "https://shrq.netlify.app/*"
-  to = "https://sharq.tech/:splat"
-  status = 301
-  force = true
