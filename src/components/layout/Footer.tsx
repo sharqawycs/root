@@ -1,11 +1,21 @@
 import Highlight from '@/components/blocks/Highlight';
 
 export default function Footer() {
+    const footerStyle = {
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        padding: '0.5rem 2rem',
+        textAlign: 'center',
+        borderTop: '1px solid #e9e9e7',
+        fontSize: '14px',
+    };
+
     const currentYear = new Date().getFullYear();
     const email = 'sharqawy@diran.app';
 
     return (
-        <footer class="footer">
+        <footer style={footerStyle}>
             <Highlight href={`mailto:${email}`} before={{}} animation="slide-right" after={{ bgColor: '#2196F3', bgOpacity: 0.3 }}>
                 {email}
             </Highlight>

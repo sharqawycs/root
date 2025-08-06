@@ -1,6 +1,7 @@
 import { useLocation } from 'preact-iso';
 import { useState } from 'preact/hooks';
 import Highlight from '@/components/blocks/Highlight';
+import '@/styles/header.css';
 
 export default function Header() {
     const { url } = useLocation();

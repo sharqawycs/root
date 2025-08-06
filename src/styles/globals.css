@@ -47,21 +47,6 @@ body {
     flex: 1;
 }
 
-/* Typography */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: 'Baskerville', 'Libre Baskerville', 'Times New Roman', serif;
-}
-
-em,
-i {
-    font-family: 'Baskerville', 'Libre Baskerville', 'Times New Roman', serif;
-}
-
 /* Blur In Animation */
 @keyframes blurIn {
     from {
@@ -79,82 +64,16 @@ i {
     animation: blurIn 0.2s linear;
 }
 
-.page h1 {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 2rem;
-    color: #37352f;
-}
-
-.page h3 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin: 2rem 0 1rem 0;
-    color: #37352f;
-}
-
-.page p {
-    margin-bottom: 1rem;
-    color: #37352f;
-    font-size: 16px;
-}
-
-.page a {
-    color: #37352f;
-    text-decoration: underline;
-}
-
-/* Home Page */
-.intro-text {
-    font-size: 1.125rem;
-    margin-bottom: 1.5rem;
-}
-
-.home-sections {
-    margin-top: 3rem;
-}
-
-.home-section {
-    margin-bottom: 2rem;
-}
-
-/* Lists */
-ul {
-    margin: 1rem 0;
-    padding-left: 1.5rem;
-}
-
-li {
-    margin-bottom: 0.5rem;
-}
-
-/* Social Links */
-.social-links a {
-    display: block;
-    margin-bottom: 1rem;
-    text-decoration: none;
-}
-
-.social-links h3 {
-    margin: 0;
-    font-size: 1rem;
-}
-
-.social-links p {
-    margin: 0;
-    color: #787774;
-    font-size: 14px;
-}
-
-/* Footer */
-.footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    text-align: center;
-    border-top: 1px solid #e9e9e7;
-    font-size: 14px;
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+em,
+i {
+    font-family: 'Baskerville', 'Libre Baskerville', 'Times New Roman', serif;
 }
 
 /* Utilities */

@@ -8,7 +8,6 @@ import Content from '@/pages/Content';
 import Socials from '@/pages/Socials';
 import NotFound from '@/pages/_404.js';
 import '@/styles/globals.css';
-import '@/styles/header.css';
 import '@/styles/components.css';
 import '@/styles/blocks.css';
 import '@/styles/highlight.css';
