@@ -81,7 +81,23 @@ i {
     font-family: 'Baskerville', 'Libre Baskerville', 'Times New Roman', serif;
 }
 
+/* Blur In Animation */
+@keyframes blurIn {
+    from {
+        opacity: 0;
+        filter: blur(2px);
+    }
+    to {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
 /* Page Styles */
+.page {
+    animation: blurIn 0.2s linear;
+}
+
 .page h1 {
     font-size: 2rem;
     font-weight: 700;
