@@ -1,13 +1,7 @@
-<h1 align="center">Sharqawy Wael</h1>
-<h3 align="center">Trying to make sth</h3>
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=SharQawyCS&label=Profile%20views&color=000000&style=3d" alt="SharQawyCS" /> </p>
+<h1>Yo, I'm Sharqawy</h1>
 
----
-
-<h1 align="center">Yo, I'm Sharqawy (aka CS)</h1>
-
-<p align="center"><i>This GitHub looks empty? That’s on purpose.</i></p>
+<p><i>This GitHub looks empty?</i></p>
 
 ---
 
@@ -30,3 +24,5 @@ I’m also into cognitive science, neuroscience, and how tech can be used to bui
 <p>
 <a href="https://twitter.com/sharqawycs">Twitter/X</a> - <a href="https://linkedin.com/in/sharqawycs">LinkedIn</a> - <a href="mailto:sharqawycs@gmail.com">Email</a> 
 </p>
+
+<p align="left"> <img src="https://komarev.com/ghpvc/?username=SharQawyCS&label=Profile%20views&color=000000&style=3d" alt="SharQawyCS" /> </p>
