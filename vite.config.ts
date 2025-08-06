@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite';
 import preact from '@preact/preset-vite';
-import { resolve } from 'path';
 import { fileURLToPath, URL } from 'node:url';
 
 // https://vitejs.dev/config/

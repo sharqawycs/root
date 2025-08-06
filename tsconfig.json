@@ -4,13 +4,23 @@
         "module": "ESNext",
         "moduleResolution": "bundler",
         "noEmit": true,
-        "allowJs": true,
-        "checkJs": true,
+
+        "allowJs": false,
+        "checkJs": false,
+
+        "strict": true, // Enables all strictness checks (see below for overrides)
+
+        "forceConsistentCasingInFileNames": true, // ❗ Avoid casing bugs in imports
+        "noFallthroughCasesInSwitch": true, // 🛑 Switch fallthrough is dumb
+        "noUnusedLocals": true, // 💩 Kill dead code
+        "noUnusedParameters": true,
+        "noImplicitReturns": true, // ❗ Force return types
+        "noPropertyAccessFromIndexSignature": true,
 
         /* Preact Config */
         "jsx": "react-jsx",
         "jsxImportSource": "preact",
-        "skipLibCheck": true,
+        "skipLibCheck": false,
         "baseUrl": ".",
         "paths": {
             "@/*": ["./src/*"],

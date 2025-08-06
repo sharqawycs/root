@@ -70,7 +70,7 @@ export default function Header() {
 
             {/* Mobile Navigation */}
             <nav class={`mobile-nav ${mobileMenuOpen ? 'open' : ''}`}>
-                {navItems.slice(1).map(({ path, label, color }, index) => {
+                {navItems.slice(1).map(({ path, label, color }) => {
                     const isActive = url === path;
                     return (
                         <div key={path} class="mobile-nav-item" onClick={closeMobileMenu}>
