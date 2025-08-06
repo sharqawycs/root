@@ -5,7 +5,7 @@ export default function Footer() {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        padding: '0.5rem 2rem',
+        padding: '0.5rem 1rem',
         textAlign: 'center',
         borderTop: '1px solid #e9e9e7',
         fontSize: '14px',
