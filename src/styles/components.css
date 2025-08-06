@@ -7,7 +7,8 @@
 
 .page-header h1 {
     margin-bottom: 0.5rem;
-    font-family: 'Baskerville', 'Libre Baskerville', 'Times New Roman', serif;
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+    font-weight: 200;
 }
 
 .page-header .subtitle {
@@ -15,7 +16,7 @@
     color: #787774;
     margin-bottom: 0.5rem;
     font-style: italic;
-    font-family: 'Baskerville', 'Libre Baskerville', 'Times New Roman', serif;
+    font-family: 'Playfair Display', 'Times New Roman', serif;
 }
 
 .page-header .date {
@@ -48,7 +49,7 @@
     margin-bottom: 0.5rem;
     color: #37352f;
     transition: color 0.2s ease;
-    font-family: 'Baskerville', 'Libre Baskerville', 'Times New Roman', serif;
+    font-family: 'Playfair Display', 'Times New Roman', serif;
 }
 
 .post-card .excerpt {
@@ -108,7 +109,7 @@
 .link-card h4 {
     margin-bottom: 0.5rem;
     color: #37352f;
-    font-family: 'Baskerville', 'Libre Baskerville', 'Times New Roman', serif;
+    font-family: 'Playfair Display', 'Times New Roman', serif;
 }
 
 .link-card p {
@@ -130,7 +131,7 @@
 
 .section h2 {
     margin-bottom: 1rem;
-    font-family: 'Baskerville', 'Libre Baskerville', 'Times New Roman', serif;
+    font-family: 'Playfair Display', 'Times New Roman', serif;
 }
 
 .section-content > * + * {

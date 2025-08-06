@@ -5,13 +5,27 @@
     font-display: swap;
     src: url('/fonts/InterVariable.woff2') format('woff2');
 }
-
 @font-face {
     font-family: 'Inter';
     font-style: italic;
     font-weight: 100 900;
     font-display: swap;
     src: url('/fonts/InterVariable-Italic.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('/fonts/PlayfairDisplay-VariableFont_wght.ttf') format('ttf');
+}
+@font-face {
+    font-family: 'Playfair Display';
+    font-style: italic;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('/fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf') format('ttf');
 }
 
 * {
@@ -73,7 +87,7 @@ h5,
 h6,
 em,
 i {
-    font-family: 'Baskerville', 'Libre Baskerville', 'Times New Roman', serif;
+    font-family: 'Playfair Display', 'Times New Roman', serif;
 }
 
 /* Utilities */

@@ -1,7 +1,11 @@
+import PageHeader from '@/components/blog/PageHeader';
+
 export default function Home() {
     return (
-        <section class="page">
-            <h1>Hey, I'm SharQawyCS</h1>
+        <div class="page">
+            <PageHeader title="iam sharqawy Write" />
+
+            <h1>yo, i'm sharqawy!</h1>
             <p class="intro-text">I'm a developer who likes to build things and write about them.</p>
             <p>
                 I work mostly with TypeScript, JavaScript, React, and Node.js. I believe in keeping code simple and avoiding
@@ -31,6 +35,6 @@ export default function Home() {
                     </p>
                 </div>
             </div>
-        </section>
+        </div>
     );
 }
