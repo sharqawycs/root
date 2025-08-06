@@ -49,34 +49,15 @@ body {
 
 .header-content {
     padding: 0 2rem;
-}
-
-.header-logo h1 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: #37352f;
-    font-family: 'Baskerville', 'Libre Baskerville', 'Times New Roman', serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
 }
 
 .header-nav {
     display: flex;
     gap: 2rem;
-}
-
-.header-nav a {
-    text-decoration: none;
-    color: #787774;
-    font-weight: 500;
-    font-size: 14px;
-}
-
-.header-nav a:hover {
-    color: #37352f;
-}
-
-.header-nav a.active {
-    color: #37352f;
 }
 
 /* Main Content */
@@ -179,15 +160,13 @@ li {
     font-size: 14px;
 }
 
-.footer a,
-.footer p {
-    margin: 0;
-    color: #787774;
+/* Utilities */
+.font-bold {
+    font-weight: bold;
 }
-.footer a {
-    text-decoration: none;
+.font-semibold {
+    font-weight: 600;
 }
-
-.footer a:hover {
-    text-decoration: underline;
+.font-medium {
+    font-weight: 500;
 }

@@ -20,26 +20,42 @@ interface HighlightProps {
     after: StyleVariant;
 
     // Animation style
-    animation?: 'slide-right' | 'slide-left' | 'fade' | 'expand' | 'underline' | 'scale';
+    animation?: 'none' | 'slide-right' | 'slide-left' | 'fade' | 'expand' | 'underline' | 'scale';
 }
 
-export default function Highlight({ children, href, target, className = '', before, after, animation = 'fade' }: HighlightProps) {
-    // Generate CSS custom properties
+export default function Highlight({ children, href, target, className = '', before, after, animation = 'none' }: HighlightProps) {
+    // Helper function to convert hex to rgba
+    const hexToRgba = (hex: string, opacity: number) => {
+        if (!hex || hex === 'transparent') return 'transparent';
+        const r = parseInt(hex.slice(1, 3), 16);
+        const g = parseInt(hex.slice(3, 5), 16);
+        const b = parseInt(hex.slice(5, 7), 16);
+        return `rgba(${r}, ${g}, ${b}, ${opacity})`;
+    };
+
+    // Generate CSS custom properties with proper rgba values
     const style = {
         // Before styles
-        '--before-bg': before.bgColor || 'transparent',
-        '--before-text': before.textColor || 'inherit',
-        '--before-bg-opacity': (before.bgOpacity || 0).toString(),
-        '--before-text-opacity': (before.textOpacity || 1).toString(),
+        '--before-bg': before.bgColor ? hexToRgba(before.bgColor, before.bgOpacity || 0) : 'transparent',
+        '--before-text': before.textColor ? hexToRgba(before.textColor, before.textOpacity || 1) : 'inherit',
+
+        // '--after-bg': after.bgColor ? hexToRgba(after.bgColor, after.bgOpacity || 0) : 'transparent',
+        // '--after-text': after.textColor ? hexToRgba(after.textColor, after.textOpacity || 1) : 'inherit',
 
         // After styles
-        '--after-bg': after.bgColor || before.bgColor || 'transparent',
-        '--after-text': after.textColor || before.textColor || 'inherit',
-        '--after-bg-opacity': (after.bgOpacity !== undefined ? after.bgOpacity : before.bgOpacity || 1).toString(),
-        '--after-text-opacity': (after.textOpacity !== undefined ? after.textOpacity : before.textOpacity || 1).toString(),
+        '--after-bg': after.bgColor
+            ? hexToRgba(after.bgColor, after.bgOpacity !== undefined ? after.bgOpacity : 1)
+            : before.bgColor
+              ? hexToRgba(before.bgColor, after.bgOpacity !== undefined ? after.bgOpacity : 1)
+              : 'transparent',
+        '--after-text': after.textColor
+            ? hexToRgba(after.textColor, after.textOpacity !== undefined ? after.textOpacity : 1)
+            : before.textColor
+              ? hexToRgba(before.textColor, after.textOpacity !== undefined ? after.textOpacity : 1)
+              : 'inherit',
     } as any;
 
-    const classes = ['highlight-v2', `highlight-v2--${animation}`, className].filter(Boolean).join(' ');
+    const classes = ['highlight', `highlight--${animation}`, className].filter(Boolean).join(' ');
 
     if (href) {
         return (
