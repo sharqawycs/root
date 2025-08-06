@@ -57,15 +57,15 @@ export default function Header() {
                     <button class="sm:hidden p-2 relative" onClick={toggleMobileMenu} aria-label="Toggle mobile menu">
                         <div class="w-6 h-5 relative z-50">
                             <span
-                                class={`block absolute h-0.5 w-full bg-gray-800 rounded-sm transition-all duration-300 ease-in-out origin-center ${
+                                class={`block absolute h-0.5 w-full bg-gray-800 rounded-sm transition-all duration-300 ease-in-out ${
                                     mobileMenuOpen ? 'top-2.5 rotate-45' : 'top-1 rotate-0'
                                 }`}></span>
                             <span
-                                class={`block absolute h-0.5 w-full bg-gray-800 rounded-sm transition-all duration-300 ease-in-out ${
-                                    mobileMenuOpen ? 'opacity-0' : 'top-2.5 opacity-100'
+                                class={`block absolute h-0.5 w-full bg-gray-800 rounded-sm transition-all duration-300 ease-in-out top-2.5 ${
+                                    mobileMenuOpen ? 'opacity-0' : 'opacity-100'
                                 }`}></span>
                             <span
-                                class={`block absolute h-0.5 w-full bg-gray-800 rounded-sm transition-all duration-300 ease-in-out origin-center ${
+                                class={`block absolute h-0.5 w-full bg-gray-800 rounded-sm transition-all duration-300 ease-in-out ${
                                     mobileMenuOpen ? 'top-2.5 -rotate-45' : 'top-4 rotate-0'
                                 }`}></span>
                         </div>
