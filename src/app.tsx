@@ -2,10 +2,10 @@ import { LocationProvider, Router, Route, hydrate, prerender as ssr } from 'prea
 
 import Layout from '@/Layout.js';
 import Home from '@/pages/Home';
-import Write from '@/pages/Write';
-import Philosophy from '@/pages/Philosophy';
+import Journal from '@/pages/Journal';
+import Gallery from '@/pages/Gallery';
 import Content from '@/pages/Content';
-import Socials from '@/pages/Socials';
+
 import NotFound from '@/pages/_404.js';
 import '@/styles/globals.css';
 
@@ -15,10 +15,9 @@ export default function App() {
             <Layout>
                 <Router>
                     <Route path="/" component={Home} />
-                    <Route path="/write" component={Write} />
-                    <Route path="/philosophy" component={Philosophy} />
+                    <Route path="/journal" component={Journal} />
+                    <Route path="/gallery" component={Gallery} />
                     <Route path="/content" component={Content} />
-                    <Route path="/socials" component={Socials} />
                     <Route default component={NotFound} />
                 </Router>
             </Layout>

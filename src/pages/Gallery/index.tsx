@@ -1,10 +1,11 @@
 import PageHeader from '@/components/blog/PageHeader';
 import Page from '@/components/layout/Page';
 
-export default function NotFound() {
+export default function Gallery() {
     return (
         <Page>
-            <PageHeader title="404" subtitle="Not Found - Sorry bro :(" />
+            <PageHeader title="Gallery" subtitle="A collection of my art" />
+            <p>coming soon...</p>
         </Page>
     );
 }

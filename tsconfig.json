@@ -5,7 +5,7 @@
         "moduleResolution": "bundler",
         "noEmit": true,
 
-        "allowJs": false,
+        "allowJs": true,
         "checkJs": false,
 
         "strict": true, // Enables all strictness checks (see below for overrides)

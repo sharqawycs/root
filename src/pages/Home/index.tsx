@@ -1,39 +1,28 @@
 import PageHeader from '@/components/blog/PageHeader';
+import Page from '@/components/layout/Page';
 
 export default function Home() {
     return (
-        <div>
-            <PageHeader title="iam sharqawy Write" />
+        <Page>
+            <PageHeader title="yo, i'm sharqawy" subtitle="CS student & Builder" />
 
-            <p class="intro-text">I'm a developer who likes to build things and write about them.</p>
             <p>
-                I work mostly with TypeScript, JavaScript, React, and Node.js. I believe in keeping code simple and avoiding
-                over-engineering.
+                i’m a cs student tryna kill fear through building and content. i build and share to get out of my own way. i like sharp
+                tools, clean design, and projects that actually do something. this is my public space to share my work, thoughts, and
+                everything i’m figuring out along the way.
             </p>
-            <p>This is where I share my thoughts, projects, and things I find worth consuming.</p>
 
-            <div class="home-sections">
-                <div class="home-section">
-                    <h3>Recent Thoughts</h3>
-                    <p>
-                        Check out my <a href="/write">writing</a> for random thoughts and technical posts.
-                    </p>
-                </div>
+            <p class="my-4">
+                when i’m not coding, i’m deep into random internet rabbit holes — learning anything that grabs my brain. i love building
+                PCs, btw i’ve got a thing for mechanical keyboards and minimalist setups :), sometimes i love breaking stuff on purpose just
+                to reverse-engineer it.
+            </p>
 
-                <div class="home-section">
-                    <h3>What I Believe</h3>
-                    <p>
-                        Read my <a href="/philosophy">philosophy</a> on code, life, and work.
-                    </p>
-                </div>
-
-                <div class="home-section">
-                    <h3>Worth Your Time</h3>
-                    <p>
-                        Curated <a href="/content">content</a> I actually think is valuable.
-                    </p>
-                </div>
-            </div>
-        </div>
+            <p class="my-4">
+                i find art in everyday things — cooking, taking photos, cleaning up my space. it makes me feel like i’m here. writing lyrics
+                or poetry helps when my brain’s loud. debating’s fun too — not to win, just to break ideas and see what’s left. all of it’s
+                kinda my way of keeping things honest & authentic.
+            </p>
+        </Page>
     );
 }

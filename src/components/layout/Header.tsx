@@ -8,10 +8,9 @@ export default function Header() {
 
     const navItems = [
         { path: '/', label: 'Sharqawy', color: '#2196F3' },
-        { path: '/write', label: 'Write', color: '#4CAF50' },
-        { path: '/philosophy', label: 'Philosophy', color: '#FF9800' },
+        { path: '/journal', label: 'Journal', color: '#4CAF50' },
+        { path: '/gallery', label: 'Gallery', color: '#FF9800' },
         { path: '/content', label: 'Content', color: '#9C27B0' },
-        { path: '/socials', label: 'Socials', color: '#E91E63' },
     ];
 
     const OPACITY = 0.3;

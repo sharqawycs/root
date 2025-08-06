@@ -8,9 +8,9 @@ interface LayoutProps {
 
 export default function MainLayout({ children }: LayoutProps) {
     return (
-        <div class="layout">
+        <div class="max-w-2xl mx-auto min-h-screen flex flex-col font-inter">
             <Header />
-            <main class="main-content">{children}</main>
+            {children}
             <Footer />
         </div>
     );
