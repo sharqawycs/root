@@ -36,13 +36,8 @@ body {
     background: #fff;
 }
 
-/* Custom text selection colors */
+/* text selection colors */
 ::selection {
-    background-color: #000000; /* Blue background */
-    color: #ffffff; /* White text */
-}
-
-::-moz-selection {
-    background-color: #000000; /* Blue background for Firefox */
-    color: #ffffff; /* White text */
+    background-color: #000;
+    color: #fff;
 }
