@@ -35,3 +35,14 @@ body {
     color: #37352f;
     background: #fff;
 }
+
+/* Custom text selection colors */
+::selection {
+    background-color: #000000; /* Blue background */
+    color: #ffffff; /* White text */
+}
+
+::-moz-selection {
+    background-color: #000000; /* Blue background for Firefox */
+    color: #ffffff; /* White text */
+}
