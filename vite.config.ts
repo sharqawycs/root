@@ -5,6 +5,19 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+    build: {
+        minify: 'terser', // 🔁 from 'esbuild'
+        terserOptions: {
+            compress: {
+                drop_console: true, // remove console.logs
+                passes: 3, // try to compress harder
+            },
+            format: {
+                comments: false,
+            },
+        },
+    },
+
     plugins: [
         preact({
             prerender: {
@@ -18,6 +31,7 @@ export default defineConfig({
 
         tailwindcss(),
     ],
+
     resolve: {
         alias: {
             '@': fileURLToPath(new URL('./src', import.meta.url)),
