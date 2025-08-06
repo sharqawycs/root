@@ -25,4 +25,4 @@ I’m also into cognitive science, neuroscience, and how tech can be used to bui
 <a href="https://twitter.com/sharqawycs">Twitter/X</a> - <a href="https://linkedin.com/in/sharqawycs">LinkedIn</a> - <a href="mailto:sharqawycs@gmail.com">Email</a> 
 </p>
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=SharQawyCS&label=Profile%20views&color=000000&style=3d" alt="SharQawyCS" /> </p>
+<p align="right"> <img src="https://komarev.com/ghpvc/?username=sharqawycs&label=Profile%20views&color=000000&style=3d" alt="sharqawy profile views" /> </p>
