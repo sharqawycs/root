@@ -12,12 +12,12 @@
     },
     "dependencies": {
         "preact": "^10.25.3",
-        "preact-iso": "^2.9.2",
-        "preact-render-to-string": "^6.5.13",
-        "tailwindcss": "^4.1.11",
-        "@tailwindcss/vite": "^4.1.11"
+        "preact-iso": "^2.9.2"
     },
     "devDependencies": {
+        "preact-render-to-string": "^6.5.13",
+        "tailwindcss": "^4.1.11",
+        "@tailwindcss/vite": "^4.1.11",
         "@preact/preset-vite": "^2.9.3",
         "@types/node": "^24.2.0",
         "eslint": "^9.32.0",
