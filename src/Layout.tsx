@@ -6,7 +6,7 @@ interface LayoutProps {
     children: ComponentChildren;
 }
 
-export default function Layout({ children }: LayoutProps) {
+export default function MainLayout({ children }: LayoutProps) {
     return (
         <div class="layout">
             <Header />
