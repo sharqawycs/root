@@ -1,7 +1,7 @@
 
 <h1>Yo, I'm Sharqawy</h1>
 
-<p><i>This GitHub looks <i>empty</i>?</i></p>
+<p>This GitHub looks <i>empty</i>?</p>
 
 <hr>
 
