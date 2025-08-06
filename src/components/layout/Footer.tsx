@@ -1,4 +1,4 @@
-import Highlight from '@/components/blocks/Highlight';
+import Highlight from '@/components/ui/Highlight';
 
 export default function Footer() {
     const footerStyle = {

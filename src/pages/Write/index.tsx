@@ -1,4 +1,12 @@
-import { PageHeader, PostCard, Section, TextBlock, ListBlock, QuoteBlock, CodeBlock, LinkCard, Highlight } from '@/components';
+import CodeBlock from '@/components/blocks/CodeBlock';
+import ListBlock from '@/components/blocks/ListBlock';
+import QuoteBlock from '@/components/blocks/QuoteBlock';
+import TextBlock from '@/components/blocks/TextBlock';
+import LinkCard from '@/components/blog/LinkCard';
+import PageHeader from '@/components/blog/PageHeader';
+import PostCard from '@/components/blog/PostCard';
+import Section from '@/components/blog/Section';
+import Highlight from '@/components/ui/Highlight';
 
 export default function Write() {
     return (

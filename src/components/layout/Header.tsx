@@ -1,6 +1,6 @@
 import { useLocation } from 'preact-iso';
 import { useState } from 'preact/hooks';
-import Highlight from '@/components/blocks/Highlight';
+import Highlight from '@/components/ui/Highlight';
 import '@/styles/header.css';
 
 export default function Header() {
