@@ -1,20 +1,20 @@
 
 <h1>Yo, I'm Sharqawy</h1>
 
-<p><i>This GitHub looks empty?</i></p>
+<p><i>This GitHub looks <i>empty</i>?</i></p>
 
 <hr>
 
 <p>
-Most of my projects are private because they’re <b>closed-source</b>. That includes startup code, tools I built for myself, and experiments I’m not ready to share yet. Some of them handle sensitive data, and some are part of bigger products I’m still working on.
+Most of my projects are private because they’re <i><b>closed-source</b></i>. That includes startup code, tools I built for myself, and experiments I’m not ready to share yet. Some of them handle sensitive data, and some are part of bigger products I’m still working on.
 </p>
 
 <p>
-If you’re curious about what I’ve built, or wanna collaborate, just DM me. I’ve got demos, writeups, and code I can share privately.
+If you’re <i>curious</i> about what I’ve built, or wanna collaborate, just DM me. I’ve got demos, writeups, and code I can share privately.
 </p>
 
 <p>
-I’m also into cognitive science, neuroscience, and how tech can be used to build better tools for different kinds of minds. It’s a long-term goal. For now, I’m just putting in the reps and building the foundation.
+I’m also into cognitive science, neuroscience, and how tech can be used to build better tools for different kinds of minds. It’s a <i>long-term goal</i>. For now, I’m just putting in the reps and building the foundation.
 </p>
 
 <hr>
