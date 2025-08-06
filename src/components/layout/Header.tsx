@@ -28,15 +28,13 @@ export default function Header() {
         <>
             <header class="header">
                 <div class="header-content">
-                    <div class="header-logo">
-                        <Highlight
-                            href="/"
-                            className={url === '/' ? 'font-medium' : ''}
-                            before={url === '/' ? { bgColor: '#2196F3', bgOpacity: OPACITY } : {}}
-                            after={{ bgColor: '#2196F3', bgOpacity: OPACITY }}>
-                            Sharqawy
-                        </Highlight>
-                    </div>
+                    <Highlight
+                        href="/"
+                        className={url === '/' ? 'font-medium' : ''}
+                        before={url === '/' ? { bgColor: '#2196F3', bgOpacity: OPACITY } : {}}
+                        after={{ bgColor: '#2196F3', bgOpacity: OPACITY }}>
+                        Sharqawy
+                    </Highlight>
 
                     {/* Desktop Navigation */}
                     <nav class="header-nav">
