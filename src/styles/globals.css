@@ -1,4 +1,6 @@
+@tailwind utilities;
 @import 'tailwindcss';
+
 @font-face {
     font-family: 'Inter';
     font-style: normal;
