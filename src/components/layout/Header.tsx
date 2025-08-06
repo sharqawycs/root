@@ -1,9 +1,10 @@
 import { useLocation } from 'preact-iso';
+import { useState } from 'preact/hooks';
 import Highlight from '@/components/blocks/Highlight';
-import { isAbsolute } from 'path';
 
 export default function Header() {
     const { url } = useLocation();
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     const navItems = [
         { path: '/', label: 'Sharqawy', color: '#2196F3' },
@@ -15,34 +16,76 @@ export default function Header() {
 
     const OPACITY = 0.2;
 
+    const toggleMobileMenu = () => {
+        setMobileMenuOpen(!mobileMenuOpen);
+    };
+
+    const closeMobileMenu = () => {
+        setMobileMenuOpen(false);
+    };
+
     return (
-        <header class="header">
-            <div class="header-content">
-                <div class="header-logo">
-                    <Highlight
-                        href="/"
-                        className={url === '/' ? 'font-medium' : ''}
-                        before={url === '/' ? { bgColor: '#2196F3', bgOpacity: OPACITY } : {}}
-                        after={{ bgColor: '#2196F3', bgOpacity: OPACITY }}>
-                        Sharqawy
-                    </Highlight>
+        <>
+            <header class="header">
+                <div class="header-content">
+                    <div class="header-logo">
+                        <Highlight
+                            href="/"
+                            className={url === '/' ? 'font-medium' : ''}
+                            before={url === '/' ? { bgColor: '#2196F3', bgOpacity: OPACITY } : {}}
+                            after={{ bgColor: '#2196F3', bgOpacity: OPACITY }}>
+                            Sharqawy
+                        </Highlight>
+                    </div>
+
+                    {/* Desktop Navigation */}
+                    <nav class="header-nav">
+                        {navItems.slice(1).map(({ path, label, color }) => {
+                            const isActive = url === path;
+                            return (
+                                <Highlight
+                                    key={path}
+                                    href={path}
+                                    className={isActive ? 'font-medium' : ''}
+                                    before={isActive ? { bgColor: color, bgOpacity: OPACITY } : {}}
+                                    after={{ bgColor: color, bgOpacity: OPACITY }}>
+                                    {label}
+                                </Highlight>
+                            );
+                        })}
+                    </nav>
+
+                    {/* Mobile Menu Toggle */}
+                    <button class="mobile-menu-toggle" onClick={toggleMobileMenu} aria-label="Toggle mobile menu">
+                        <div class={`hamburger ${mobileMenuOpen ? 'open' : ''}`}>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </button>
                 </div>
-                <nav class="header-nav">
-                    {navItems.slice(1).map(({ path, label, color }) => {
-                        const isActive = url === path;
-                        return (
+            </header>
+
+            {/* Mobile Overlay */}
+            <div class={`mobile-overlay ${mobileMenuOpen ? 'open' : ''}`} onClick={closeMobileMenu} />
+
+            {/* Mobile Navigation */}
+            <nav class={`mobile-nav ${mobileMenuOpen ? 'open' : ''}`}>
+                {navItems.slice(1).map(({ path, label, color }, index) => {
+                    const isActive = url === path;
+                    return (
+                        <div key={path} class="mobile-nav-item" onClick={closeMobileMenu}>
                             <Highlight
-                                key={path}
                                 href={path}
                                 className={isActive ? 'font-medium' : ''}
                                 before={isActive ? { bgColor: color, bgOpacity: OPACITY } : {}}
                                 after={{ bgColor: color, bgOpacity: OPACITY }}>
                                 {label}
                             </Highlight>
-                        );
-                    })}
-                </nav>
-            </div>
-        </header>
+                        </div>
+                    );
+                })}
+            </nav>
+        </>
     );
 }

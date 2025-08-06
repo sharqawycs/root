@@ -41,25 +41,6 @@ body {
     flex-direction: column;
 }
 
-/* Header */
-.header {
-    padding: 2rem 0 1rem 0;
-    border-bottom: 1px solid #e9e9e7;
-}
-
-.header-content {
-    padding: 0 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: black;
-}
-
-.header-nav {
-    display: flex;
-    gap: 2rem;
-}
-
 /* Main Content */
 .main-content {
     padding: 2rem;
