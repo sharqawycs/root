@@ -30,3 +30,10 @@ I’m also into cognitive science, neuroscience, and how tech can be used to bui
 <img align="right" src="https://komarev.com/ghpvc/?username=sharqawycs&label=Profile%20views&color=000000&style=flat&abbreviated=true" alt="sharqawy profile views" />
 </p>
 
+<p>
+  <b>PS:</b> 
+  <img src="resources/apple-heart-emoji.png" alt="heart" style="width: 1em; vertical-align: middle;" />
+  <a target="_blank" href="https://github.com/sharqawycs/sharqawycs">
+    <u>this</u>
+  </a> repo
+</p>
