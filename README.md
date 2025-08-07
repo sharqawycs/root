@@ -27,13 +27,14 @@ I’m also into cognitive science, neuroscience, and how tech can be used to bui
   <a target="_blank" href="https://linkedin.com/in/sharqawycs">LinkedIn</a> -
   <a target="_blank" href="mailto:sharqawycs@gmail.com">Email</a> -
   <a target="_blank" href="https://leetcode.com/u/sharqawycs/">LC</a> 
-<img align="right" src="https://komarev.com/ghpvc/?username=sharqawycs&label=Profile%20views&color=000000&style=flat&abbreviated=true" alt="sharqawy profile views" />
 </p>
 
 <p>
   <b>PS:</b> 
-  <img src="resources/apple-heart-emoji.png" alt="heart" style="width: 1em; vertical-align: middle;" />
+  <img src="resources/apple-heart-emoji.png" alt="heart" style="width: 1em; vertical-align: -0.2em;" />
   <a target="_blank" href="https://github.com/sharqawycs/sharqawycs">
     <u>this</u>
   </a> repo
+
+  <img align="right" src="https://komarev.com/ghpvc/?username=sharqawycs&label=Profile%20views&color=000000&style=flat&abbreviated=true" alt="sharqawy profile views" />
 </p>
