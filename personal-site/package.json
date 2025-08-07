@@ -1,5 +1,6 @@
 {
-    "private": true,
+    "name": "sharqawy-personal-site",
+    "private": false,
     "type": "module",
     "scripts": {
         "dev": "vite",
