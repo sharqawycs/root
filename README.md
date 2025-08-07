@@ -1,4 +1,3 @@
-
 <h1>Yo, I'm Sharqawy</h1>
 
 <p>This GitHub looks <i>empty</i>?</p>
@@ -31,7 +30,10 @@ I’m also into cognitive science, neuroscience, and how tech can be used to bui
 
 <p>
   <b>PS:</b> 
-  <img src="resources/apple-heart-emoji.png" alt="heart" style="width: 1em; vertical-align: -0.2em;" />
+  I
+  <sub>
+    <img src="resources/apple-heart-emoji.png" alt="heart" width="14" height="14" />
+  </sub>
   <a target="_blank" href="https://github.com/sharqawycs/sharqawycs">
     <u>this</u>
   </a> repo
