@@ -12,6 +12,7 @@
         "format:check": "prettier --check ."
     },
     "dependencies": {
+        "marked": "^16.1.2",
         "preact": "^10.25.3",
         "preact-iso": "^2.9.2"
     },
