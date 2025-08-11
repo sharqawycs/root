@@ -7,7 +7,7 @@ export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     const navItems = [
-        { path: '/', label: 'Sharqawy', color: '#2196F3' },
+        // { path: '/', label: 'Sharqawy', color: '#2196F3' },
         { path: '/journal', label: 'Journal', color: '#4CAF50' },
         { path: '/gallery', label: 'Gallery', color: '#FF9800' },
         { path: '/content', label: 'Content', color: '#9C27B0' },
@@ -36,7 +36,7 @@ export default function Header() {
 
                     {/* Desktop Navigation */}
                     <nav class="hidden sm:flex gap-8 items-center">
-                        {navItems.slice(1).map(({ path, label, color }) => {
+                        {navItems.map(({ path, label, color }) => {
                             const isActive = url === path;
                             return (
                                 <Highlight
@@ -83,7 +83,7 @@ export default function Header() {
                 class={`fixed top-0 right-0 w-72 h-screen bg-white/95 backdrop-blur-xl border-l border-gray-200 pt-20 px-4 pb-8 z-40 transition-transform duration-300 flex flex-col gap-4 ${
                     mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
                 }`}>
-                {navItems.slice(1).map(({ path, label, color }) => {
+                {navItems.map(({ path, label, color }) => {
                     const isActive = url === path;
                     return (
                         <div
