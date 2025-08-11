@@ -4,7 +4,7 @@ import Page from '@/components/layout/Page';
 export default function NotFound() {
     return (
         <Page>
-            <PageHeader title="404" subtitle="Not Found - Sorry bro :(" />
+            <PageHeader subtitle="Not Found - Sorry bro :(">404</PageHeader>
         </Page>
     );
 }

@@ -4,7 +4,7 @@ import Page from '@/components/layout/Page';
 export default function Gallery() {
     return (
         <Page>
-            <PageHeader title="Gallery" subtitle="A collection of my art" />
+            <PageHeader subtitle="A collection of my art">Gallery</PageHeader>
             <p>coming soon...</p>
         </Page>
     );

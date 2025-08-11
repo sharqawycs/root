@@ -12,7 +12,7 @@ import Highlight from '@/components/ui/Highlight';
 export default function Journal() {
     return (
         <Page>
-            <PageHeader title="Journal" subtitle="Where I write dumb stuff and random thoughts" />
+            <PageHeader subtitle="Where I write dumb stuff and random thoughts">Journal</PageHeader>
 
             <p>heyy :)</p>
         </Page>
