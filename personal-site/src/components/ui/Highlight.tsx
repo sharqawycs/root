@@ -39,14 +39,14 @@ export default function Highlight({ children, href, target, className = '', befo
 
     // Generate after styles
     const afterBg = after.bgColor
-        ? hexToRgba(after.bgColor, after.bgOpacity !== undefined ? after.bgOpacity : 1)
+        ? hexToRgba(after.bgColor, after.bgOpacity !== undefined ? after.bgOpacity : 0.3)
         : before.bgColor
-          ? hexToRgba(before.bgColor, after.bgOpacity !== undefined ? after.bgOpacity : 1)
+          ? hexToRgba(before.bgColor, after.bgOpacity !== undefined ? after.bgOpacity : 0.3)
           : 'transparent';
     const afterText = after.textColor
-        ? hexToRgba(after.textColor, after.textOpacity !== undefined ? after.textOpacity : 1)
+        ? hexToRgba(after.textColor, after.textOpacity !== undefined ? after.textOpacity : 0.3)
         : before.textColor
-          ? hexToRgba(before.textColor, after.textOpacity !== undefined ? after.textOpacity : 1)
+          ? hexToRgba(before.textColor, after.textOpacity !== undefined ? after.textOpacity : 0.3)
           : 'inherit';
 
     // Base Tailwind classes
