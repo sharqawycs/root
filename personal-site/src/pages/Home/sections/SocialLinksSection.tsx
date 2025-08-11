@@ -8,20 +8,27 @@ export default function SocialLinksSection() {
     ];
     const OPACITY = 0.3;
     return (
-        <>
+        <section>
             <h2 class="text-2xl font-playfair mb-2">Connect</h2>
-            {socialLinks.map(({ url, label, color }) => {
-                return (
-                    <Highlight
-                        key={url}
-                        href={url}
-                        animation="expand"
-                        before={false ? { bgColor: color, bgOpacity: OPACITY } : {}}
-                        after={{ bgColor: color, bgOpacity: OPACITY }}>
-                        {label}
-                    </Highlight>
-                );
-            })}
-        </>
+
+            <div>
+                {socialLinks.map(({ url, label, color }, idx) => {
+                    return (
+                        <>
+                            <Highlight
+                                className="underline"
+                                key={url}
+                                href={url}
+                                animation="expand"
+                                before={false ? { bgColor: color, bgOpacity: OPACITY } : {}}
+                                after={{ bgColor: color, bgOpacity: OPACITY }}>
+                                {label}
+                            </Highlight>
+                            {idx < socialLinks.length - 1 && ' | '}
+                        </>
+                    );
+                })}
+            </div>
+        </section>
     );
 }
