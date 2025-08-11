@@ -8,8 +8,14 @@ const sampleMarkdown = `
 This tests proper token recursion in lists and other nested structures.
 
 ## Nested Lists with Formatting
-
+- This is the best thing ever
+- This is the best thing ever
+- This is the best thing ever
+- This is the best thing ever
 1. **First level** with bold
+1. **First level** with bold
+   1. **First level** with bold
+   1. **First level** with bold
    - Nested item with *italic text*
    - Another nested with [a link](https://example.com)
    - Item with inline \`code\`
@@ -28,6 +34,12 @@ This tests proper token recursion in lists and other nested structures.
 - [x] Another completed with \`code   \` and *italic*
 - [ ] Task with **bold**, *italic*, and [link](https://github.com)
 
+
+- hi 
+- pro
+   - i like 
+      - what
+         - you
 ## Complex Nesting
 
 1. Level 1 with **formatting**

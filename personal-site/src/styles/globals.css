@@ -28,6 +28,7 @@
 @theme {
     --font-satoshi: 'Satoshi', system-ui, sans-serif;
     --font-playfair: 'Playfair Display', 'Times New Roman', serif;
+    --dash-bullet: '- ';
 }
 
 body {
