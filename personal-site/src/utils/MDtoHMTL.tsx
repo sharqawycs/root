@@ -1,6 +1,6 @@
 import { marked, Tokens } from 'marked';
 import { render } from 'preact-render-to-string';
-import { Heading, Paragraph, Link } from '@/components/markdown';
+import { Heading, Paragraph, Link, List, ListItem } from '@/components/markdown';
 import { JSX } from 'preact';
 
 const renderer = new marked.Renderer();
@@ -20,24 +20,28 @@ renderer.paragraph = ({ tokens }: Tokens.Paragraph) => {
     );
 };
 
-const MarkdownList = ({ ordered, start, children }: { ordered: boolean; start?: number | string; children: any }) => {
-    const ListTag = (ordered ? 'ol' : 'ul') as keyof JSX.IntrinsicElements;
-    const baseClasses = ordered ? 'list-decimal list-inside mb-4 space-y-2' : 'list-disc list-inside mb-4 space-y-2';
-    const startProps = ordered && start !== 1 && start !== '' ? { start: Number(start) } : {};
+// List
+renderer.list = (token: Tokens.List) => {
+    const { ordered, start, items } = token;
+    const itemsHtml = items.map(item => renderer.listitem(item)).join('');
 
-    return (
-        <ListTag class={baseClasses} {...startProps}>
-            {children}
-        </ListTag>
+    return render(
+        <List ordered={ordered} start={start}>
+            <span dangerouslySetInnerHTML={{ __html: itemsHtml }} />
+        </List>
     );
 };
 
-const MarkdownListItem = ({ task, checked, children }: { task?: boolean; checked?: boolean; children: any }) => (
-    <li class="text-gray-700">
-        {task && <input type="checkbox" disabled checked={checked} class="mr-2" />}
-        {children}
-    </li>
-);
+// List item
+renderer.listitem = (item: Tokens.ListItem) => {
+    const content = renderer.parser.parse(item.tokens, false);
+
+    return render(
+        <ListItem task={item.task} checked={item.checked}>
+            <span dangerouslySetInnerHTML={{ __html: content }} />
+        </ListItem>
+    );
+};
 
 const MarkdownCodeBlock = ({ text, lang }: { text: string; lang?: string }) => {
     const langClass = lang ? ` language-${lang}` : '';
@@ -49,29 +53,6 @@ const MarkdownCodeBlock = ({ text, lang }: { text: string; lang?: string }) => {
 };
 
 const MarkdownInlineCode = ({ text }: { text: string }) => <code class="bg-gray-100 px-1 py-0.5 rounded text-sm font-mono">{text}</code>;
-
-// List renderer using custom component
-renderer.list = (token: Tokens.List) => {
-    const { ordered, start, items } = token;
-    const itemsHtml = items.map(item => renderer.listitem(item)).join('');
-
-    return render(
-        <MarkdownList ordered={ordered} start={start}>
-            <span dangerouslySetInnerHTML={{ __html: itemsHtml }} />
-        </MarkdownList>
-    );
-};
-
-// List item renderer using custom component
-renderer.listitem = (item: Tokens.ListItem) => {
-    const content = renderer.parser.parse(item.tokens, false);
-
-    return render(
-        <MarkdownListItem task={item.task} checked={item.checked}>
-            <span dangerouslySetInnerHTML={{ __html: content }} />
-        </MarkdownListItem>
-    );
-};
 
 // Link renderer using custom component
 renderer.link = ({ href, title, tokens }: Tokens.Link) => {
