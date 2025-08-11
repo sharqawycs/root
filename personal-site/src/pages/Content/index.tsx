@@ -1,6 +1,6 @@
 import PageHeader from '@/components/blog/PageHeader';
 import Page from '@/components/layout/Page';
-import markdownToHTML from '@/utils/MDtoHMTL';
+import markdownToHTML from '@/utils/markdownToHTML';
 
 const sampleMarkdown = `
 # Token Recursion Test
