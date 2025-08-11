@@ -19,6 +19,7 @@ export default function SocialLinksSection() {
                                 className="underline"
                                 key={url}
                                 href={url}
+                                target="_blank"
                                 animation="expand"
                                 before={false ? { bgColor: color, bgOpacity: OPACITY } : {}}
                                 after={{ bgColor: color, bgOpacity: OPACITY }}>
