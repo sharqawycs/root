@@ -2,9 +2,9 @@ import { defineConfig } from 'vite';
 import preact from '@preact/preset-vite';
 import { fileURLToPath, URL } from 'node:url';
 import tailwindcss from '@tailwindcss/vite';
-import notes from './src/data/journals';
+import journals from './temp/journals';
 
-const dynamicRoutes = notes.map(note => `/journal/${note.title.toLowerCase()}`);
+const JournalsRoutes = journals.map(note => `/journal/${note.title.toLowerCase()}`);
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -26,7 +26,7 @@ export default defineConfig({
             prerender: {
                 enabled: true,
                 renderTarget: '#app',
-                additionalPrerenderRoutes: ['/404', ...dynamicRoutes],
+                additionalPrerenderRoutes: ['/404', ...JournalsRoutes],
                 previewMiddlewareEnabled: true,
                 previewMiddlewareFallback: '/404',
             },

@@ -1,14 +1,14 @@
 import Page from '@/components/layout/Page';
 import { markdownToHTML } from '@/utils/markdownToHTML';
 import { useRoute } from 'preact-iso';
-import data from '@/data/journals';
+import tempData from '@/../temp/journals';
 import _404 from '@/pages/_404';
 
 export default function Note() {
     const { params } = useRoute();
     const { slug } = params;
 
-    const note = data.find(item => slugify(item.title.toLowerCase()) === slug.toLowerCase());
+    const note = tempData.find(item => slugify(item.title.toLowerCase()) === slug.toLowerCase());
 
     if (!note) return <_404 />;
 
