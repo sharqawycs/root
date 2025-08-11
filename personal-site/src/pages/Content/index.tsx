@@ -39,6 +39,14 @@ This tests proper token recursion in lists and other nested structures.
    - Back to bullet level
 2. Level 1 continued
 
+Test simple JS code
+
+\`\`\`Java
+const add = (a, b) => a + b;
+console.log(add(2, 3));
+\`\`\`
+
+
 This should properly parse all tokens recursively!
 `;
 

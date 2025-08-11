@@ -12,14 +12,16 @@
         "format:check": "prettier --check ."
     },
     "dependencies": {
-        "marked": "^16.1.2",
         "preact": "^10.25.3",
         "preact-iso": "^2.9.2"
     },
     "devDependencies": {
+        "marked": "^16.1.2",
+        "prismjs": "^1.30.0",
         "@preact/preset-vite": "^2.9.3",
         "@tailwindcss/vite": "^4.1.11",
         "@types/node": "^24.2.0",
+        "@types/prismjs": "^1.26.5",
         "eslint": "^9.32.0",
         "eslint-config-preact": "^2.0.0",
         "preact-render-to-string": "^6.5.13",

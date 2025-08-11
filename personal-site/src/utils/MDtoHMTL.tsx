@@ -1,7 +1,9 @@
 import { marked, Tokens } from 'marked';
 import { render } from 'preact-render-to-string';
 import { Heading, Paragraph, Link, List, ListItem } from '@/components/markdown';
-import { JSX } from 'preact';
+import Prism from 'prismjs';
+
+import 'prismjs/themes/prism-coy.css';
 
 const renderer = new marked.Renderer();
 
@@ -44,14 +46,17 @@ renderer.listitem = (item: Tokens.ListItem) => {
 };
 
 const MarkdownCodeBlock = ({ text, lang }: { text: string; lang?: string }) => {
-    const langClass = lang ? ` language-${lang}` : '';
+    const highlighted = lang ? Prism.highlight(text, Prism.languages[lang.toLowerCase()] || Prism.languages['js'], lang) : text;
+
     return (
-        <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto mb-4">
-            <code class={`font-mono text-sm${langClass}`}>{text}</code>
-        </pre>
+        <div class="mb-4">
+            {lang && <div class="text-xs font-bold text-gray-500 mb-1">{lang}</div>}
+            <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto">
+                <code class="font-mono text-sm" dangerouslySetInnerHTML={{ __html: highlighted }} />
+            </pre>
+        </div>
     );
 };
-
 const MarkdownInlineCode = ({ text }: { text: string }) => <code class="bg-gray-100 px-1 py-0.5 rounded text-sm font-mono">{text}</code>;
 
 // Link renderer using custom component
