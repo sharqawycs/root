@@ -7,7 +7,6 @@ export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     const navItems = [
-        // { path: '/', label: 'Sharqawy', color: '#2196F3' },
         { path: '/journal', label: 'Journal', color: '#4CAF50' },
         { path: '/gallery', label: 'Gallery', color: '#FF9800' },
         { path: '/content', label: 'Content', color: '#9C27B0' },

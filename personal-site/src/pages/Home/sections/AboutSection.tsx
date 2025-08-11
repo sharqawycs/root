@@ -12,15 +12,9 @@ export default function AboutSection() {
             </p>
 
             <p class="my-4">
-                when i’m not coding, i’m deep into random internet rabbit holes — learning anything that grabs my brain. i love building
-                PCs, btw i’ve got a thing for mechanical keyboards and minimalist setups :), sometimes i love breaking stuff on purpose just
-                to reverse-engineer it.
-            </p>
-
-            <p class="my-4">
-                i find art in everyday things — cooking, taking photos, cleaning up my space. it makes me feel like i’m here. writing lyrics
-                or poetry helps when my brain’s loud. debating’s fun too — not to win, just to break ideas and see what’s left. all of it’s
-                kinda my way of keeping things honest & authentic.
+                i love losing in random internet rabbit holes and learning whatever sparks my brain. i'd love building PCs with minimalist
+                setups, or geeking out over mechanical keyboards. i find art in the everyday, from cooking to writing poetry, and i love
+                breaking things to reverse-engineer them. debating ideas keeps me sharp, always aiming for honesty and authenticity.
             </p>
         </>
     );
