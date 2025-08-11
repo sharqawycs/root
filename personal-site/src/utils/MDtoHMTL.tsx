@@ -1,6 +1,6 @@
 import { marked, Tokens } from 'marked';
 import { render } from 'preact-render-to-string';
-import { Heading, Paragraph, Link, List, ListItem, CodeBlock, InlineCode } from '@/components/markdown';
+import { Heading, Paragraph, Link, List, ListItem, CodeBlock, InlineCode, Divider } from '@/components/markdown';
 
 const renderer = new marked.Renderer();
 
@@ -60,6 +60,10 @@ renderer.link = ({ href, title, tokens }: Tokens.Link) => {
             <span dangerouslySetInnerHTML={{ __html: text }} />
         </Link>
     );
+};
+
+renderer.hr = () => {
+    return render(<Divider />);
 };
 
 // Function to convert Markdown to HTML with our renderer preferences

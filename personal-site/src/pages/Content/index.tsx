@@ -27,6 +27,8 @@ This tests proper token recursion in lists and other nested structures.
    3. Back to level 1
 3. **Third level** with mixed content
 
+---
+
 ## Task Lists with Formatting
 
 - [x] Completed task with **[link](https://google.com)**
