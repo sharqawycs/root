@@ -1,9 +1,6 @@
 import { marked, Tokens } from 'marked';
 import { render } from 'preact-render-to-string';
-import { Heading, Paragraph, Link, List, ListItem } from '@/components/markdown';
-import Prism from 'prismjs';
-
-import 'prismjs/themes/prism-coy.css';
+import { Heading, Paragraph, Link, List, ListItem, CodeBlock, InlineCode } from '@/components/markdown';
 
 const renderer = new marked.Renderer();
 
@@ -45,19 +42,15 @@ renderer.listitem = (item: Tokens.ListItem) => {
     );
 };
 
-const MarkdownCodeBlock = ({ text, lang }: { text: string; lang?: string }) => {
-    const highlighted = lang ? Prism.highlight(text, Prism.languages[lang.toLowerCase()] || Prism.languages['js'], lang) : text;
-
-    return (
-        <div class="mb-4">
-            {lang && <div class="text-xs font-bold text-gray-500 mb-1">{lang}</div>}
-            <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto">
-                <code class="font-mono text-sm" dangerouslySetInnerHTML={{ __html: highlighted }} />
-            </pre>
-        </div>
-    );
+// Code block renderer using custom component
+renderer.code = ({ text, lang }: Tokens.Code) => {
+    return render(<CodeBlock text={text} lang={lang} />);
 };
-const MarkdownInlineCode = ({ text }: { text: string }) => <code class="bg-gray-100 px-1 py-0.5 rounded text-sm font-mono">{text}</code>;
+
+// Inline code renderer using custom component
+renderer.codespan = ({ text }: Tokens.Codespan) => {
+    return render(<InlineCode text={text} />);
+};
 
 // Link renderer using custom component
 renderer.link = ({ href, title, tokens }: Tokens.Link) => {
@@ -67,16 +60,6 @@ renderer.link = ({ href, title, tokens }: Tokens.Link) => {
             <span dangerouslySetInnerHTML={{ __html: text }} />
         </Link>
     );
-};
-
-// Code block renderer using custom component
-renderer.code = ({ text, lang }: Tokens.Code) => {
-    return render(<MarkdownCodeBlock text={text} lang={lang} />);
-};
-
-// Inline code renderer using custom component
-renderer.codespan = ({ text }: Tokens.Codespan) => {
-    return render(<MarkdownInlineCode text={text} />);
 };
 
 // Function to convert Markdown to HTML with our renderer preferences
