@@ -2,15 +2,13 @@ import Page from '@/components/layout/Page';
 import { markdownToHTML } from '@/utils/markdownToHTML';
 import { useRoute } from 'preact-iso';
 import _404 from '@/pages/_404';
-import { getAllJournals } from '@/utils/services/JournalServices';
-
-const allJournals = getAllJournals();
+import { getJournalBySlug } from '@/utils/services/JournalServices';
 
 export default function Note() {
     const { params } = useRoute();
     const { slug } = params;
 
-    const note = allJournals.find(item => item.slug === slug);
+    const note = getJournalBySlug(slug);
 
     if (!note) return <_404 />;
 

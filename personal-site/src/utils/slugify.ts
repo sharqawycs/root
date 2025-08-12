@@ -10,3 +10,10 @@ export const slugifyPath = (path: string): string => {
         .map(slugify)
         .join('/'); // put the slashes back
 };
+
+export const titleize = (text: string): string => {
+    return text
+        .toLowerCase()
+        .replace(/-/g, ' ')
+        .replace(/(?:^|\s)\w/g, match => match.toUpperCase());
+};
