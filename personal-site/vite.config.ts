@@ -2,24 +2,6 @@ import { defineConfig } from 'vite';
 import preact from '@preact/preset-vite';
 import { fileURLToPath, URL } from 'node:url';
 import tailwindcss from '@tailwindcss/vite';
-import fg from 'fast-glob';
-
-/** HELPERS */
-
-// "Hi I lOVe u" => "hi-i-love-u"
-const slugify = (text: string): string =>
-    text
-        .toLowerCase()
-        .replace(/[^\w]+/g, '-')
-        .replace(/(^-|-$)+/g, '');
-
-// Generate routes for journals for SSG
-const mdFiles = fg.sync('./src/data/journals/*.md');
-const JournalsRoutes = mdFiles.map(path => {
-    const fileName = path.split('/').pop()!;
-    const slug = fileName.replace(/\.md$/, '');
-    return `/journal/${slugify(slug)}`;
-});
 
 export default defineConfig({
     build: {
@@ -39,7 +21,7 @@ export default defineConfig({
             prerender: {
                 enabled: true,
                 renderTarget: '#app',
-                additionalPrerenderRoutes: ['/404', ...JournalsRoutes],
+                additionalPrerenderRoutes: ['/404'],
                 previewMiddlewareEnabled: true,
                 previewMiddlewareFallback: '/404',
             },
