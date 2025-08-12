@@ -27,6 +27,3 @@ dist-ssr
 .env
 .env.local
 .env.*
-
-# temp files for build 
-personal-site/temp/
