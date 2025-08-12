@@ -1,4 +1,5 @@
 import { LocationProvider, Router, Route, hydrate, prerender as ssr } from 'preact-iso';
+import { slugifyPath } from './utils/slugify';
 
 import Layout from '@/Layout.js';
 import Home from '@/pages/Home';
@@ -28,6 +29,13 @@ export default function App() {
 }
 
 if (typeof window !== 'undefined') {
+    const current = window.location.pathname;
+    const normalized = slugifyPath(current);
+
+    if (normalized !== current) {
+        window.history.replaceState({}, '', normalized);
+    }
+
     const app = document.getElementById('app');
     if (app) {
         hydrate(<App />, app);

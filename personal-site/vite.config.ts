@@ -2,25 +2,38 @@ import { defineConfig } from 'vite';
 import preact from '@preact/preset-vite';
 import { fileURLToPath, URL } from 'node:url';
 import tailwindcss from '@tailwindcss/vite';
-import journals from './temp/journals';
+import fg from 'fast-glob';
 
-const JournalsRoutes = journals.map(note => `/journal/${note.title.toLowerCase()}`);
+/** HELPERS */
 
-// https://vitejs.dev/config/
+// "Hi I lOVe u" => "hi-i-love-u"
+const slugify = (text: string): string =>
+    text
+        .toLowerCase()
+        .replace(/[^\w]+/g, '-')
+        .replace(/(^-|-$)+/g, '');
+
+// Generate routes for journals for SSG
+const mdFiles = fg.sync('./src/data/journals/*.md');
+const JournalsRoutes = mdFiles.map(path => {
+    const fileName = path.split('/').pop()!;
+    const slug = fileName.replace(/\.md$/, '');
+    return `/journal/${slugify(slug)}`;
+});
+
 export default defineConfig({
     build: {
-        minify: 'terser', // 🔁 from 'esbuild'
+        minify: 'terser',
         terserOptions: {
             compress: {
-                drop_console: true, // remove console.logs
-                passes: 3, // try to compress harder
+                drop_console: true,
+                passes: 3,
             },
             format: {
                 comments: false,
             },
         },
     },
-
     plugins: [
         preact({
             prerender: {
@@ -31,10 +44,8 @@ export default defineConfig({
                 previewMiddlewareFallback: '/404',
             },
         }),
-
         tailwindcss(),
     ],
-
     resolve: {
         alias: {
             '@': fileURLToPath(new URL('./src', import.meta.url)),
