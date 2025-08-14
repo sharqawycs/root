@@ -26,5 +26,13 @@ export const dateify = (date: string): string => {
     const year = parseInt(date.slice(4, 6), 10) + 2000; // 20xx
 
     const datefied = new Date(year, month, parseInt(day, 10));
-    return datefied.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+    const currentYear = new Date().getFullYear();
+    const options: Intl.DateTimeFormatOptions = { day: '2-digit', month: 'short' };
+
+    // Include year only if it's different from current year
+    if (year !== currentYear) {
+        options.year = 'numeric';
+    }
+
+    return datefied.toLocaleDateString('en-GB', options);
 };

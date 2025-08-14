@@ -39,7 +39,18 @@ const journals: Journal[] = Object.entries(files).map(([path, mod]) => {
     const fileName = path.split('/').pop()!; // "File name110925.md"
     const withoutExt = fileName.replace(/\.md$/, '');
 
+    // Validate that the file name has at least 6 characters for the date
+    if (withoutExt.length < 6) {
+        throw new Error(`Invalid journal file name format: ${fileName}. Expected format: <name><ddmmyy>.md`);
+    }
+
     const [slug, date] = [slugify(withoutExt.slice(0, -6)), withoutExt.slice(-6)];
+
+    // Validate date format
+    if (!/^\d{6}$/.test(date)) {
+        throw new Error(`Invalid date format in file name: ${fileName}. Expected 6 digits (ddmmyy)`);
+    }
+
     const title = titleize(slug);
 
     return { title, slug, date, content };
