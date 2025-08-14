@@ -1,5 +1,5 @@
 import { LocationProvider, Router, Route, hydrate, prerender as ssr } from 'preact-iso';
-import { slugifyPath } from './utils/slugify';
+import { slugifyPath } from './utils/formatters';
 
 import Layout from '@/Layout.js';
 import Home from '@/pages/Home';

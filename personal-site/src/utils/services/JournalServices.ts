@@ -1,4 +1,4 @@
-import { slugify, titleize, dateify } from '@/utils/slugify';
+import { slugify, titleize, dateify } from '@/utils/formatters';
 
 const files = import.meta.glob<{ default: string }>('@/data/journals/*.md', { query: '?raw', eager: true });
 
