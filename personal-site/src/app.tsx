@@ -12,36 +12,36 @@ import NotFound from '@/pages/_404.js';
 import '@/styles/globals.css';
 
 export default function App() {
-    return (
-        <LocationProvider>
-            <Layout>
-                <Router>
-                    <Route path="/" component={Home} />
-                    <Route path="/journal" component={Journal} />
-                    <Route path="/journal/:slug" component={Note} />
-                    <Route path="/gallery" component={Gallery} />
-                    <Route path="/content" component={Content} />
-                    <Route default component={NotFound} />
-                </Router>
-            </Layout>
-        </LocationProvider>
-    );
+  return (
+    <LocationProvider>
+      <Layout>
+        <Router>
+          <Route path="/" component={Home} />
+          <Route path="/journal" component={Journal} />
+          <Route path="/journal/:slug" component={Note} />
+          <Route path="/gallery" component={Gallery} />
+          <Route path="/content" component={Content} />
+          <Route default component={NotFound} />
+        </Router>
+      </Layout>
+    </LocationProvider>
+  );
 }
 
 if (typeof window !== 'undefined') {
-    const current = window.location.pathname;
-    const normalized = slugifyPath(current);
+  const current = window.location.pathname;
+  const normalized = slugifyPath(current);
 
-    if (normalized !== current) {
-        window.history.replaceState({}, '', normalized);
-    }
+  if (normalized !== current) {
+    window.history.replaceState({}, '', normalized);
+  }
 
-    const app = document.getElementById('app');
-    if (app) {
-        hydrate(<App />, app);
-    }
+  const app = document.getElementById('app');
+  if (app) {
+    hydrate(<App />, app);
+  }
 }
 
 export async function prerender(data: any) {
-    return await ssr(<App {...data} />);
+  return await ssr(<App {...data} />);
 }

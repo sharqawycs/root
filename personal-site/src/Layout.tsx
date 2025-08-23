@@ -3,15 +3,15 @@ import Header from '@/components/layout/Header.js';
 import Footer from '@/components/layout/Footer.js';
 
 interface LayoutProps {
-    children: ComponentChildren;
+  children: ComponentChildren;
 }
 
 export default function MainLayout({ children }: LayoutProps) {
-    return (
-        <div class="max-w-2xl mx-auto min-h-screen flex flex-col font-satoshi">
-            <Header />
-            {children}
-            <Footer />
-        </div>
-    );
+  return (
+    <div class="max-w-2xl mx-auto min-h-screen flex flex-col font-satoshi">
+      <Header />
+      {children}
+      <Footer />
+    </div>
+  );
 }

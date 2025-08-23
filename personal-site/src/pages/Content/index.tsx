@@ -65,12 +65,12 @@ This should properly parse all tokens recursively!
 `;
 
 export default function Content() {
-    const htmlContent = markdownToHTML(sampleMarkdown);
+  const htmlContent = markdownToHTML(sampleMarkdown);
 
-    return (
-        <Page>
-            <PageHeader subtitle="Testing proper token recursion in lists">Markdown Renderer Test</PageHeader>
-            <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
-        </Page>
-    );
+  return (
+    <Page>
+      <PageHeader subtitle="Testing proper token recursion in lists">Markdown Renderer Test</PageHeader>
+      <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+    </Page>
+  );
 }

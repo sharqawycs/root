@@ -1,20 +1,20 @@
 import { ComponentChildren } from 'preact';
 
 interface PageProps {
-    children: ComponentChildren | string;
-    className?: string;
+  children: ComponentChildren | string;
+  className?: string;
 }
 
 export default function Page({ children, className = '' }: PageProps) {
-    const pageStyle = {
-        animation: 'blur-in 0.2s linear',
-    };
+  const pageStyle = {
+    animation: 'blur-in 0.2s linear',
+  };
 
-    // If children is raw HTML object, render dangerouslySetInnerHTML
-    if (typeof children === 'string') {
-        return (
-            <>
-                <style>{`
+  // If children is raw HTML object, render dangerouslySetInnerHTML
+  if (typeof children === 'string') {
+    return (
+      <>
+        <style>{`
           @keyframes blur-in {
             from {
               opacity: 0;
@@ -26,15 +26,15 @@ export default function Page({ children, className = '' }: PageProps) {
             }
           }
         `}</style>
-                <div class={'p-4 ml-1 flex-1 ' + className} style={pageStyle} dangerouslySetInnerHTML={{ __html: children as string }} />
-            </>
-        );
-    }
+        <div class={'p-4 ml-1 flex-1 ' + className} style={pageStyle} dangerouslySetInnerHTML={{ __html: children as string }} />
+      </>
+    );
+  }
 
-    // Otherwise render normally
-    return (
-        <>
-            <style>{`
+  // Otherwise render normally
+  return (
+    <>
+      <style>{`
           @keyframes blur-in {
             from {
               opacity: 0;
@@ -46,9 +46,9 @@ export default function Page({ children, className = '' }: PageProps) {
             }
           }
       `}</style>
-            <div class={'p-4 ml-1 flex-1 ' + className} style={pageStyle}>
-                {children}
-            </div>
-        </>
-    );
+      <div class={'p-4 ml-1 flex-1 ' + className} style={pageStyle}>
+        {children}
+      </div>
+    </>
+  );
 }
