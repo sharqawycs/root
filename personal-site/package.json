@@ -19,6 +19,7 @@
         "@preact/preset-vite": "^2.9.3",
         "@tailwindcss/vite": "^4.1.11",
         "@types/node": "^24.2.0",
+        "@types/bun": "latest",
         "@types/prismjs": "^1.26.5",
         "eslint": "^9.32.0",
         "eslint-config-preact": "^2.0.0",
