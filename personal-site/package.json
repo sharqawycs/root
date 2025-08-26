@@ -7,8 +7,8 @@
     "check": "tsc --noEmit",
     "run:scripts": "bun ./scripts",
     "build": "bun run run:scripts && vite build",
-    "preview": "vite preview",
-    "start": "vite preview",
+    "preview": "vite preview --host",
+    "start": "vite preview --host",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
