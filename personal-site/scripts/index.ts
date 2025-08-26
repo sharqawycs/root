@@ -1,3 +1,7 @@
+/**
+ * This scripts run immediatily before building the project with `bun run build`.
+ */
+
 // imported scripts
 import { generateSitemapAndRobots } from './generate-sitemap.js';
 
