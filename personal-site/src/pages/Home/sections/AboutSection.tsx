@@ -3,7 +3,7 @@ import PageHeader from '@/components/blog/PageHeader';
 export default function AboutSection() {
   return (
     <>
-      <PageHeader subtitle="CS student & Builder">yo, i'm sharqawy</PageHeader>
+      <PageHeader subtitle="CS student & Builder">yo, i'm sharaawy</PageHeader>
 
       <p>
         i’m a cs student tryna kill fear through building and content. i build and share to get out of my own way. i like sharp tools, clean
