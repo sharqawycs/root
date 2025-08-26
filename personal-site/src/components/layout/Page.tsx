@@ -1,11 +1,13 @@
 import { ComponentChildren } from 'preact';
+import { default as Seo, SeoProps } from '@/components/Seo';
 
-interface PageProps {
+interface PageProps extends SeoProps {
   children: ComponentChildren | string;
   className?: string;
 }
 
-export default function Page({ children, className = '' }: PageProps) {
+// TODO: some code reduce, DRY
+export default function Page({ children, className = '', ...seoProps }: PageProps) {
   const pageStyle = {
     animation: 'blur-in 0.2s linear',
   };
@@ -26,6 +28,7 @@ export default function Page({ children, className = '' }: PageProps) {
             }
           }
         `}</style>
+        <Seo title={seoProps.title} description={seoProps.description} url={seoProps.url} />
         <div class={'p-4 ml-1 flex-1 ' + className} style={pageStyle} dangerouslySetInnerHTML={{ __html: children as string }} />
       </>
     );
@@ -47,6 +50,7 @@ export default function Page({ children, className = '' }: PageProps) {
           }
       `}</style>
       <div class={'p-4 ml-1 flex-1 ' + className} style={pageStyle}>
+        <Seo title={seoProps.title} description={seoProps.description} url={seoProps.url} />
         {children}
       </div>
     </>

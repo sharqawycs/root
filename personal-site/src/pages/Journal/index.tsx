@@ -1,6 +1,5 @@
 import PageHeader from '@/components/blog/PageHeader';
 import Page from '@/components/layout/Page';
-import Seo from '@/components/Seo';
 import { JournalInfo } from '@/types/journal';
 import { getAllJournalsInfo } from '@/utils/services/JournalServices';
 import Highlight from '@/components/ui/Highlight';
@@ -9,8 +8,7 @@ export default function Journal() {
   const journals = getAllJournalsInfo();
 
   return (
-    <Page>
-      <Seo title="Journal" description="My thoughts, experiments and notes." />
+    <Page title="Journal" description="My thoughts, experiments and notes.">
       <PageHeader subtitle="Where I write dumb stuff and random thoughts">Journal</PageHeader>
 
       {journals.length === 0 ? <p>coming soon...</p> : <JournalsSection journals={journals} />}
