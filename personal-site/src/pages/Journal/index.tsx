@@ -4,12 +4,13 @@ import { JournalInfo } from '@/types/journal';
 import { getAllJournalsInfo } from '@/utils/services/JournalServices';
 import Highlight from '@/components/ui/Highlight';
 
+const PAGE_TITLE = 'Journal';
 export default function Journal() {
   const journals = getAllJournalsInfo();
 
   return (
-    <Page title="Journal" description="My thoughts, experiments and notes.">
-      <PageHeader subtitle="Where I write dumb stuff and random thoughts">Journal</PageHeader>
+    <Page title={PAGE_TITLE} description="My thoughts, experiments and notes.">
+      <PageHeader subtitle="Where I write dumb stuff and random thoughts">{PAGE_TITLE}</PageHeader>
 
       {journals.length === 0 ? <p>coming soon...</p> : <JournalsSection journals={journals} />}
     </Page>
