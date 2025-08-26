@@ -1,9 +1,10 @@
 import { ComponentChildren } from 'preact';
+import Highlight from '../ui/Highlight';
 
-export const Link = ({ href, title, children }: { href: string; title?: string | null; children: ComponentChildren }) => (
-  <a href={href} title={title || undefined} class="text-blue-600 hover:text-blue-800 underline transition-colors">
+export const Link = ({ href, children }: { href: string; children: ComponentChildren }) => (
+  <Highlight href={href} before={{ bgColor: '#FF9800', bgOpacity: 0.3 }} after={{ bgColor: '#FF9800', bgOpacity: 0.5 }}>
     {children}
-  </a>
+  </Highlight>
 );
 
 export default Link;

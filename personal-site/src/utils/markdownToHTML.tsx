@@ -53,10 +53,10 @@ renderer.codespan = ({ text }: Tokens.Codespan) => {
 };
 
 // Link renderer using custom component
-renderer.link = ({ href, title, tokens }: Tokens.Link) => {
+renderer.link = ({ href, tokens }: Tokens.Link) => {
   const text = renderer.parser.parseInline(tokens, renderer);
   return render(
-    <Link href={href} title={title}>
+    <Link href={href}>
       <span dangerouslySetInnerHTML={{ __html: text }} />
     </Link>
   );
@@ -65,9 +65,10 @@ renderer.link = ({ href, title, tokens }: Tokens.Link) => {
 // Horizontal rule renderer using custom component
 renderer.hr = () => render(<Divider />);
 
+// TODO: This renderer does not support nested elements
 // Strong text renderer using custom component (aka bold)
 renderer.strong = ({ tokens }: Tokens.Strong) => {
-  const text = renderer.parser.parseInline(tokens, renderer);
+  const text = renderer.parser.parseInline(tokens, undefined);
   return render(<strong className={'font-medium'}>{text}</strong>);
 };
 // Function to convert Markdown to HTML with our renderer preferences
