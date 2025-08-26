@@ -1,4 +1,5 @@
 import Page from '@/components/layout/Page';
+import Seo from '@/components/Seo';
 import { markdownToHTML } from '@/utils/markdownToHTML';
 import { useRoute } from 'preact-iso';
 import _404 from '@/pages/_404';
@@ -13,5 +14,10 @@ export default function Note() {
   if (!note) return <_404 />;
 
   const html = markdownToHTML(note.content);
-  return <Page>{html}</Page>; // The <Page> can handle the HTML content
+  return (
+    <Page>
+      <Seo title={note.title} description={`${note.title} — journal entry.`} url={`https://yourdomain.com/journal/${note.slug}`} />
+      {html}
+    </Page>
+  ); // The <Page> can handle the HTML content
 }
