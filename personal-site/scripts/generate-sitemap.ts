@@ -3,9 +3,9 @@ import fs from 'fs';
 import path from 'path';
 
 // Configure this to your live domain or set VITE_SITE_URL in .env
-const DOMAIN = process.env.VITE_SITE_URL || 'https://sharq.tech';
+const DOMAIN = process.env['VITE_SITE_URL'] || 'https://www.sharq.tech';
 
-function slugFromFilename(name) {
+function slugFromFilename(name: string) {
   // expects something like "my-note110925.md" -> slug: my-note
   const withoutExt = name.replace(/\.md$/, '');
   if (withoutExt.length < 6) return null;
@@ -13,12 +13,13 @@ function slugFromFilename(name) {
   return slug.replace(/ /g, '-');
 }
 
-function buildUrl(loc, changefreq = 'monthly', priority = '0.5') {
+function buildUrl(loc: string, changefreq = 'monthly', priority = '0.5') {
   return `  <url>\n    <loc>${loc}</loc>\n    <changefreq>${changefreq}</changefreq>\n    <priority>${priority}</priority>\n  </url>\n`;
 }
 
 function main() {
   console.log('sitemap generation started...');
+  console.log('\x1b[33mYour domain:\x1b[0m', DOMAIN);
 
   const outDir = path.resolve(process.cwd(), 'public');
   if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
@@ -50,6 +51,13 @@ function main() {
   const out = path.resolve(outDir, 'sitemap.xml');
   fs.writeFileSync(out, xml, 'utf8');
   console.log('Wrote sitemap to', out);
+
+  // generate robots.txt alongside the sitemap
+  console.log('robots.txt generation started...');
+  const robots = `User-agent: *\nAllow: /\nSitemap: ${DOMAIN}/sitemap.xml\nHost: ${DOMAIN}\n`;
+  const robotsOut = path.resolve(outDir, 'robots.txt');
+  fs.writeFileSync(robotsOut, robots, 'utf8');
+  console.log('Wrote robots to', robotsOut);
 }
 
-main();
+export { main as generateSitemapAndRobots };

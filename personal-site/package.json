@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "vite --host",
     "check": "tsc --noEmit",
-    "generate-sitemap": "bun ./scripts/generate-sitemap.js",
-    "build": "bun run generate-sitemap && vite build",
+    "run:scripts": "bun ./scripts",
+    "build": "bun run run:scripts && vite build",
     "preview": "vite preview",
     "start": "vite preview",
     "format": "prettier --write .",
