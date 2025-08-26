@@ -6,7 +6,7 @@
     "dev": "vite --host",
     "check": "tsc --noEmit",
     "generate-sitemap": "bun ./scripts/generate-sitemap.js",
-    "build": "vite build && bun run generate-sitemap",
+    "build": "bun run generate-sitemap && vite build",
     "preview": "vite preview",
     "start": "vite preview",
     "format": "prettier --write .",
