@@ -1,17 +1,7 @@
+import { Journal, JournalInfo } from '@/types/journal';
 import { slugify, titleize, dateify } from '@/utils/formatters';
 
 const files = import.meta.glob<{ default: string }>('@/data/journals/*.md', { query: '?raw', eager: true });
-
-/* TYPES */
-interface JournalInfo {
-  title: string;
-  slug: string;
-  date: string;
-}
-
-interface Journal extends JournalInfo {
-  content: string;
-}
 
 /* HELPERS */
 // Sorts from new to old and expect date like ddmmyy
