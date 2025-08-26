@@ -62,10 +62,14 @@ renderer.link = ({ href, title, tokens }: Tokens.Link) => {
   );
 };
 
-renderer.hr = () => {
-  return render(<Divider />);
-};
+// Horizontal rule renderer using custom component
+renderer.hr = () => render(<Divider />);
 
+// Strong text renderer using custom component (aka bold)
+renderer.strong = ({ tokens }: Tokens.Strong) => {
+  const text = renderer.parser.parseInline(tokens, renderer);
+  return render(<strong className={'font-medium'}>{text}</strong>);
+};
 // Function to convert Markdown to HTML with our renderer preferences
 export function markdownToHTML(markdown: string): string {
   const htmlString = marked.parse(markdown, { renderer }) as string;
