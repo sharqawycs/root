@@ -31,6 +31,10 @@
   --dash-bullet: '- ';
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   line-height: 1.6;
   color: #37352f;
