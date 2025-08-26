@@ -2,7 +2,6 @@ import { writeFileSync } from 'fs';
 import { resolve } from 'path';
 import { getAllJournalsInfo } from '../src/utils/services/JournalServices';
 
-// Update this to your live domain before running
 const DOMAIN = 'https://sharq.tech';
 
 function buildUrl(loc: string, changefreq = 'monthly', priority = '0.5') {
