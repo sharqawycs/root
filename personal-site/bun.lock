@@ -14,7 +14,8 @@
         "eslint": "^9.32.0",
         "preact": "10.27.1",
         "preact-iso": "^2.9.2",
-        "prettier": "3.6.2",
+        "prettier": "^3.6.2",
+        "prettier-plugin-astro": "^0.14.1",
         "tailwindcss": "^4.1.12",
       },
     },
@@ -920,6 +921,8 @@
 
     "prettier": ["prettier@3.6.2", "", { "bin": { "prettier": "bin/prettier.cjs" } }, "sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ=="],
 
+    "prettier-plugin-astro": ["prettier-plugin-astro@0.14.1", "", { "dependencies": { "@astrojs/compiler": "^2.9.1", "prettier": "^3.0.0", "sass-formatter": "^0.7.6" } }, "sha512-RiBETaaP9veVstE4vUwSIcdATj6dKmXljouXc/DDNwBSPTp8FRkLGDSGFClKsAFeeg+13SB0Z1JZvbD76bigJw=="],
+
     "prismjs": ["prismjs@1.30.0", "", {}, "sha512-DEvV2ZF2r2/63V+tK8hQvrR2ZGn10srHbXviTlcv7Kpzw8jWiNTqbVgjO3IY8RxrrOUF8VPMQQFysYYYv0YZxw=="],
 
     "prompts": ["prompts@2.4.2", "", { "dependencies": { "kleur": "^3.0.3", "sisteransi": "^1.0.5" } }, "sha512-NxNv/kLguCA7p3jE8oL2aEBsrJWgAakBpgmgK6lpPWV+WuOmY6r2/zbAVnP+T8bQlA0nzHXSJSJW0Hq7ylaD2Q=="],
@@ -982,6 +985,10 @@
 
     "rollup": ["rollup@4.48.1", "", { "dependencies": { "@types/estree": "1.0.8" }, "optionalDependencies": { "@rollup/rollup-android-arm-eabi": "4.48.1", "@rollup/rollup-android-arm64": "4.48.1", "@rollup/rollup-darwin-arm64": "4.48.1", "@rollup/rollup-darwin-x64": "4.48.1", "@rollup/rollup-freebsd-arm64": "4.48.1", "@rollup/rollup-freebsd-x64": "4.48.1", "@rollup/rollup-linux-arm-gnueabihf": "4.48.1", "@rollup/rollup-linux-arm-musleabihf": "4.48.1", "@rollup/rollup-linux-arm64-gnu": "4.48.1", "@rollup/rollup-linux-arm64-musl": "4.48.1", "@rollup/rollup-linux-loongarch64-gnu": "4.48.1", "@rollup/rollup-linux-ppc64-gnu": "4.48.1", "@rollup/rollup-linux-riscv64-gnu": "4.48.1", "@rollup/rollup-linux-riscv64-musl": "4.48.1", "@rollup/rollup-linux-s390x-gnu": "4.48.1", "@rollup/rollup-linux-x64-gnu": "4.48.1", "@rollup/rollup-linux-x64-musl": "4.48.1", "@rollup/rollup-win32-arm64-msvc": "4.48.1", "@rollup/rollup-win32-ia32-msvc": "4.48.1", "@rollup/rollup-win32-x64-msvc": "4.48.1", "fsevents": "~2.3.2" }, "bin": { "rollup": "dist/bin/rollup" } }, "sha512-jVG20NvbhTYDkGAty2/Yh7HK6/q3DGSRH4o8ALKGArmMuaauM9kLfoMZ+WliPwA5+JHr2lTn3g557FxBV87ifg=="],
 
+    "s.color": ["s.color@0.0.15", "", {}, "sha512-AUNrbEUHeKY8XsYr/DYpl+qk5+aM+DChopnWOPEzn8YKzOhv4l2zH6LzZms3tOZP3wwdOyc0RmTciyi46HLIuA=="],
+
+    "sass-formatter": ["sass-formatter@0.7.9", "", { "dependencies": { "suf-log": "^2.5.3" } }, "sha512-CWZ8XiSim+fJVG0cFLStwDvft1VI7uvXdCNJYXhDvowiv+DsbD1nXLiQ4zrE5UBvj5DWZJ93cwN0NX5PMsr1Pw=="],
+
     "sax": ["sax@1.4.1", "", {}, "sha512-+aWOz7yVScEGoKNd4PA10LZ8sk0A/z5+nXQG5giUO5rprX9jgYsTdov9qCchZiPIZezbZH+jRut8nPodFAX4Jg=="],
 
     "semver": ["semver@7.7.2", "", { "bin": { "semver": "bin/semver.js" } }, "sha512-RF0Fw+rO5AMf9MAyaRXI4AV0Ulj5lMHqVxxdSgiVbixSCXoEmmX/jk0CuJw4+3SqroYO9VoUh+HcuJivvtJemA=="],
@@ -1027,6 +1034,8 @@
     "style-to-js": ["style-to-js@1.1.17", "", { "dependencies": { "style-to-object": "1.0.9" } }, "sha512-xQcBGDxJb6jjFCTzvQtfiPn6YvvP2O8U1MDIPNfJQlWMYfktPy+iGsHE7cssjs7y84d9fQaK4UF3RIJaAHSoYA=="],
 
     "style-to-object": ["style-to-object@1.0.9", "", { "dependencies": { "inline-style-parser": "0.2.4" } }, "sha512-G4qppLgKu/k6FwRpHiGiKPaPTFcG3g4wNVX/Qsfu+RqQM30E7Tyu/TEgxcL9PNLF5pdRLwQdE3YKKf+KF2Dzlw=="],
+
+    "suf-log": ["suf-log@2.5.3", "", { "dependencies": { "s.color": "0.0.15" } }, "sha512-KvC8OPjzdNOe+xQ4XWJV2whQA0aM1kGVczMQ8+dStAO6KfEB140JEVQ9dE76ONZ0/Ylf67ni4tILPJB41U0eow=="],
 
     "supports-color": ["supports-color@7.2.0", "", { "dependencies": { "has-flag": "^4.0.0" } }, "sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw=="],
 
