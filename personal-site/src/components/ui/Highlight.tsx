@@ -1,4 +1,4 @@
-import type { JSX } from 'preact';
+import type { ReactNode } from 'react';
 
 interface StyleVariant {
   bgColor?: string;
@@ -8,7 +8,7 @@ interface StyleVariant {
 }
 
 interface HighlightProps {
-  children: JSX.Element | string;
+  children: ReactNode;
   href?: string;
   target?: string;
   className?: string;
@@ -211,7 +211,7 @@ export default function Highlight({ children, href, target, className = '', befo
           href={href}
           target={target}
           rel={target === '_blank' ? 'noopener noreferrer' : undefined}
-          class={`${classes} ${uniqueId} no-underline`}
+          className={`${classes} ${uniqueId} no-underline`}
           style={componentStyle}>
           {children}
         </a>
@@ -222,7 +222,7 @@ export default function Highlight({ children, href, target, className = '', befo
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: pseudoElementCSS }} />
-      <span class={`${classes} ${uniqueId}`} style={componentStyle}>
+      <span className={`${classes} ${uniqueId}`} style={componentStyle}>
         {children}
       </span>
     </>

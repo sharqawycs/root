@@ -1,8 +1,11 @@
-import { useState, useEffect } from 'preact/hooks';
-import Highlight from '../ui/Highlight.tsx';
+'use client';
+
+import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
+import Highlight from '../ui/Highlight';
 
 const navItems = [
-  { path: '/journal', label: 'Journal', color: '#4CAF50' },
+  { path: '/posts', label: 'Journal', color: '#4CAF50' },
   { path: '/gallery', label: 'Gallery', color: '#FF9800' },
   { path: '/content', label: 'Content', color: '#9C27B0' },
 ];
@@ -11,16 +14,11 @@ const OPACITY = 0.3;
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  // const  = typeof window !== 'undefined' ? window.location.pathname : '/';
-
-  const [currentPath, setPath] = useState('nothing'); // safe default
-
-  useEffect(() => {
-    setPath(window.location.pathname);
-  }, []);
+  const pathname = usePathname();
+  const currentPath = pathname;
 
   useEffect(() => {
-    const handleClickOutside = (e: Event) => {
+    const handleClickOutside = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       const nav = document.getElementById('mobile-nav');
       const toggleButton = document.getElementById('mobile-menu-toggle');
@@ -45,7 +43,7 @@ const Header = () => {
     };
   }, [isMenuOpen]);
 
-  const toggleMenu = (e: Event) => {
+  const toggleMenu = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
     setIsMenuOpen(!isMenuOpen);

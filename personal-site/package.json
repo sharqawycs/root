@@ -1,29 +1,33 @@
 {
-  "name": "sharqawy-personal-site-astro",
-  "type": "module",
-  "version": "0.0.1",
+  "name": "personal-site",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "dev": "astro dev --host",
-    "build": "astro build",
-    "preview": "astro preview --host",
-    "start": "astro build && astro preview --host",
-    "astro": "astro",
-    "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "dev": "next dev --turbopack",
+    "build": "next build --turbopack",
+    "start": "next start",
+    "lint": "eslint"
   },
   "dependencies": {
-    "astro": "5.13.3"
+    "@mdx-js/loader": "^3.1.0",
+    "@mdx-js/react": "^3.1.0",
+    "@next/mdx": "^15.5.2",
+    "next": "15.5.2",
+    "nextra": "^4.4.0",
+    "nextra-theme-blog": "^4.4.0",
+    "nextra-theme-docs": "^4.4.0",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
   },
   "devDependencies": {
-    "@astrojs/mdx": "^4.3.4",
-    "@astrojs/preact": "4.1.0",
-    "@astrojs/sitemap": "3.5.1",
-    "@tailwindcss/vite": "^4.1.12",
-    "eslint": "^9.32.0",
-    "preact": "10.27.1",
-    "preact-iso": "^2.9.2",
-    "prettier": "^3.6.2",
-    "prettier-plugin-astro": "^0.14.1",
-    "tailwindcss": "^4.1.12"
+    "typescript": "^5",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@tailwindcss/postcss": "^4",
+    "tailwindcss": "^4",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.2",
+    "@eslint/eslintrc": "^3"
   }
 }
