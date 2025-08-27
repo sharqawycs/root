@@ -29,13 +29,7 @@ export default function PostContent({ title, date, readTime, markdownContent, ch
           {readTime && <span class="bg-gray-100 px-2 py-1 rounded">{readTime}</span>}
         </div>
       </header>
-      <div class="prose prose-lg max-w-none">
-        {markdownContent ? (
-          <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
-        ) : (
-          children
-        )}
-      </div>
+      <div class="prose prose-lg max-w-none">{markdownContent ? <div dangerouslySetInnerHTML={{ __html: htmlContent }} /> : children}</div>
     </article>
   );
 }

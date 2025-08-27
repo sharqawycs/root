@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://www.sharq.tech/sitemap.xml
-Host: https://www.sharq.tech
