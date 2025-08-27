@@ -14,7 +14,7 @@ export default function SocialLinksSection() {
       <div>
         {socialLinks.map(({ url, label, color }, idx) => {
           return (
-            <>
+
               <Highlight
                 className="underline"
                 key={url}
@@ -25,8 +25,7 @@ export default function SocialLinksSection() {
                 after={{ bgColor: color, bgOpacity: OPACITY }}>
                 {label}
               </Highlight>
-              {idx < socialLinks.length - 1 && ' | '}
-            </>
+
           );
         })}
       </div>
