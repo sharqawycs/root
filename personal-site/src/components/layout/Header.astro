@@ -79,17 +79,17 @@ const OPACITY = 0.3;
   .hamburger-line {
     display: block;
     position: absolute;
-    height: 2px;
-    width: 100%;
-    background-color: #1f2937;
-    border-radius: 2px;
     transition: all 0.3s ease-in-out;
+    border-radius: 2px;
+    background-color: #1f2937;
+    width: 100%;
+    height: 2px;
   }
 
   /* Hamburger to X animation */
   .menu-open .hamburger-line:nth-child(1) {
-    transform: rotate(45deg);
     top: 10px !important;
+    transform: rotate(45deg);
   }
 
   .menu-open .hamburger-line:nth-child(2) {
@@ -97,8 +97,8 @@ const OPACITY = 0.3;
   }
 
   .menu-open .hamburger-line:nth-child(3) {
-    transform: rotate(-45deg);
     top: 10px !important;
+    transform: rotate(-45deg);
   }
 </style>
 

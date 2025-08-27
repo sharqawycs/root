@@ -1,26 +1,26 @@
 @import 'tailwindcss';
 
 @font-face {
-  font-family: 'Satoshi';
   font-style: normal;
   font-weight: 100 900;
-  font-display: optional;
   src: url('/fonts/Satoshi-Variable.woff2') format('woff2');
+  font-family: 'Satoshi';
+  font-display: optional;
 }
 
 @font-face {
-  font-family: 'Playfair Display';
   font-style: normal;
   font-weight: 400;
-  font-display: optional;
   src: url('/fonts/playfair-display-v39-latin-regular.woff2') format('woff2');
+  font-family: 'Playfair Display';
+  font-display: optional;
 }
 @font-face {
-  font-family: 'Playfair Display';
   font-style: italic;
   font-weight: 400;
-  font-display: optional;
   src: url('/fonts/playfair-display-v39-latin-italic.woff2') format('woff2');
+  font-family: 'Playfair Display';
+  font-display: optional;
 }
 
 @theme {
@@ -34,9 +34,9 @@ html {
 }
 
 body {
-  line-height: 1.6;
-  color: #37352f;
   background: #fff;
+  color: #37352f;
+  line-height: 1.6;
 }
 
 /* text selection colors */
@@ -49,8 +49,8 @@ body {
 
 /* Prose styles for MDX content */
 .prose {
-  color: #37352f;
   max-width: 65ch;
+  color: #37352f;
 }
 
 .prose h1,
@@ -59,11 +59,11 @@ body {
 .prose h4,
 .prose h5,
 .prose h6 {
-  font-family: var(--font-playfair);
-  font-weight: 400;
-  line-height: 1.25;
   margin-top: 2rem;
   margin-bottom: 1rem;
+  font-weight: 400;
+  line-height: 1.25;
+  font-family: var(--font-playfair);
 }
 
 .prose h1 {
@@ -115,9 +115,9 @@ body {
 }
 
 .prose ul > li::before {
-  content: var(--dash-bullet);
   position: absolute;
   left: -1.625rem;
+  content: var(--dash-bullet);
   color: #6b7280;
 }
 
@@ -128,19 +128,19 @@ body {
 }
 
 .prose code {
+  border-radius: 0.25rem;
   background-color: #f3f4f6;
   padding: 0.125rem 0.25rem;
-  border-radius: 0.25rem;
   font-size: 0.875em;
 }
 
 .prose pre {
-  background-color: #1f2937;
-  color: #f9fafb;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  overflow-x: auto;
   margin: 1.25rem 0;
+  border-radius: 0.5rem;
+  background-color: #1f2937;
+  padding: 1rem;
+  overflow-x: auto;
+  color: #f9fafb;
 }
 
 .prose pre code {

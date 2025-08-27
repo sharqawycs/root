@@ -1,15 +1,15 @@
 {
   "name": "sharqawy-personal-site-astro",
-  "type": "module",
   "version": "0.0.1",
+  "type": "module",
   "scripts": {
-    "dev": "astro dev --host",
-    "build": "astro build",
-    "preview": "astro preview --host",
-    "start": "astro build && astro preview --host",
     "astro": "astro",
+    "build": "astro build",
+    "dev": "astro dev --host",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "preview": "astro preview --host",
+    "start": "astro build && astro preview --host"
   },
   "dependencies": {
     "astro": "5.13.3"
@@ -29,6 +29,10 @@
     "preact-iso": "^2.9.2",
     "prettier": "^3.6.2",
     "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-css-order": "^2.1.2",
+    "prettier-plugin-organize-imports": "^4.2.0",
+    "prettier-plugin-packagejson": "^2.5.19",
+    "prettier-plugin-sort-json": "^4.1.1",
     "prettier-plugin-tailwindcss": "^0.6.14",
     "tailwindcss": "^4.1.12"
   }

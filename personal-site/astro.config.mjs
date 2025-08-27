@@ -1,9 +1,9 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
-import preact from '@astrojs/preact';
 import mdx from '@astrojs/mdx';
-import tailwindcss from '@tailwindcss/vite';
+import preact from '@astrojs/preact';
 import sitemap from '@astrojs/sitemap';
+import tailwindcss from '@tailwindcss/vite';
+import { defineConfig } from 'astro/config';
 import { fileURLToPath, URL } from 'node:url';
 
 // https://astro.build/config
