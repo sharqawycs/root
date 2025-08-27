@@ -1,0 +1,146 @@
+---
+import Highlight from '../ui/Highlight.tsx';
+
+const currentPath = Astro.url.pathname;
+
+const navItems = [
+  { path: '/journal', label: 'Journal', color: '#4CAF50' },
+  { path: '/gallery', label: 'Gallery', color: '#FF9800' },
+  { path: '/content', label: 'Content', color: '#9C27B0' },
+];
+
+const OPACITY = 0.3;
+---
+
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200 py-2 px-4">
+  <div class="flex justify-between items-center relative">
+    <Highlight
+      href="/"
+      before={currentPath === '/' ? { bgColor: '#2196F3', bgOpacity: OPACITY } : {}}
+      after={{ bgColor: '#2196F3', bgOpacity: OPACITY }}
+      client:load>
+      Sharqawy
+    </Highlight>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden sm:flex gap-8 items-center">
+      {navItems.map(({ path, label, color }) => {
+        const isActive = currentPath === path;
+        return (
+          <Highlight
+            href={path}
+            before={isActive ? { bgColor: color, bgOpacity: OPACITY } : {}}
+            after={{ bgColor: color, bgOpacity: OPACITY }}
+            client:load>
+            {label}
+          </Highlight>
+        );
+      })}
+    </nav>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="sm:hidden mobile-menu-toggle" aria-label="Toggle mobile menu">
+      <div class="w-6 h-5 relative">
+        <span class="hamburger-line top-1"></span>
+        <span class="hamburger-line top-2.5"></span>
+        <span class="hamburger-line top-4"></span>
+      </div>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Overlay -->
+<div class="mobile-overlay fixed inset-0 bg-black/30 backdrop-blur-sm z-30 opacity-0 invisible transition-all duration-300"></div>
+
+<!-- Mobile Navigation -->
+<nav class="mobile-nav fixed top-0 right-0 w-72 h-screen bg-white/95 backdrop-blur-xl border-l border-gray-200 pt-20 px-4 pb-8 z-40 translate-x-full transition-transform duration-300 flex flex-col gap-4">
+  {navItems.map(({ path, label, color }) => {
+    const isActive = currentPath === path;
+    return (
+      <div class="py-4 border-b border-gray-100 mobile-nav-item">
+        <Highlight
+          href={path}
+          before={isActive ? { bgColor: color, bgOpacity: OPACITY } : {}}
+          after={{ bgColor: color, bgOpacity: OPACITY }}
+          client:load>
+          {label}
+        </Highlight>
+      </div>
+    );
+  })}
+</nav>
+
+<style>
+  @reference "@/styles/global.css"
+  .hamburger-line {
+    @apply block absolute h-[0.5px] w-full bg-gray-800 rounded-sm transition-all duration-300 ease-in-out;
+  }
+  
+  .mobile-menu-open .hamburger-line:nth-child(1) {
+    @apply top-2.5 rotate-45;
+  }
+  
+  .mobile-menu-open .hamburger-line:nth-child(2) {
+    @apply opacity-0;
+  }
+  
+  .mobile-menu-open .hamburger-line:nth-child(3) {
+    @apply top-2.5 -rotate-45;
+  }
+  
+  .mobile-menu-open .mobile-overlay {
+    @apply opacity-100 visible;
+  }
+  
+  .mobile-menu-open .mobile-nav {
+    @apply translate-x-0;
+  }
+  
+  .mobile-menu-open .mobile-nav-item {
+    @apply translate-x-0 opacity-100;
+  }
+</style>
+
+<script>
+  // Mobile menu functionality
+  const toggleButton = document.querySelector('.mobile-menu-toggle');
+  const overlay = document.querySelector('.mobile-overlay');
+  const nav = document.querySelector('.mobile-nav');
+  const body = document.body;
+  
+  function toggleMobileMenu() {
+    body.classList.toggle('mobile-menu-open');
+  }
+  
+  function closeMobileMenu() {
+    body.classList.remove('mobile-menu-open');
+  }
+  
+  toggleButton?.addEventListener('click', toggleMobileMenu);
+  overlay?.addEventListener('click', closeMobileMenu);
+  
+  // Close menu when clicking nav links
+  nav?.addEventListener('click', (e) => {
+    if ((e.target as HTMLElement)?.tagName === 'A') {
+      closeMobileMenu();
+    }
+  });
+  
+  // Add smooth page transitions
+  document.addEventListener('DOMContentLoaded', () => {
+    // Add transition class to body for smooth navigation
+    document.body.style.transition = 'opacity 0.15s ease-in-out';
+    
+    // Handle link clicks for smooth transitions
+    document.addEventListener('click', (e) => {
+      const link = (e.target as HTMLElement)?.closest('a');
+      if (link && link.hostname === window.location.hostname && !link.hasAttribute('data-no-transition')) {
+        e.preventDefault();
+        document.body.style.opacity = '0.9';
+        setTimeout(() => {
+          window.location.href = link.href;
+        }, 150);
+      }
+    });
+  });
+</script>
