@@ -1,4 +1,8 @@
 {
+  "extends": "astro/tsconfigs/strict",
+  "include": [".astro/types.d.ts", "**/*"],
+  "exclude": ["dist"],
+
   "compilerOptions": {
     "target": "ES2020",
     "module": "ESNext",
@@ -23,10 +27,7 @@
     "skipLibCheck": false,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
-      "react": ["./node_modules/preact/compat/"],
-      "react-dom": ["./node_modules/preact/compat/"]
+      "@/*": ["./src/*"]
     }
-  },
-  "include": ["node_modules/vite/client.d.ts", "**/*"]
+  }
 }

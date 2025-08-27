@@ -1,0 +1,37 @@
+---
+import { getCollection } from 'astro:content';
+import Page from '@/components/layout/Page.astro';
+import PageHeader from '@/components/PageHeader.tsx';
+import Highlight from '@/components/ui/Highlight.tsx';
+
+const journals = await getCollection('journal');
+const sortedJournals = journals.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+---
+
+<Page title="Journal" description="My thoughts, experiments and notes.">
+  <PageHeader subtitle="Where I write dumb stuff and random thoughts"> Journal </PageHeader>
+
+  {
+    sortedJournals.length === 0 ? (
+      <p>coming soon...</p>
+    ) : (
+      <div class="flex flex-col gap-4 items-start">
+        {sortedJournals.map(note => (
+          <article key={note.slug} class="flex items-center gap-2">
+            <Highlight
+              href={`/journal/${note.slug}`}
+              before={{ bgColor: '#FF9800', bgOpacity: 0.3 }}
+              after={{ bgColor: '#FF9800', bgOpacity: 0.5 }}
+              client:load>
+              {note.data.title}
+            </Highlight>
+            <span>-</span>
+            <time datetime={note.data.date.toISOString()} class="text-gray-500">
+              {note.data.date.toLocaleDateString()}
+            </time>
+          </article>
+        ))}
+      </div>
+    )
+  }
+</Page>

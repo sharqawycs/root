@@ -1,40 +1,29 @@
 {
-  "name": "sharqawy-personal-site",
-  "private": false,
+  "name": "sharqawy-personal-site-astro",
   "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "dev": "vite --host",
-    "check": "tsc --noEmit",
-    "run:scripts": "bun ./scripts",
-    "build": "bun run run:scripts && vite build",
-    "preview": "vite preview --host",
-    "start": "vite preview --host",
+    "dev": "astro dev --host",
+    "build": "astro build",
+    "preview": "astro preview --host",
+    "start": "astro build && astro preview --host",
+    "astro": "astro",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
   "dependencies": {
-    "preact": "^10.25.3",
-    "preact-iso": "^2.9.2"
+    "astro": "5.13.3"
   },
   "devDependencies": {
-    "@preact/preset-vite": "^2.9.3",
-    "@tailwindcss/vite": "^4.1.11",
-    "@types/node": "^24.2.0",
-    "@types/bun": "latest",
-    "@types/prismjs": "^1.26.5",
+    "@astrojs/mdx": "^4.3.4",
+    "@astrojs/preact": "4.1.0",
+    "@astrojs/sitemap": "3.5.1",
+    "@tailwindcss/vite": "^4.1.12",
     "eslint": "^9.32.0",
-    "eslint-config-preact": "^2.0.0",
-    "marked": "^16.1.2",
-    "preact-render-to-string": "^6.5.13",
+    "preact": "10.27.1",
+    "preact-iso": "^2.9.2",
     "prettier": "^3.6.2",
-    "prismjs": "^1.30.0",
-    "tailwindcss": "^4.1.11",
-    "terser": "^5.43.1",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.9.2",
-    "vite": "^6.0.4"
-  },
-  "eslintConfig": {
-    "extends": "preact"
+    "prettier-plugin-astro": "^0.14.1",
+    "tailwindcss": "^4.1.12"
   }
 }

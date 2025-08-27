@@ -1,0 +1,40 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Header from '@/components/layout/Header.tsx';
+import Footer from '@/components/layout/Footer.astro';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  className?: string;
+}
+
+const { title, description, ogImage, className = '' } = Astro.props;
+---
+
+<Layout title={title} description={description} ogImage={ogImage}>
+  <Header />
+  <div class={`p-4 ml-1 flex-1 page-content ${className}`}>
+    <!-- Children is <slot />  -->
+    <slot />
+  </div>
+  <Footer />
+</Layout>
+
+<style>
+  .page-content {
+    animation: blur-in 0.2s linear;
+  }
+
+  @keyframes blur-in {
+    from {
+      opacity: 0;
+      filter: blur(2px);
+    }
+    to {
+      opacity: 1;
+      filter: blur(0);
+    }
+  }
+</style>
