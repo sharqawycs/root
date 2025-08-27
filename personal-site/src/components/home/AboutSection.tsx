@@ -1,4 +1,4 @@
-import PageHeader from '@/components/blog/PageHeader';
+import PageHeader from '@/components/PageHeader';
 
 export default function AboutSection() {
   return (
