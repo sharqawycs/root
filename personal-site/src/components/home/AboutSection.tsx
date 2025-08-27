@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import PageHeader from '@/components/PageHeader';
 
 export default function AboutSection() {
