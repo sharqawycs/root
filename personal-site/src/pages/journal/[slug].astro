@@ -4,7 +4,7 @@ import Page from '@/components/layout/Page.astro';
 
 export async function getStaticPaths() {
   const journals = await getCollection('journal');
-  return journals.map((journal) => ({
+  return journals.map(journal => ({
     params: { slug: journal.slug },
     props: { journal },
   }));
@@ -18,10 +18,7 @@ const { journal } = Astro.props;
 const { Content } = await journal.render();
 ---
 
-<Page 
-  title={journal.data.title}
-  description={journal.data.description || journal.data.title}
->
+<Page title={journal.data.title} description={journal.data.description || journal.data.title}>
   <article class="max-w-3xl mx-auto">
     <header class="mb-8 pb-4 border-b border-gray-200">
       <h1 class="text-3xl font-bold mb-4">{journal.data.title}</h1>

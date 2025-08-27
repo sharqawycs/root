@@ -1,7 +1,6 @@
 ---
-
 import Layout from '@/layouts/Layout.astro';
-import Header from '@/components/layout/Header.astro';
+import Header from '@/components/layout/Header.tsx';
 import Footer from '@/components/layout/Footer.astro';
 
 export interface Props {
@@ -17,6 +16,7 @@ const { title, description, ogImage, className = '' } = Astro.props;
 <Layout title={title} description={description} ogImage={ogImage}>
   <Header />
   <div class={`p-4 ml-1 flex-1 page-content ${className}`}>
+    <!-- Children is <slot />  -->
     <slot />
   </div>
   <Footer />

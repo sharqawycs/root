@@ -7,22 +7,26 @@ export interface Props {
   ogImage?: string;
 }
 
-const { title = "sharqawycs — Sharqawy (personal site)", description = "sharqawycs - personal site of Sharqawy, CS student and builder. Projects, notes, and contact.", ogImage = "https://sharq.tech/og-image.png" } = Astro.props;
+const {
+  title = 'sharqawycs — Sharqawy (personal site)',
+  description = 'sharqawycs - personal site of Sharqawy, CS student and builder. Projects, notes, and contact.',
+  ogImage = 'https://sharq.tech/og-image.png',
+} = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="light dark" />
-    
-    <!-- Preload critical fonts -->
+
+    <!-- Preload fonts to avoid lag -->
     <link rel="preload" href="/fonts/Satoshi-Variable.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/playfair-display-v39-latin-regular.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/playfair-display-v39-latin-italic.woff2" as="font" type="font/woff2" crossorigin />
-    
+
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="author" content="sharqawycs" />
