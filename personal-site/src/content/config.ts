@@ -6,6 +6,8 @@ const journal = defineCollection({
     title: z.string(),
     date: z.date(),
     description: z.string().optional(),
+    tags: z.array(z.string()).optional(),
+    image: z.string().optional(),
   }),
 });
 
