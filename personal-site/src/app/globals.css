@@ -23,7 +23,7 @@
   src: url('/fonts/playfair-display-v39-latin-italic.woff2') format('woff2');
 }
 
-:root {
+@theme {
   --font-satoshi: 'Satoshi', system-ui, sans-serif;
   --font-playfair: 'Playfair Display', 'Times New Roman', serif;
   --dash-bullet: '- ';
@@ -37,7 +37,6 @@ body {
   line-height: 1.6;
   color: #37352f;
   background: #fff;
-  font-family: var(--font-satoshi);
 }
 
 /* text selection colors */

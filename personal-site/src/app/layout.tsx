@@ -16,13 +16,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="preload" href="/fonts/Satoshi-Variable.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="preload" href="/fonts/playfair-display-v39-latin-regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/Satoshi-Variable.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/playfair-display-v39-latin-italic.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
       </head>
       <body className="font-satoshi antialiased">
-        <div className="min-h-screen flex flex-col">
+        <div className="flex min-h-screen flex-col">
           <Header />
-          <main className="p-4 ml-1 flex-1 page-content">{children}</main>
+          <main className="page-content ml-1 flex-1 p-4">{children}</main>
           <Footer />
         </div>
       </body>
