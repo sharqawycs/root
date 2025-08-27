@@ -1,6 +1,4 @@
-@tailwind utilities;
 @import 'tailwindcss';
-@import 'tailwindcss/preflight';
 
 @font-face {
   font-family: 'Satoshi';

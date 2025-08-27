@@ -1,4 +1,4 @@
-import { slugify } from '../../utils/[UNUSED]formatters';
+import { slugify } from '@/utils/[UNUSED]formatters';
 import type { JSX } from 'preact';
 
 const sizes: Record<number, string> = {
