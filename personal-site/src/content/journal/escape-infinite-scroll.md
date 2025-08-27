@@ -1,7 +1,7 @@
 ---
-title: "How to Escape the Infinite Scroll Jail"
+title: 'How to Escape the Infinite Scroll Jail'
 date: 2025-08-26
-description: "Breaking free from mindless scrolling and reclaiming your time and focus"
+description: 'Breaking free from mindless scrolling and reclaiming your time and focus'
 ---
 
 Past few weeks I realized I was **using my phone nearly all day** and had no clue why. I used to barely touch social media - _just WhatsApp_ - but suddenly I was constantly checking messages, dumb statuses, wasting hours. And what made it even worse, I started being active on X which was wasting a lot of time!
