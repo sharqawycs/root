@@ -1,4 +1,4 @@
-import type { JSX } from 'preact';
+import { ComponentChildren } from 'preact';
 
 interface StyleVariant {
   bgColor?: string;
@@ -8,7 +8,7 @@ interface StyleVariant {
 }
 
 interface HighlightProps {
-  children: JSX.Element | string;
+  children: ComponentChildren;
   href?: string;
   target?: string;
   className?: string;
