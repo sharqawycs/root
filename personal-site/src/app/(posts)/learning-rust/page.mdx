@@ -1,0 +1,46 @@
+export const metadata = {
+  title: 'Learning Rust: First Impressions',
+  publishDate: '2024-12-15T00:00:00Z',
+  description: "My journey into systems programming with Rust and why it's both exciting and frustrating.",
+};
+
+# Learning Rust: First Impressions
+
+After months of hearing about Rust's memory safety and performance benefits, I finally decided to dive in. Here are my first impressions after a week of wrestling with the borrow checker.
+
+## The Good
+
+### Memory Safety Without Garbage Collection
+
+Coming from languages like JavaScript and Python, the idea of having memory safety without the overhead of garbage collection is fascinating. Rust prevents common bugs like null pointer dereferences and buffer overflows at compile time.
+
+### Pattern Matching
+
+The `match` expressions in Rust are incredibly powerful. They force you to handle all possible cases, making your code more robust.
+
+```rust
+let result = match user_input {
+    Some(value) => process_value(value),
+    None => handle_empty_input(),
+};
+```
+
+### Cargo is Amazing
+
+The package manager and build system is so much better than what I'm used to. Everything just works, and the documentation is excellent.
+
+## The Challenging
+
+### The Borrow Checker
+
+While I understand its purpose, the borrow checker can be frustrating when you're trying to do something simple but the compiler won't let you. I've spent hours fighting with lifetime annotations.
+
+### Steep Learning Curve
+
+Rust requires you to think differently about memory management. Concepts like ownership, borrowing, and lifetimes are new and take time to internalize.
+
+## What's Next
+
+I'm working through the Rust Book and building small CLI tools to practice. The goal is to eventually contribute to some open-source Rust projects and maybe build a web server.
+
+The frustration is worth it when you finally get something working and know it's memory-safe and fast.
