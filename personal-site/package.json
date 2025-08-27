@@ -18,6 +18,7 @@
     "@astrojs/mdx": "^4.3.4",
     "@astrojs/preact": "4.1.0",
     "@astrojs/sitemap": "3.5.1",
+    "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/vite": "^4.1.12",
     "@typescript-eslint/eslint-plugin": "^8.41.0",
     "@typescript-eslint/parser": "^8.41.0",
