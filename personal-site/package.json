@@ -14,6 +14,7 @@
     "format:check": "prettier --check ."
   },
   "dependencies": {
+    "@mdx-js/preact": "^3.1.0",
     "preact": "^10.25.3",
     "preact-iso": "^2.9.2"
   },
