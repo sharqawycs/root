@@ -4,7 +4,7 @@
   font-family: 'Satoshi';
   font-style: normal;
   font-weight: 100 900;
-  font-display: swap;
+  font-display: optional;
   src: url('/fonts/Satoshi-Variable.woff2') format('woff2');
 }
 
@@ -12,14 +12,14 @@
   font-family: 'Playfair Display';
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: optional;
   src: url('/fonts/playfair-display-v39-latin-regular.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Playfair Display';
   font-style: italic;
   font-weight: 400;
-  font-display: swap;
+  font-display: optional;
   src: url('/fonts/playfair-display-v39-latin-italic.woff2') format('woff2');
 }
 
