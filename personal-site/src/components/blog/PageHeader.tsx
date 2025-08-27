@@ -1,9 +1,9 @@
-import { ComponentChildren } from 'preact';
+import type { JSX } from 'preact';
 
 interface PageHeaderProps {
   subtitle?: string;
   date?: string;
-  children?: ComponentChildren;
+  children?: JSX.Element | string;
 }
 
 export default function PageHeader({ subtitle, date, children }: PageHeaderProps) {

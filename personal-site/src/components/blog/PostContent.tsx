@@ -1,13 +1,25 @@
-import { ComponentChildren } from 'preact';
+import type { JSX } from 'preact';
+import { useEffect, useState } from 'preact/hooks';
+import { markdownToHTML } from '../../utils/markdownToHTML';
 
 interface PostContentProps {
   title: string;
   date: string;
   readTime?: string;
-  children: ComponentChildren;
+  markdownContent?: string;
+  children?: JSX.Element | string;
 }
 
-export default function PostContent({ title, date, readTime, children }: PostContentProps) {
+export default function PostContent({ title, date, readTime, markdownContent, children }: PostContentProps) {
+  const [htmlContent, setHtmlContent] = useState<string>('');
+
+  useEffect(() => {
+    if (markdownContent) {
+      const html = markdownToHTML(markdownContent);
+      setHtmlContent(html);
+    }
+  }, [markdownContent]);
+
   return (
     <article class="max-w-3xl mx-auto">
       <header class="mb-8 pb-4 border-b border-gray-200">
@@ -17,7 +29,13 @@ export default function PostContent({ title, date, readTime, children }: PostCon
           {readTime && <span class="bg-gray-100 px-2 py-1 rounded">{readTime}</span>}
         </div>
       </header>
-      <div class="prose prose-lg max-w-none">{children}</div>
+      <div class="prose prose-lg max-w-none">
+        {markdownContent ? (
+          <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+        ) : (
+          children
+        )}
+      </div>
     </article>
   );
 }

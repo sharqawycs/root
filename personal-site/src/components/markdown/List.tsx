@@ -1,6 +1,6 @@
-import { ComponentChildren, JSX } from 'preact';
+import type { JSX } from 'preact';
 
-export const List = ({ ordered, start, children }: { ordered: boolean; start?: number | string; children: ComponentChildren }) => {
+export const List = ({ ordered, start, children }: { ordered: boolean; start?: number | string; children: JSX.Element | string }) => {
   const ListTag = (ordered ? 'ol' : 'ul') as keyof JSX.IntrinsicElements;
   const baseClasses = ordered
     ? 'list-decimal list-outside mb-4 space-y-2 ml-6'
@@ -14,7 +14,7 @@ export const List = ({ ordered, start, children }: { ordered: boolean; start?: n
   );
 };
 
-export const ListItem = ({ task, checked, children }: { task?: boolean; checked?: boolean; children: ComponentChildren }) => (
+export const ListItem = ({ task, checked, children }: { task?: boolean; checked?: boolean; children: JSX.Element | string }) => (
   <li class="text-gray-700" style={task ? { listStyleType: 'none' } : undefined}>
     {task && <input type="checkbox" disabled checked={checked} class="mr-2" />}
     {children}

@@ -1,7 +1,7 @@
-import { ComponentChildren } from 'preact';
+import type { JSX } from 'preact';
 
 interface TextBlockProps {
-  children: ComponentChildren;
+  children: JSX.Element | string;
   size?: 'small' | 'normal' | 'large';
   variant?: 'p' | 'h1' | 'h2' | 'h3' | 'h4';
 }

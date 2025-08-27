@@ -1,8 +1,8 @@
-import { ComponentChildren } from 'preact';
+import type { JSX } from 'preact';
 import { default as Seo, SeoProps } from '@/components/Seo';
 
 interface PageProps extends SeoProps {
-  children: ComponentChildren | string;
+  children: JSX.Element | string;
   className?: string;
 }
 

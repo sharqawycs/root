@@ -1,7 +1,7 @@
-import { ComponentChildren } from 'preact';
+import type { JSX } from 'preact';
 
 interface QuoteBlockProps {
-  children: ComponentChildren;
+  children: JSX.Element | string;
   author?: string;
   source?: string;
 }

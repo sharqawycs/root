@@ -1,8 +1,8 @@
-import { ComponentChildren } from 'preact';
+import type { JSX } from 'preact';
 
 interface SectionProps {
-  title?: string;
-  children: ComponentChildren;
+  title: string;
+  children: JSX.Element | string;
   className?: string;
 }
 

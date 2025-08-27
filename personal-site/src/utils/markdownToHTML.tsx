@@ -1,6 +1,7 @@
-import { marked, Tokens } from 'marked';
+import { marked } from 'marked';
+import type { Tokens } from 'marked';
 import { render } from 'preact-render-to-string';
-import { Heading, Paragraph, Link, List, ListItem, CodeBlock, InlineCode, Divider } from '@/components/markdown';
+import { Heading, Paragraph, Link, List, ListItem, CodeBlock, InlineCode, Divider } from '../components/markdown';
 
 const renderer = new marked.Renderer();
 
