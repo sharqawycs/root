@@ -1,5 +1,5 @@
-import PageHeader from "@/components/PageHeader";
-import Highlight from "@/components/ui/Highlight";
+import PageHeader from '@/components/PageHeader';
+import Highlight from '@/components/ui/Highlight';
 
 // In a real app, you'd get this from a database or CMS
 const posts = [
@@ -7,8 +7,8 @@ const posts = [
     slug: 'escape-infinite-scroll',
     title: 'How to Escape the Infinite Scroll Jail',
     date: new Date('2025-08-26'),
-    description: 'Breaking free from mindless scrolling and reclaiming your time and focus'
-  }
+    description: 'Breaking free from mindless scrolling and reclaiming your time and focus',
+  },
 ];
 
 export default function PostsPage() {
@@ -16,9 +16,7 @@ export default function PostsPage() {
 
   return (
     <div>
-      <PageHeader subtitle="Where I write dumb stuff and random thoughts">
-        Journal
-      </PageHeader>
+      <PageHeader subtitle="Where I write dumb stuff and random thoughts">Journal</PageHeader>
 
       {sortedPosts.length === 0 ? (
         <p>coming soon...</p>
@@ -29,8 +27,7 @@ export default function PostsPage() {
               <Highlight
                 href={`/journal/${post.slug}`}
                 before={{ bgColor: '#FF9800', bgOpacity: 0.3 }}
-                after={{ bgColor: '#FF9800', bgOpacity: 0.5 }}
-              >
+                after={{ bgColor: '#FF9800', bgOpacity: 0.5 }}>
                 {post.title}
               </Highlight>
               <span>-</span>

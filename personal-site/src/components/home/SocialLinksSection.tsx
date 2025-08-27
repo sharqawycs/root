@@ -14,18 +14,16 @@ export default function SocialLinksSection() {
       <div>
         {socialLinks.map(({ url, label, color }, idx) => {
           return (
-
-              <Highlight
-                className="underline"
-                key={url}
-                href={url}
-                target="_blank"
-                animation="expand"
-                before={false ? { bgColor: color, bgOpacity: OPACITY } : {}}
-                after={{ bgColor: color, bgOpacity: OPACITY }}>
-                {label}
-              </Highlight>
-
+            <Highlight
+              className="underline"
+              key={url}
+              href={url}
+              target="_blank"
+              animation="expand"
+              before={false ? { bgColor: color, bgOpacity: OPACITY } : {}}
+              after={{ bgColor: color, bgOpacity: OPACITY }}>
+              {label}
+            </Highlight>
           );
         })}
       </div>

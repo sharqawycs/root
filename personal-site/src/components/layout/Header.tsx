@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
-import Highlight from '../ui/Highlight';
+import Highlight from '@/components/ui/Highlight';
 
 const navItems = [
   { path: '/journal', label: 'Journal', color: '#4CAF50' },

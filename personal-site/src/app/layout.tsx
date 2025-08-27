@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
-import "./globals.css";
+import type { Metadata } from 'next';
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
+import './globals.css';
 
 export const metadata: Metadata = {
-  title: "Sharqawy",
-  description: "CS student, builder, and maker. Read my journal and view my projects.",
+  title: 'Sharqawy',
+  description: 'CS student, builder, and maker. Read my journal and view my projects.',
 };
 
 export default function RootLayout({
@@ -22,9 +22,7 @@ export default function RootLayout({
       <body className="font-satoshi antialiased">
         <div className="min-h-screen flex flex-col">
           <Header />
-          <main className="p-4 ml-1 flex-1 page-content">
-            {children}
-          </main>
+          <main className="p-4 ml-1 flex-1 page-content">{children}</main>
           <Footer />
         </div>
       </body>
