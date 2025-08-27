@@ -1,0 +1,32 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Page from '../../components/layout/Page.astro';
+import PostContent from '../../components/blog/PostContent.tsx';
+
+export async function getStaticPaths() {
+  const journals = await getCollection('journal');
+  return journals.map((journal) => ({
+    params: { slug: journal.slug },
+    props: { journal },
+  }));
+}
+
+type Props = {
+  journal: CollectionEntry<'journal'>;
+};
+
+const { journal } = Astro.props;
+// Don't render the content here, we'll pass the raw markdown to the PostContent component
+---
+
+<Page 
+  title={journal.data.title}
+  description={journal.data.description || journal.data.title}
+>
+  <PostContent 
+    title={journal.data.title}
+    date={journal.data.date}
+    markdownContent={journal.body}
+    client:load
+  />
+</Page>
