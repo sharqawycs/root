@@ -12,8 +12,8 @@ const navItems = [
 const OPACITY = 0.3;
 ---
 
-<header class="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-gray-200 py-2 px-4">
-  <div class="flex justify-between items-center relative">
+<header class="sticky top-0 z-40 border-b border-gray-200 bg-white/80 px-4 py-2 backdrop-blur-md">
+  <div class="relative flex items-center justify-between">
     <Highlight
       href="/"
       before={currentPath === '/' ? { bgColor: '#2196F3', bgOpacity: OPACITY } : {}}
@@ -22,7 +22,7 @@ const OPACITY = 0.3;
     </Highlight>
 
     <!-- Desktop Navigation -->
-    <nav class="hidden sm:flex gap-8 items-center">
+    <nav class="hidden items-center gap-8 sm:flex">
       {
         navItems.map(({ path, label, color }) => {
           const isActive = currentPath === path;
@@ -39,8 +39,8 @@ const OPACITY = 0.3;
     </nav>
 
     <!-- Mobile Menu Toggle -->
-    <button id="mobile-menu-toggle" class="sm:hidden relative z-50" aria-label="Toggle mobile menu">
-      <div class="w-6 h-5 relative">
+    <button id="mobile-menu-toggle" class="relative z-50 sm:hidden" aria-label="Toggle mobile menu">
+      <div class="relative h-5 w-6">
         <span class="hamburger-line absolute top-1"></span>
         <span class="hamburger-line absolute top-2.5"></span>
         <span class="hamburger-line absolute top-4"></span>
@@ -51,14 +51,14 @@ const OPACITY = 0.3;
   <!-- Mobile Navigation Dropdown -->
   <nav
     id="mobile-nav"
-    class="absolute inset-x-0 top-full z-50 flex w-full flex-col items-start justify-start gap-2 rounded-lg bg-white/95 backdrop-blur-xl px-4 py-6 shadow-lg border border-gray-200 transform scale-95 opacity-0 invisible transition-all duration-200 origin-top">
+    class="invisible absolute inset-x-0 top-full z-50 flex w-full origin-top scale-95 transform flex-col items-start justify-start gap-2 rounded-lg border border-gray-200 bg-white/95 px-4 py-6 opacity-0 shadow-lg backdrop-blur-xl transition-all duration-200">
     {
       navItems.map(({ path, label }) => {
         const isActive = currentPath === path;
         return (
           <a
             href={path}
-            class={`w-full px-4 py-3 text-left text-lg font-medium rounded-lg transition-colors duration-200 ${
+            class={`w-full rounded-lg px-4 py-3 text-left text-lg font-medium transition-colors duration-200 ${
               isActive ? 'bg-gray-100 text-gray-900' : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'
             }`}>
             {label}
@@ -72,7 +72,7 @@ const OPACITY = 0.3;
 <!-- Mobile Menu Backdrop -->
 <div
   id="mobile-backdrop"
-  class="fixed inset-0 bg-black/20 backdrop-blur-sm opacity-0 invisible transition-all duration-200 pointer-events-none z-30">
+  class="pointer-events-none invisible fixed inset-0 z-30 bg-black/20 opacity-0 backdrop-blur-sm transition-all duration-200">
 </div>
 
 <style is:global>

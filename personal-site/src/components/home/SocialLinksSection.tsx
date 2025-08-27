@@ -9,7 +9,7 @@ export default function SocialLinksSection() {
   const OPACITY = 0.3;
   return (
     <section>
-      <h2 class="text-2xl font-playfair mb-2">Connect</h2>
+      <h2 class="font-playfair mb-2 text-2xl">Connect</h2>
 
       <div>
         {socialLinks.map(({ url, label, color }, idx) => {

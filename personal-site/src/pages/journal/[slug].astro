@@ -19,9 +19,9 @@ const { Content } = await journal.render();
 ---
 
 <Page title={journal.data.title} description={journal.data.description || journal.data.title}>
-  <article class="max-w-3xl mx-auto">
-    <header class="mb-8 pb-4 border-b border-gray-200">
-      <h1 class="text-3xl font-bold mb-4">{journal.data.title}</h1>
+  <article class="mx-auto max-w-3xl">
+    <header class="mb-8 border-b border-gray-200 pb-4">
+      <h1 class="mb-4 text-3xl font-bold">{journal.data.title}</h1>
       <div class="flex items-center gap-4 text-sm text-gray-500">
         <time>{journal.data.date.toLocaleDateString()}</time>
       </div>

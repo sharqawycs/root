@@ -4,19 +4,19 @@ const repo = 'https://github.com/sharqawycs/sharqawycs?tab=MIT-1-ov-file';
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="flex justify-between items-center px-4 py-2 text-center border-t border-gray-200 text-sm">
+<footer class="flex items-center justify-between border-t border-gray-200 px-4 py-2 text-center text-sm">
   <a href={`mailto:${email}`} class="hover-highlight" data-color="#2196F3" data-animation="slide-right">
     {email}
   </a>
 
-  <div class="relative inline group">
+  <div class="group relative inline">
     <!-- Default text -->
-    <p class="transition-opacity duration-300 ease-in-out opacity-100 group-hover:opacity-0">
+    <p class="opacity-100 transition-opacity duration-300 ease-in-out group-hover:opacity-0">
       &copy; {currentYear} sharqawycs
     </p>
 
     <!-- Hover text -->
-    <div class="absolute top-0 right-0 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100">
+    <div class="absolute top-0 right-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
       <a href={repo} target="_blank" class="hover-highlight" data-color="#2196F3" data-animation="slide-right"> MIT License </a>
     </div>
   </div>

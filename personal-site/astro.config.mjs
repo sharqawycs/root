@@ -8,7 +8,7 @@ import { fileURLToPath, URL } from 'node:url';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://sharq.tech',
+  site: 'https://www.sharq.tech',
   integrations: [preact(), mdx(), sitemap()],
   vite: {
     plugins: [tailwindcss()],

@@ -9,8 +9,8 @@ interface PageHeaderProps {
 export default function PageHeader({ subtitle, date, children }: PageHeaderProps) {
   return (
     <header class="mb-8">
-      <h1 class="text-4xl font-playfair mb-2">{children}</h1>
-      {subtitle && <p class="text-xl font-playfair italic text-gray-600 mb-2">{subtitle}</p>}
+      <h1 class="font-playfair mb-2 text-4xl">{children}</h1>
+      {subtitle && <p class="font-playfair mb-2 text-xl text-gray-600 italic">{subtitle}</p>}
       {date && <time class="text-sm text-gray-500">{date}</time>}
     </header>
   );
