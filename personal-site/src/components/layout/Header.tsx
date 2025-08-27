@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import Highlight from '../ui/Highlight';
 
 const navItems = [
-  { path: '/posts', label: 'Journal', color: '#4CAF50' },
+  { path: '/journal', label: 'Journal', color: '#4CAF50' },
   { path: '/gallery', label: 'Gallery', color: '#FF9800' },
   { path: '/content', label: 'Content', color: '#9C27B0' },
 ];

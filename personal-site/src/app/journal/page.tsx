@@ -1,6 +1,5 @@
 import PageHeader from "@/components/PageHeader";
 import Highlight from "@/components/ui/Highlight";
-import Link from "next/link";
 
 // In a real app, you'd get this from a database or CMS
 const posts = [
@@ -28,7 +27,7 @@ export default function PostsPage() {
           {sortedPosts.map(post => (
             <article key={post.slug} className="flex items-center gap-2">
               <Highlight
-                href={`/posts/${post.slug}`}
+                href={`/journal/${post.slug}`}
                 before={{ bgColor: '#FF9800', bgOpacity: 0.3 }}
                 after={{ bgColor: '#FF9800', bgOpacity: 0.5 }}
               >

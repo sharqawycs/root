@@ -11,7 +11,7 @@ export default function AboutSection() {
         along the way.
       </p>
 
-      <p class="my-4">
+      <p className="my-4">
         i love losing in random internet rabbit holes and learning whatever sparks my brain. i'd love building PCs with minimalist setups,
         or geeking out over mechanical keyboards. i find art in the everyday, from cooking to writing poetry, and i love breaking things to
         reverse-engineer them. debating ideas keeps me sharp, always aiming for honesty and authenticity.

@@ -1,8 +1,8 @@
-import type { JSX } from 'preact';
+import type { ReactNode } from 'react';
 
 interface CalloutBoxProps {
   type?: 'info' | 'warning' | 'success' | 'error';
-  children: JSX.Element | string;
+  children: ReactNode;
 }
 
 export default function CalloutBox({ type = 'info', children }: CalloutBoxProps) {
@@ -13,5 +13,5 @@ export default function CalloutBox({ type = 'info', children }: CalloutBoxProps)
     error: 'bg-red-50 border-red-200 text-red-800',
   };
 
-  return <div class={`p-4 border-l-4 rounded-r ${styles[type]} my-4`}>{children}</div>;
+  return <div className={`p-4 border-l-4 rounded-r ${styles[type]} my-4`}>{children}</div>;
 }

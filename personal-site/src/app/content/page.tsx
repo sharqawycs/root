@@ -3,10 +3,10 @@ import PageHeader from "@/components/PageHeader";
 export default function ContentPage() {
   return (
     <div>
-      <PageHeader subtitle="Curated content and resources">
-        Content
+      <PageHeader subtitle="Stuff I actually think is worth your time">
+        Content Worth Consuming
       </PageHeader>
-      <p>Coming soon...</p>
+      <p>coming soon...</p>
     </div>
   );
 }
