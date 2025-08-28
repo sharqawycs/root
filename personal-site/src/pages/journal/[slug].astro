@@ -1,6 +1,6 @@
 ---
 import { getCollection, type CollectionEntry } from 'astro:content';
-import Page from '@/components/layout/Page.astro';
+import PageLayout from '@/layouts/PageLayout.astro';
 
 export async function getStaticPaths() {
   const journals = await getCollection('journal');
@@ -89,7 +89,7 @@ When stacking these modifiers with other modifiers like hover, you most likely w
 
 
 -->
-<Page title={journal.data.title} description={journal.data.description || journal.data.title}>
+<PageLayout title={journal.data.title} description={journal.data.description || journal.data.title}>
   <article class="prose mx-auto max-w-3xl">
     <header class="mb-8 border-b border-gray-200 pb-4">
       <h1 class="mb-4 text-3xl font-bold">{journal.data.title}</h1>
@@ -101,4 +101,4 @@ When stacking these modifiers with other modifiers like hover, you most likely w
       <Content />
     </div>
   </article>
-</Page>
+</PageLayout>
