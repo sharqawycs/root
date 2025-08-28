@@ -18,7 +18,7 @@ html {
   font-weight: 100 900;
   src: url('/fonts/Satoshi-Variable.woff2') format('woff2');
   font-family: 'Satoshi';
-  font-display: optional;
+  font-display: block;
 }
 
 @font-face {
@@ -26,18 +26,19 @@ html {
   font-weight: 400;
   src: url('/fonts/playfair-display-v39-latin-regular.woff2') format('woff2');
   font-family: 'Playfair Display';
-  font-display: optional;
+  font-display: block;
 }
 @font-face {
   font-style: italic;
   font-weight: 400;
   src: url('/fonts/playfair-display-v39-latin-italic.woff2') format('woff2');
   font-family: 'Playfair Display';
-  font-display: optional;
+  font-display: block;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-background-end: var(--background-end);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
@@ -94,6 +95,7 @@ html {
 
 :root {
   --background: #f8f8f2;
+  --background-end: #ffffff;
   --foreground: #282a36;
   --card: #f8f8f2;
   --card-foreground: #282a36;
@@ -143,6 +145,7 @@ html {
 
 .dark {
   --background: #282a36;
+  --background-end: #1c1e26;
   --foreground: #f8f8f2;
   --card: #282a36;
   --card-foreground: #f8f8f2;
@@ -193,7 +196,7 @@ html {
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground from-background to-background-end bg-gradient-to-t;
   }
 }
 
