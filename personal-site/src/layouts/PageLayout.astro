@@ -10,7 +10,7 @@ export interface Props {
   className?: string;
 }
 
-const { title, description, ogImage, className = '' } = Astro.props;
+const { title, description, ogImage, className = '' } = Astro.props as Props;
 ---
 
 <RootLayout title={title} description={description} ogImage={ogImage}>
