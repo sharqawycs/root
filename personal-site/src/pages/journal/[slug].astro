@@ -1,6 +1,7 @@
 ---
 import { getCollection, type CollectionEntry } from 'astro:content';
 import PageLayout from '@/layouts/PageLayout.astro';
+import PageHeader from '@/components/PageHeader';
 
 export async function getStaticPaths() {
   const journals = await getCollection('journal');
@@ -87,18 +88,18 @@ When stacking these modifiers with other modifiers like hover, you most likely w
 
 ----
 
+Class	Gray scale
+prose-gray  GREAT
+prose-slate	BAD
+prose-zinc	Whity
+prose-neutral	Neutral
+prose-stone	Stone
 
 -->
 <PageLayout title={journal.data.title} description={journal.data.description || journal.data.title}>
-  <article class="prose dark:prose-invert mx-auto max-w-3xl">
-    <header class="border-border mb-8 border-b pb-4">
-      <h1 class="mb-4 text-3xl font-bold">{journal.data.title}</h1>
-      <div class="text-muted-foreground flex items-center gap-4 text-sm">
-        <time>{journal.data.date.toLocaleDateString()}</time>
-      </div>
-    </header>
-    <div class="max-w-none">
-      <Content />
-    </div>
+  <article class="prose prose-neutral dark:prose-invert mx-auto max-w-3xl">
+    <PageHeader subtitle={journal.data.description} date={journal.data.date.toLocaleDateString()}>{journal.data.title}</PageHeader>
+
+    <Content />
   </article>
 </PageLayout>
