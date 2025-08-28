@@ -24,6 +24,10 @@ const prose =
   ' prose-hr:border-border';
 ---
 
+{
+  /**
+   * 
+   * 
 <!-- 
 
 Class	Gray scale
@@ -90,17 +94,9 @@ prose-hr:{utility}	hr
 When stacking these modifiers with other modifiers like hover, you most likely want the other modifier to come last:
 
 <article class="prose prose-a:text-blue-600 prose-a:hover:text-blue-500">{{ markdown }}</article>
+   */
+}
 
-----
-
-Class	Gray scale
-prose-gray  GREAT
-prose-slate	BAD
-prose-zinc	Whity
-prose-neutral	Neutral
-prose-stone	Stone
-
--->
 <PageLayout title={journal.data.title} description={journal.data.description || journal.data.title}>
   <article class={'mx-auto max-w-3xl' + prose}>
     <PageHeader subtitle={journal.data.description} date={journal.data.date.toLocaleDateString()}>{journal.data.title}</PageHeader>
