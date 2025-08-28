@@ -16,12 +16,26 @@ const {
 ---
 
 <!doctype html>
+<!-- Theme Provider -->
+<script is:inline>
+  // Default = dark
+  if (typeof localStorage !== 'undefined') {
+    const saved = localStorage.getItem('theme');
+    if (saved) {
+      document.documentElement.classList[saved === 'dark' ? 'add' : 'remove']('dark');
+    } else {
+      document.documentElement.classList.add('dark'); // force default dark
+      localStorage.setItem('theme', 'dark');
+    }
+  }
+</script>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="color-scheme" content="light dark" />
+    <meta name="color-scheme" content="dark light" />
 
     <!-- Preload fonts to avoid lag -->
     <link rel="preload" href="/fonts/Satoshi-Variable.woff2" as="font" type="font/woff2" crossorigin />
@@ -57,7 +71,7 @@ const {
     <meta name="twitter:site" content="@sharqawycs" />
   </head>
   <body>
-    <div class="font-display mx-auto flex min-h-screen max-w-2xl flex-col">
+    <div class="font-display mx-auto flex min-h-screen max-w-3xl flex-col">
       <slot />
     </div>
   </body>
