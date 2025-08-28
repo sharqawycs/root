@@ -3,6 +3,11 @@
 import '@/styles/global.css';
 import { cn } from '@/lib/utils';
 
+// Inter font
+import '@fontsource/inter/400.css'; // regular
+import '@fontsource/inter/500.css'; // medium
+import '@fontsource/inter/700.css'; // bold
+
 export interface Props {
   title?: string;
   description?: string;
@@ -132,7 +137,6 @@ const classNames = cn(
     <meta name="color-scheme" content="dark light" />
 
     <!-- Preload fonts to avoid lag -->
-    <link rel="preload" href="/fonts/Satoshi-Variable.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/playfair-display-v39-latin-regular.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/playfair-display-v39-latin-italic.woff2" as="font" type="font/woff2" crossorigin />
 

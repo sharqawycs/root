@@ -15,14 +15,6 @@ html {
 
 @font-face {
   font-style: normal;
-  font-weight: 100 900;
-  src: url('/fonts/Satoshi-Variable.woff2') format('woff2');
-  font-family: 'Satoshi';
-  font-display: block;
-}
-
-@font-face {
-  font-style: normal;
   font-weight: 400;
   src: url('/fonts/playfair-display-v39-latin-regular.woff2') format('woff2');
   font-family: 'Playfair Display';
@@ -71,9 +63,9 @@ html {
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  --font-satoshi: 'Satoshi', system-ui, sans-serif;
+  --font-inter: Inter, system-ui, sans-serif;
   --font-playfair-display: 'Playfair Display', 'Times New Roman', serif;
-  --font-sans: var(--font-satoshi);
+  --font-sans: var(--font-inter);
   --font-serif: var(--font-playfair-display);
   --font-mono: var(--font-mono);
   --dash-bullet: '- ';
