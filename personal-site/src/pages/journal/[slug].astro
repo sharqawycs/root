@@ -17,6 +17,8 @@ type Props = {
 
 const { journal } = Astro.props;
 const { Content } = await journal.render();
+
+const prose = 'prose prose-neutral dark:prose-invert prose-base' + ' prose-heading:font-semibold prose-headings:font-serif';
 ---
 
 <!-- 
@@ -97,7 +99,7 @@ prose-stone	Stone
 
 -->
 <PageLayout title={journal.data.title} description={journal.data.description || journal.data.title}>
-  <article class="prose prose-neutral dark:prose-invert mx-auto max-w-3xl">
+  <article class={'mx-auto max-w-3xl ' + prose}>
     <PageHeader subtitle={journal.data.description} date={journal.data.date.toLocaleDateString()}>{journal.data.title}</PageHeader>
 
     <Content />
