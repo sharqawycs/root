@@ -1,7 +1,7 @@
 ---
 import RootLayout from '@/layouts/RootLayout.astro';
-import Header from '@/components/layout/Header.tsx';
-// import Footer from '@/components/layout/Footer.astro';
+// import Header from '@/components/layout/Header.tsx';
+import NavBar from '@/components/NavBar.astro';
 
 export interface Props {
   title?: string;
@@ -14,8 +14,9 @@ const { title, description, ogImage, className = '' } = Astro.props;
 ---
 
 <RootLayout title={title} description={description} ogImage={ogImage}>
-  <Header />
-  <main class={`p-4 ml-1 flex-1 page-animation  ${className}`}>
+  <!-- <Header /> -->
+  <NavBar />
+  <main class={`p-4 flex-1 page-animation  ${className}`}>
     <!-- Children is <slot />  -->
     <slot />
   </main>

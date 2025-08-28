@@ -13,6 +13,11 @@ const {
   description = 'sharqawycs - personal site of Sharqawy, CS student and builder. Projects, notes, and contact.',
   ogImage = 'https://sharq.tech/og-image.png',
 } = Astro.props;
+
+const prose =
+  ' prose prose-neutral dark:prose-invert prose-base' +
+  ' prose-heading:font-semibold prose-headings:font-serif' +
+  ' prose-hr:border-border';
 ---
 
 <!doctype html>
@@ -70,7 +75,8 @@ const {
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@sharqawycs" />
   </head>
-  <body class="mx-auto flex min-h-screen max-w-3xl flex-col font-sans">
+
+  <body class={'mx-auto flex min-h-screen max-w-3xl flex-col font-sans ' + prose}>
     <slot />
   </body>
 </html>
