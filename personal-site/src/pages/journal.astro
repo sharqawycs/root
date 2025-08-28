@@ -18,11 +18,7 @@ const sortedJournals = journals.sort((a, b) => new Date(b.data.date).getTime() -
       <div class="flex flex-col items-start gap-4">
         {sortedJournals.map(note => (
           <article key={note.slug} class="flex items-center gap-2">
-            <Highlight
-              href={`/journal/${note.slug}`}
-              before={{ bgColor: '#FF9800', bgOpacity: 0.3 }}
-              after={{ bgColor: '#FF9800', bgOpacity: 0.5 }}
-              client:load>
+            <Highlight href={`/journal/${note.slug}`} className=" bg-primary/80" opacity={0.6} client:load>
               {note.data.title}
             </Highlight>
             <span>-</span>
