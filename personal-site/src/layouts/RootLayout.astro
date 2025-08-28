@@ -100,7 +100,8 @@ When stacking these modifiers with other modifiers like hover, you most likely w
 }
 
 /*Prose and overrides */
-const prose = cn(
+const classNames = cn(
+  'mx-auto flex min-h-screen flex-col max-w-full bg-background', // Layout, bg-background are for safety and extra-scrolling, see global.css for the real bg
   'prose prose-neutral dark:prose-invert prose-base', // Root Prose
   'prose-headings:font-serif', // Headings: h1, h2, h3, h4
   'prose-hr:border-border', // Horizontal Rules
@@ -164,7 +165,7 @@ const prose = cn(
     <meta name="twitter:site" content="@sharqawycs" />
   </head>
 
-  <body class={'mx-auto flex min-h-screen max-w-3xl flex-col ' + prose}>
+  <body class={classNames}>
     <slot />
   </body>
 </html>
