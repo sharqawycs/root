@@ -56,6 +56,8 @@ Here's a complete list of available element modifiers:
 
 Modifier	Target
 prose-headings:{utility}	h1, h2, h3, h4, th
+prose-hr:{utility}	hr
+
 
 [[CONSIDER]]
 prose-lead:{utility}	[class~="lead"] 
@@ -64,6 +66,11 @@ prose-kbd:{utility}	kbd
 prose-code:{utility}	code
 prose-pre:{utility}	pre
 prose-a:{utility}	a
+prose-blockquote:{utility}	blockquote
+
+prose-figure:{utility}	figure
+prose-img:{utility}	img
+prose-video:{utility}	video
 
 
 prose-h1:{utility}	h1 ok
@@ -72,8 +79,6 @@ prose-h3:{utility}	h3
 prose-h4:{utility}	h4
 
 prose-p:{utility}	p
-prose-blockquote:{utility}	blockquote
-prose-figure:{utility}	figure
 prose-figcaption:{utility}	figcaption
 prose-strong:{utility}	strong
 
@@ -87,19 +92,19 @@ prose-thead:{utility}	thead
 prose-tr:{utility}	tr
 prose-th:{utility}	th
 prose-td:{utility}	td
-prose-img:{utility}	img
-prose-video:{utility}	video
-prose-hr:{utility}	hr
+
 When stacking these modifiers with other modifiers like hover, you most likely want the other modifier to come last:
 
 <article class="prose prose-a:text-blue-600 prose-a:hover:text-blue-500">{{ markdown }}</article>
    */
 }
 
+/*Prose and overrides */
 const prose = cn(
   'prose prose-neutral dark:prose-invert prose-base', // Root Prose
   'prose-headings:font-serif', // Headings: h1, h2, h3, h4
-  'prose-hr:border-border' // Horizontal Rules
+  'prose-hr:border-border', // Horizontal Rules
+  'prose-a:no-underline prose-a:text-primary prose-a:hover:underline' // a element and links
 );
 ---
 
