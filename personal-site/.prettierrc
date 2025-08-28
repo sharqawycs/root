@@ -4,6 +4,15 @@
   "bracketSpacing": true,
   "endOfLine": "lf",
   "jsxSingleQuote": false,
+  "overrides": [
+    {
+      "files": "*.astro",
+      "options": {
+        "parser": "astro"
+      }
+    }
+  ],
+
   "plugins": [
     "prettier-plugin-sort-json",
     "prettier-plugin-astro",
@@ -12,7 +21,6 @@
     "prettier-plugin-organize-imports",
     "prettier-plugin-tailwindcss"
   ],
-
   "printWidth": 140,
   "quoteProps": "as-needed",
   "semi": true,

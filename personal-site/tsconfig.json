@@ -26,8 +26,9 @@
       "@/*": ["./src/*"]
     }
   },
-  "exclude": ["dist"],
+
+  "exclude": ["dist", ".astro/**", "node_modules/**"],
 
   "extends": "astro/tsconfigs/strict",
-  "include": [".astro/types.d.ts", "**/*", ".eslintrc.js"]
+  "include": [".astro/types.d.ts", "**/*"]
 }
