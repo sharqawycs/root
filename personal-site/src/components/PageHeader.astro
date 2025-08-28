@@ -7,10 +7,11 @@ interface PageHeaderProps {
 const { subtitle, date } = Astro.props as PageHeaderProps;
 ---
 
-<header class="not-prose mb-8">
-  <h1 class="text-foreground mb-2 font-serif text-4xl font-semibold">
+<header class="mb-8">
+  <h1 class="mb-2">
     <slot />
   </h1>
-  {subtitle && <p class="text-muted-foreground mb-2 font-serif text-xl italic">{subtitle}</p>}
-  {date && <time class="text-muted-foreground text-sm">{date}</time>}
+  {subtitle && <p class="lead prose-lead mt-2 mb-2 font-serif italic">{subtitle}</p>}
+  {/*/ TODO, add user icons and name or smth */}
+  {date && <time class="hidden text-sm">{date}</time>}
 </header>
