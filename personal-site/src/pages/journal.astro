@@ -26,7 +26,7 @@ const sortedJournals = journals.sort((a, b) => new Date(b.data.date).getTime() -
               {note.data.title}
             </Highlight>
             <span>-</span>
-            <time datetime={note.data.date.toISOString()} class="text-gray-500">
+            <time datetime={note.data.date.toISOString()} class="text-muted-foreground">
               {note.data.date.toLocaleDateString()}
             </time>
           </article>

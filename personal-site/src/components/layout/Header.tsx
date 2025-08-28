@@ -53,7 +53,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="sticky top-0 z-40 border-b border-gray-200 bg-white/80 px-4 py-2 backdrop-blur-md">
+      <header className="bg-background/20 sticky top-0 z-40 border-b px-4 py-2 backdrop-blur-md">
         <div className="relative flex items-center justify-between">
           <Highlight
             href="/"
@@ -95,7 +95,7 @@ const Header = () => {
         {/* Mobile Navigation Dropdown */}
         <nav
           id="mobile-nav"
-          className={`absolute inset-x-0 top-full z-50 flex w-full origin-top transform flex-col items-start justify-start gap-2 rounded-b-lg border border-gray-200 bg-white/80 px-4 py-6 shadow-lg backdrop-blur-md transition-all duration-200 ${
+          className={`bg-background/20 absolute inset-x-0 top-full z-50 flex w-full origin-top transform flex-col items-start justify-start gap-2 rounded-b-lg border px-4 py-6 shadow-lg backdrop-blur-md transition-all duration-200 ${
             isMenuOpen ? 'visible scale-100 opacity-100' : 'invisible scale-90 opacity-0'
           }`}>
           {navItems.map(({ path, label }) => {
