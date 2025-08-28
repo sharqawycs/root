@@ -1,42 +1,71 @@
-import { useLocation } from 'preact-iso';
-import { useState } from 'preact/hooks';
-import Highlight from '@/components/ui/Highlight';
+import { useEffect, useState } from 'preact/hooks';
+import Highlight from '../ui/Highlight.tsx';
 
-export default function Header() {
-  const { url } = useLocation();
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+const navItems = [
+  { path: '/journal', label: 'Journal', color: '#4CAF50' },
+  { path: '/gallery', label: 'Gallery', color: '#FF9800' },
+  { path: '/content', label: 'Content', color: '#9C27B0' },
+];
 
-  const navItems = [
-    { path: '/journal', label: 'Journal', color: '#4CAF50' },
-    { path: '/gallery', label: 'Gallery', color: '#FF9800' },
-    { path: '/content', label: 'Content', color: '#9C27B0' },
-  ];
+const OPACITY = 0.3;
 
-  const OPACITY = 0.3;
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // const  = typeof window !== 'undefined' ? window.location.pathname : '/';
 
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
-  };
+  const [currentPath, setPath] = useState('nothing'); // safe default
 
-  const closeMobileMenu = () => {
-    setMobileMenuOpen(false);
+  useEffect(() => {
+    setPath(window.location.pathname);
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (e: Event) => {
+      const target = e.target as HTMLElement;
+      const nav = document.getElementById('mobile-nav');
+      const toggleButton = document.getElementById('mobile-menu-toggle');
+
+      if (isMenuOpen && nav && toggleButton && !nav.contains(target) && !toggleButton.contains(target)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isMenuOpen) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+    document.addEventListener('keydown', handleEscape);
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+      document.removeEventListener('keydown', handleEscape);
+    };
+  }, [isMenuOpen]);
+
+  const toggleMenu = (e: Event) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
     <>
-      <header class="py-2 px-4 border-b border-gray-200 relative">
-        <div class="flex justify-between items-center relative">
+      <header className="bg-background/20 sticky top-0 z-40 border-b px-4 py-2 backdrop-blur-md">
+        <div className="relative flex items-center justify-between">
           <Highlight
             href="/"
-            before={url === '/' ? { bgColor: '#2196F3', bgOpacity: OPACITY } : {}}
+            before={currentPath === '/' ? { bgColor: '#2196F3', bgOpacity: OPACITY } : {}}
             after={{ bgColor: '#2196F3', bgOpacity: OPACITY }}>
             Sharqawy
           </Highlight>
 
           {/* Desktop Navigation */}
-          <nav class="hidden sm:flex gap-8 items-center">
+          <nav className="hidden items-center gap-8 sm:flex">
             {navItems.map(({ path, label, color }) => {
-              const isActive = url === path;
+              const isActive = currentPath === path;
               return (
                 <Highlight
                   key={path}
@@ -50,55 +79,81 @@ export default function Header() {
           </nav>
 
           {/* Mobile Menu Toggle */}
-          <button class="sm:hidden relative" onClick={toggleMobileMenu} aria-label="Toggle mobile menu">
-            <div class="w-6 h-5 relative z-50">
-              <span
-                class={`block absolute h-0.5 w-full bg-gray-800 rounded-sm transition-all duration-300 ease-in-out ${
-                  mobileMenuOpen ? 'top-2.5 rotate-45' : 'top-1 rotate-0'
-                }`}></span>
-              <span
-                class={`block absolute h-0.5 w-full bg-gray-800 rounded-sm transition-all duration-300 ease-in-out top-2.5 ${
-                  mobileMenuOpen ? 'opacity-0' : 'opacity-100'
-                }`}></span>
-              <span
-                class={`block absolute h-0.5 w-full bg-gray-800 rounded-sm transition-all duration-300 ease-in-out ${
-                  mobileMenuOpen ? 'top-2.5 -rotate-45' : 'top-4 rotate-0'
-                }`}></span>
+          <button
+            id="mobile-menu-toggle"
+            className={`relative z-50 sm:hidden ${isMenuOpen ? 'menu-open' : ''}`}
+            aria-label="Toggle mobile menu"
+            onClick={toggleMenu}>
+            <div className="relative h-5 w-6">
+              <span className="hamburger-line absolute top-1"></span>
+              <span className="hamburger-line absolute top-2.5"></span>
+              <span className="hamburger-line absolute top-4"></span>
             </div>
           </button>
         </div>
+
+        {/* Mobile Navigation Dropdown */}
+        <nav
+          id="mobile-nav"
+          className={`bg-background/20 absolute inset-x-0 top-full z-50 flex w-full origin-top transform flex-col items-start justify-start gap-2 rounded-b-lg border px-4 py-6 shadow-lg backdrop-blur-md transition-all duration-200 ${
+            isMenuOpen ? 'visible scale-100 opacity-100' : 'invisible scale-90 opacity-0'
+          }`}>
+          {navItems.map(({ path, label }) => {
+            const isActive = currentPath === path;
+            return (
+              <a
+                key={path}
+                href={path}
+                className={`w-full rounded-lg py-3 text-left text-lg font-medium transition-colors duration-200 ${
+                  isActive ? 'bg-gray-100 text-gray-900' : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'
+                }`}>
+                {label}
+              </a>
+            );
+          })}
+        </nav>
       </header>
 
-      {/* Mobile Overlay */}
+      {/* Mobile Menu Backdrop */}
       <div
-        class={`fixed inset-0 bg-black/30 backdrop-blur-sm z-30 transition-all duration-300 ${
-          mobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+        id="mobile-backdrop"
+        className={`pointer-events-none fixed inset-0 z-30 bg-black/20 backdrop-blur-sm transition-all duration-200 ${
+          isMenuOpen ? 'pointer-events-auto visible opacity-100' : 'invisible opacity-0'
         }`}
-        onClick={closeMobileMenu}
-      />
+        onClick={() => setIsMenuOpen(false)}></div>
 
-      {/* Mobile Navigation */}
-      <nav
-        class={`fixed top-0 right-0 w-72 h-screen bg-white/95 backdrop-blur-xl border-l border-gray-200 pt-20 px-4 pb-8 z-40 transition-transform duration-300 flex flex-col gap-4 ${
-          mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}>
-        {navItems.map(({ path, label, color }) => {
-          const isActive = url === path;
-          return (
-            <div
-              key={path}
-              class={`py-4 border-b border-gray-100 ${mobileMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-5 opacity-0'}`}
-              onClick={closeMobileMenu}>
-              <Highlight
-                href={path}
-                before={isActive ? { bgColor: color, bgOpacity: OPACITY } : {}}
-                after={{ bgColor: color, bgOpacity: OPACITY }}>
-                {label}
-              </Highlight>
-            </div>
-          );
-        })}
-      </nav>
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+          .hamburger-line {
+            display: block;
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            background-color: #1f2937;
+            border-radius: 2px;
+            transition: all 0.3s ease-in-out;
+          }
+
+          /* Hamburger to X animation */
+          .menu-open .hamburger-line:nth-child(1) {
+            transform: rotate(45deg);
+            top: 10px !important;
+          }
+
+          .menu-open .hamburger-line:nth-child(2) {
+            opacity: 0;
+          }
+
+          .menu-open .hamburger-line:nth-child(3) {
+            transform: rotate(-45deg);
+            top: 10px !important;
+          }
+        `,
+        }}
+      />
     </>
   );
-}
+};
+
+export default Header;

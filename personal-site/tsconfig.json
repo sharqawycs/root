@@ -10,11 +10,11 @@
 
     "strict": true, // Enables all strictness checks (see below for overrides)
 
-    "forceConsistentCasingInFileNames": true, // ❗ Avoid casing bugs in imports
-    "noFallthroughCasesInSwitch": true, // 🛑 Switch fallthrough is dumb
-    "noUnusedLocals": true, // 💩 Kill dead code
+    "forceConsistentCasingInFileNames": true, // Avoid casing bugs in imports
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noImplicitReturns": true, // ❗ Force return types
+    "noImplicitReturns": true, // Force return types
     "noPropertyAccessFromIndexSignature": true,
 
     /* Preact Config */
@@ -23,10 +23,12 @@
     "skipLibCheck": false,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
-      "react": ["./node_modules/preact/compat/"],
-      "react-dom": ["./node_modules/preact/compat/"]
+      "@/*": ["./src/*"]
     }
   },
-  "include": ["node_modules/vite/client.d.ts", "**/*"]
+
+  "exclude": ["dist", ".astro/**", "node_modules/**"],
+
+  "extends": "astro/tsconfigs/strict",
+  "include": [".astro/types.d.ts", "**/*"]
 }
