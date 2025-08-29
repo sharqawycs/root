@@ -18,7 +18,7 @@ const sortedJournals = journals.sort((a, b) => new Date(b.data.date).getTime() -
       <div class="flex flex-col items-start gap-4">
         {sortedJournals.map(note => (
           <article key={note.slug} class="flex items-center gap-2">
-            <HighlightLink href={`/journal/${note.slug}`} className=" bg-primary/80">
+            <HighlightLink href={`/journal/${note.slug}`} class="bg-primary/80">
               {note.data.title}
             </HighlightLink>
             <span>-</span>
