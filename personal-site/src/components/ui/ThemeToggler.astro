@@ -1,5 +1,4 @@
 ---
-// ThemeToggler.astro
 import { Sun, Moon } from '@/components/icons/index.astro';
 ---
 
@@ -20,8 +19,8 @@ import { Sun, Moon } from '@/components/icons/index.astro';
     document.documentElement.classList.toggle('dark', theme === 'dark');
 
     // toggle visibility
-    moon.classList.toggle('hidden', theme !== 'dark'); // show Moon only on dark
-    sun.classList.toggle('hidden', theme === 'dark'); // show Sun only on light
+    moon.classList.toggle('hidden', theme !== 'dark'); // Moon only on dark
+    sun.classList.toggle('hidden', theme === 'dark'); // Sun only on light
   };
 
   button.addEventListener('click', () => {
