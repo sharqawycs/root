@@ -183,8 +183,20 @@ html {
   * {
     @apply border-border outline-ring/50;
   }
+
+  /* Prose */
   body {
+    @apply prose prose-neutral dark:prose-invert prose-base; /* Prose base styles */
+    @apply prose-headings:font-serif prose-headings:font-semibold; /* Headings */
+    @apply prose-a:no-underline prose-a:text-primary prose-a:hover:underline; /* Links */
+    @apply prose-hr:border-border max-w-full; /* Horizontal rules */
+  }
+
+  /* Last to override prose */
+  body {
+    @apply mx-auto flex min-h-screen max-w-full flex-col;
     @apply text-foreground from-background to-background-end bg-gradient-to-t;
+    @apply transition-colors duration-300; /* When Toggling theme */
   }
 }
 

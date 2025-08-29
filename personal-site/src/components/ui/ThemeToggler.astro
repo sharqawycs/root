@@ -1,0 +1,34 @@
+---
+// ThemeToggler.astro
+import Moon from '../icons/Moon.astro';
+import Sun from '../icons/Sun.astro';
+---
+
+<button id="theme-toggler" class="hover:text-primary text-foreground h-6 w-6 transition-colors duration-150">
+  <Moon class="hidden" />
+  <Sun class="hidden" />
+</button>
+
+<script is:inline>
+  const button = document.getElementById('theme-toggler');
+  const moon = button.querySelector('svg:nth-child(1)');
+  const sun = button.querySelector('svg:nth-child(2)');
+
+  const getCurrentTheme = () => localStorage.getItem('theme') || 'dark';
+
+  const setCurrentTheme = theme => {
+    localStorage.setItem('theme', theme);
+    document.documentElement.classList.toggle('dark', theme === 'dark');
+
+    // toggle visibility
+    moon.classList.toggle('hidden', theme !== 'dark'); // show Moon only on dark
+    sun.classList.toggle('hidden', theme === 'dark'); // show Sun only on light
+  };
+
+  button.addEventListener('click', () => {
+    setCurrentTheme(getCurrentTheme() === 'dark' ? 'light' : 'dark');
+  });
+
+  // initialize
+  setCurrentTheme(getCurrentTheme());
+</script>

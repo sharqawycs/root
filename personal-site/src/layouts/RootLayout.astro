@@ -1,7 +1,6 @@
 ---
 // The Root Layout with all global rules
 import '@/styles/global.css';
-import classNames from '@/lib/rootClasses.ts';
 
 // Inter font, the main font
 import '@fontsource/inter/latin-ext-400'; // All text
@@ -28,19 +27,6 @@ const {
 ---
 
 <!doctype html>
-{/* Theme Provider */}
-<script is:inline>
-  if (typeof localStorage !== 'undefined') {
-    const saved = localStorage.getItem('theme');
-    if (saved) {
-      document.documentElement.classList[saved === 'dark' ? 'add' : 'remove']('dark');
-    } else {
-      document.documentElement.classList.add('dark'); // force default dark
-      localStorage.setItem('theme', 'dark');
-    }
-  }
-</script>
-
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -77,7 +63,5 @@ const {
     <meta name="twitter:site" content="@sharqawycs" />
   </head>
 
-  <body class={classNames}>
-    <slot />
-  </body>
+  <body><slot /> </body>
 </html>
