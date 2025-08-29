@@ -4,10 +4,16 @@ import '@/styles/global.css';
 import { cn } from '@/lib/utils';
 
 // Inter font, the main font
-import '@fontsource/inter';
+import '@fontsource/inter/latin-ext-400'; // All text
+import '@fontsource/inter/latin-ext-400-italic';
+import '@fontsource/inter/latin-ext-600'; // Bold
+import '@fontsource/inter/latin-ext-600-italic';
 
 // Lora font, for headings and highlights
-import '@fontsource/lora';
+import '@fontsource/lora/latin-400-italic'; // paragraph under headings
+import '@fontsource/lora/latin-500-italic'; // Sherqo in the nav
+import loraLatin500ItalicWoff2 from '@fontsource/lora/files/lora-latin-500-italic.woff2';
+import '@fontsource/lora/latin-600'; // Headings
 
 export interface Props {
   title?: string;
@@ -109,7 +115,8 @@ When stacking these modifiers with other modifiers like hover, you most likely w
 const classNames = cn(
   'mx-auto flex min-h-screen flex-col max-w-full bg-background', // Layout, bg-background are for safety and extra-scrolling, see global.css for the real bg
   'prose prose-neutral dark:prose-invert prose-base', // Root Prose
-  'prose-headings:font-serif', // Headings: h1, h2, h3, h4
+  'prose-headings:font-serif prose-headings:font-semibold', // Headings: h1, h2, h3, h4
+
   'prose-hr:border-border', // Horizontal Rules
   'prose-a:no-underline prose-a:text-primary prose-a:hover:underline' // a element and links
 );
@@ -133,6 +140,10 @@ const classNames = cn(
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
+    {/* Font Preloading: This font needs to be preloaded because it lags, the rest of the page is ok because of the animation */}
+    <link rel="preload" as="font" type="font/woff2" href={loraLatin500ItalicWoff2} crossorigin="anonymous" />
+
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="dark light" />
