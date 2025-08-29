@@ -13,47 +13,43 @@ html {
   color: var(--primary-foreground);
 }
 
-@font-face {
-  font-style: normal;
-  font-weight: 400;
-  src: url('/fonts/playfair-display-v39-latin-regular.woff2') format('woff2');
-  font-family: 'Playfair Display';
-  font-display: block;
-}
-@font-face {
-  font-style: italic;
-  font-weight: 400;
-  src: url('/fonts/playfair-display-v39-latin-italic.woff2') format('woff2');
-  font-family: 'Playfair Display';
-  font-display: block;
-}
+/* 
+  * NOTE: Fonts are imported in RootLayout.astro | installed with fontsource
+*/
 
 @theme inline {
   --color-background: var(--background);
   --color-background-end: var(--background-end);
   --color-foreground: var(--foreground);
+
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
+
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
+
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
+
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
+
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
+
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -64,11 +60,11 @@ html {
   --color-sidebar-ring: var(--sidebar-ring);
 
   --font-inter: Inter, system-ui, sans-serif;
-  --font-playfair-display: 'Playfair Display', 'Times New Roman', serif;
+  --font-lora: 'Lora', 'Times New Roman', serif;
+
   --font-sans: var(--font-inter);
-  --font-serif: var(--font-playfair-display);
+  --font-serif: var(--font-lora);
   --font-mono: var(--font-mono);
-  --dash-bullet: '- ';
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);

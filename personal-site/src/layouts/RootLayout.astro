@@ -3,10 +3,11 @@
 import '@/styles/global.css';
 import { cn } from '@/lib/utils';
 
-// Inter font
-import '@fontsource/inter/400.css'; // regular
-import '@fontsource/inter/500.css'; // medium
-import '@fontsource/inter/700.css'; // bold
+// Inter font, the main font
+import '@fontsource/inter';
+
+// Lora font, for headings and highlights
+import '@fontsource/lora';
 
 export interface Props {
   title?: string;
@@ -135,10 +136,6 @@ const classNames = cn(
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="dark light" />
-
-    <!-- Preload fonts to avoid lag -->
-    <link rel="preload" href="/fonts/playfair-display-v39-latin-regular.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/playfair-display-v39-latin-italic.woff2" as="font" type="font/woff2" crossorigin />
 
     <title>{title}</title>
     <meta name="description" content={description} />
