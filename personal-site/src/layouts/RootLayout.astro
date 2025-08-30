@@ -4,15 +4,11 @@ import '@/styles/global.css';
 // import Analytics from '@vercel/analytics/astro';
 
 // Inter font, the main font
-import '@fontsource/inter/latin-ext-400'; // All text
-import '@fontsource/inter/latin-ext-400-italic';
-import '@fontsource/inter/latin-ext-600'; // Bold
-import '@fontsource/inter/latin-ext-600-italic';
+import '@fontsource-variable/inter';
+import '@fontsource-variable/inter/wght-italic.css';
 
-// Lora font, for headings and highlights
-import '@fontsource/lora/latin-400-italic'; // paragraph under headings
-import '@fontsource/lora/latin-500-italic'; // Sherqo in the nav
-import '@fontsource/lora/latin-600'; // Headings
+// Lora font for Shero in the nav (Logo)
+import '@fontsource/lora/latin-500-italic';
 
 export interface Props {
   title?: string;

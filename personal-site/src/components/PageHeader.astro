@@ -11,7 +11,7 @@ const { subtitle, date } = Astro.props as PageHeaderProps;
   <h1 class="mb-2">
     <slot />
   </h1>
-  {subtitle && <p class="lead prose-lead mt-2 mb-2 font-serif italic">{subtitle}</p>}
+  {subtitle && <p class="lead mt-2 mb-2">{subtitle}</p>}
   {/*/ TODO, add user icons and name or smth */}
   {date && <time class="hidden text-sm">{date}</time>}
 </header>

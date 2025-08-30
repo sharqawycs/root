@@ -59,7 +59,7 @@ html {
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  --font-inter: Inter, system-ui, sans-serif;
+  --font-inter: 'Inter Variable', system-ui, sans-serif;
   --font-lora: 'Lora', 'Times New Roman', serif;
 
   --font-sans: var(--font-inter);
@@ -187,8 +187,7 @@ html {
   /* Prose */
   body {
     @apply prose prose-neutral dark:prose-invert prose-base; /* Prose base styles */
-    @apply prose-headings:font-serif prose-headings:font-semibold; /* Headings */
-    @apply prose-a:no-underline prose-a:text-primary prose-a:hover:underline; /* Links */
+    @apply prose-a:font-normal prose-a:text-primary prose-a:hover:underline; /* Links */
     @apply prose-hr:border-border max-w-full; /* Horizontal rules */
   }
 
