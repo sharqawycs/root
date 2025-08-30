@@ -22,17 +22,15 @@ const { title, description, ogImage, class: className = '' } = Astro.props as Pr
 
 <style>
   .page-animation {
-    animation: blur-in 0.2s linear;
+    animation: fade-in 0.2s ease-out;
   }
 
-  @keyframes blur-in {
+  @keyframes fade-in {
     from {
       opacity: 0;
-      filter: blur(2px);
     }
     to {
       opacity: 1;
-      filter: blur(0);
     }
   }
 </style>
