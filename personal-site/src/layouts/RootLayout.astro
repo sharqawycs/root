@@ -5,6 +5,7 @@ import '@/styles/global.css';
 // Inter font, the main font
 import '@fontsource-variable/inter';
 import '@fontsource-variable/inter/wght-italic.css';
+import interWoff2 from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
 
 // Lora font for Shero in the nav (Logo)
 import '@fontsource/lora/latin-500-italic';
@@ -29,6 +30,8 @@ description += ' - sharqawycs';
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="preload" as="font" type="font/woff2" href={interWoff2} crossorigin="anonymous" />
+
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="dark light" />
