@@ -6,6 +6,8 @@
   "scripts": {
     "astro": "astro",
     "build": "astro build",
+    "deploy": "cd ../ && vercel deploy && cd ./personal-site",
+    "deploy: prod": "vercel deploy --prod",
     "dev": "astro dev --host",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
