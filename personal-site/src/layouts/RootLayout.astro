@@ -1,7 +1,6 @@
 ---
 // The Root Layout with all global rules
 import '@/styles/global.css';
-// import Analytics from '@vercel/analytics/astro';
 
 // Inter font, the main font
 import '@fontsource-variable/inter';
@@ -16,11 +15,14 @@ export interface Props {
   ogImage?: string;
 }
 
-const {
-  title = 'sharqawycs — Sharqawy (personal site)',
+let {
+  title = 'Sharqawy Personal site',
   description = 'sharqawycs - personal site of Sharqawy, CS student and builder. Projects, notes, and contact.',
   ogImage = 'https://sharq.tech/og-image.png',
 } = Astro.props as Props;
+
+title += ' - sharqawycs';
+description += ' - sharqawycs';
 ---
 
 <!doctype html>
