@@ -1,42 +1,59 @@
-<h1>Yo, I'm Sharqawy</h1>
+## my personal site :)
 
-<p>This GitHub looks <i>empty</i>?</p>
+[sharq.tech](https://sharq.tech)
 
-<hr>
+### Stack
 
-<p>
-Most of my projects are private because they’re <i><b>closed-source</b></i>. That includes startup code, tools I built for myself, and experiments I’m not ready to share yet. Some of them handle sensitive data, and some are part of bigger products I’m still working on.
-</p>
+- **Astro** - Static site generator with islands architecture
+- **Preact** - Lightweight React alternative for interactive components
+- **MDX** - Markdown with JSX components for content
+- **Bun** - Fast JavaScript runtime and package manager
+- **Vercel** - Deployment
+- **Tailwind CSS** - CSS framework
+- **TypeScript**
 
-<p>
-If you’re <i>curious</i> about what I’ve built, or wanna collaborate, just DM me. I’ve got demos, writeups, and code I can share privately.
-</p>
+### Architecture
 
-<p>
-I’m also into cognitive science, neuroscience, and how tech can be used to build better tools for different kinds of minds. It’s a <i>long-term goal</i>. For now, I’m just putting in the reps and building the foundation.
-</p>
+- **File-based routing** - Pages in `src/pages/` become routes
+- **Content collections** - Blog posts managed with Astro's content system
+- **Hybrid approach** - `.astro` files for static content, `.tsx` for interactive components
+- **Static generation** - Everything builds to pure HTML/CSS/JS
 
-<hr>
+### Fonts
 
-<h3>Reach Me</h3>
+- **Satoshi Variable** - Main text and UI
+- **Playfair Display** - Headers and accents (regular & italic)
 
-<p>
-<a target="_blank" href="https://void.diran.app">Website</a> -
-  <a target="_blank" href="https://twitter.com/sharqawycs">Twitter/X</a> -
-  <a target="_blank" href="https://linkedin.com/in/sharqawycs">LinkedIn</a> -
-  <a target="_blank" href="mailto:sharqawycs@gmail.com">Email</a> -
-  <a target="_blank" href="https://leetcode.com/u/sharqawycs/">LC</a> 
-</p>
+### Development
 
-<p>
-  <b>PS:</b> 
-  I
-  <sub>
-    <img src="resources/apple-heart-emoji.png" alt="heart" width="14" height="14" />
-  </sub>
-  <a target="_blank" href="https://github.com/sharqawycs/sharqawycs">
-    <u>this</u>
-  </a> repo
+```bash
+bun install    # Install dependencies
+bun run dev    # Start dev server with hot reload
+bun run build  # Build for production to /dist
+bun run preview # Preview production build locally
+```
 
-  <img align="right" src="https://komarev.com/ghpvc/?username=sharqawycs&label=Profile%20views&color=000000&style=flat&abbreviated=true" alt="sharqawy profile views" />
-</p>
+### Code Formatting
+
+```bash
+bun run format       # Format all files with Prettier
+bun run format:check # Check if files are formatted correctly
+```
+
+### Project Structure
+
+```
+src/
+├── pages/           # File-based routing
+├── layouts/         # Page layouts
+├── components/      # Reusable components
+│   ├── layout/      # Header, Footer, Page wrapper
+│   ├── home/        # Homepage sections
+│   ├── blog/        # Blog-related components
+│   ├── ui/          # UI components (Highlight, etc.)
+│   └── mdx/         # Components for MDX content
+├── content/         # Content collections (journal posts)
+└── styles/          # Global CSS
+```
+
+That's it.

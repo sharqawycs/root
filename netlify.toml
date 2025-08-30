@@ -1,9 +1,0 @@
-[build]
-  base = "./personal-site/"
-  publish = "./dist"
-  command = "npm run build"
-
-[[redirects]]
-  from = "/*"
-  to = "/404"
-  status = 404
