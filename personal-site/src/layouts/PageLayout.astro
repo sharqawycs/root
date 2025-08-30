@@ -20,11 +20,10 @@ const { title, description, ogImage, class: className = '' } = Astro.props as Pr
   </main>
 </RootLayout>
 
-<style>
+<style is:inline>
   .page-animation {
     animation: fade-in 0.2s ease-out;
   }
-
   @keyframes fade-in {
     from {
       opacity: 0;
