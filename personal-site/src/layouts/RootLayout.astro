@@ -27,6 +27,12 @@ const {
 ---
 
 <!doctype html>
+{/* Set the stored theme on load - Default is dark - it's here to make things fast */}
+<script is:inline>
+  const ct = localStorage.getItem('theme') || 'dark';
+  document.documentElement.classList.toggle('dark', ct === 'dark');
+</script>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
