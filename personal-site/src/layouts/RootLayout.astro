@@ -1,6 +1,7 @@
 ---
 // The Root Layout with all global rules
 import '@/styles/global.css';
+import SpeedInsights from '@vercel/speed-insights/astro';
 
 // Inter font, the main font
 import '@fontsource-variable/inter';
@@ -65,5 +66,8 @@ description += ' - sharqawycs';
     <meta name="twitter:site" content="@sharqawycs" />
   </head>
 
-  <body><slot /> </body>
+  <body>
+    <slot />
+    <SpeedInsights />
+  </body>
 </html>
