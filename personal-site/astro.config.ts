@@ -20,6 +20,15 @@ const htmlMin = htmlMinifier({
 export default defineConfig({
   site: 'https://www.sharq.tech',
   integrations: [mdx(), preact(), sitemapConfig],
+  prefetch: {
+    prefetchAll: true,
+    defaultStrategy: 'viewport',
+  },
+
+  compressHTML: true,
+  build: {
+    inlineStylesheets: `never`,
+  },
 
   vite: {
     plugins: [tailwindcss(), compress(), htmlMin],
