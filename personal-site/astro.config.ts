@@ -2,6 +2,7 @@
 import mdx from '@astrojs/mdx';
 import preact from '@astrojs/preact';
 import sitemap from '@astrojs/sitemap';
+import vercel from '@astrojs/vercel';
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'astro/config';
 import { fileURLToPath, URL } from 'node:url';
@@ -20,12 +21,14 @@ const htmlMin = htmlMinifier({
 export default defineConfig({
   site: 'https://www.sharq.tech',
   integrations: [mdx(), preact(), sitemapConfig],
+
   prefetch: {
     prefetchAll: true,
     defaultStrategy: 'viewport',
   },
 
   compressHTML: true,
+
   build: {
     inlineStylesheets: `never`,
   },
@@ -59,4 +62,12 @@ export default defineConfig({
       wrap: true,
     },
   },
+
+  adapter: vercel({
+    imageService: true,
+
+    webAnalytics: {
+      enabled: true,
+    },
+  }),
 });
