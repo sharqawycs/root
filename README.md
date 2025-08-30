@@ -1,15 +1,15 @@
 ## my personal site :)
 
-[sharq.tech](https://sharq.tech)
+[sharq.tech](https://www.sharq.tech)
 
 ### Stack
 
-- **Astro** - Static site generator with islands architecture
-- **Preact** - Lightweight React alternative for interactive components
-- **MDX** - Markdown with JSX components for content
+- **Astro v5** - Static site generator with islands architecture
+- **Preact v10** - Lightweight React alternative
+- **MDX** - Markdown with JSX components support
 - **Bun** - Fast JavaScript runtime and package manager
 - **Vercel** - Deployment
-- **Tailwind CSS** - CSS framework
+- **Tailwind v4** - CSS utility framework
 - **TypeScript**
 
 ### Architecture
@@ -21,23 +21,33 @@
 
 ### Fonts
 
-- **Satoshi Variable** - Main text and UI
-- **Playfair Display** - Headers and accents (regular & italic)
+- **Inter Variable** - Main text and UI (`@fontsource-variable/inter`)
+- **Lora** - The logo (`@fontsource/lora`)
 
 ### Development
 
 ```bash
-bun install    # Install dependencies
-bun run dev    # Start dev server with hot reload
-bun run build  # Build for production to /dist
-bun run preview # Preview production build locally
+bun install      # Install dependencies
+bun run dev      # Start dev server
+bun run build    # Build for production to /dist
+bun run preview  # Preview production build locally
+bun run start    # Build and preview in one command
 ```
 
-### Code Formatting
+### Code Quality & Formatting
 
 ```bash
 bun run format       # Format all files with Prettier
 bun run format:check # Check if files are formatted correctly
+bun run lint         # Lint code with ESLint
+bun run lint:fix     # Auto-fix linting issues
+```
+
+### Deployment
+
+```bash
+bun run deploy       # Deploy to Vercel (preview)
+bun run deploy:prod  # Deploy to Vercel (production)
 ```
 
 ### Project Structure
@@ -45,14 +55,12 @@ bun run format:check # Check if files are formatted correctly
 ```
 src/
 ├── pages/           # File-based routing
-├── layouts/         # Page layouts
+├── layouts/         # Page layouts (PageLayout, RootLayout)
 ├── components/      # Reusable components
-│   ├── layout/      # Header, Footer, Page wrapper
-│   ├── home/        # Homepage sections
-│   ├── blog/        # Blog-related components
-│   ├── ui/          # UI components (Highlight, etc.)
-│   └── mdx/         # Components for MDX content
-├── content/         # Content collections (journal posts)
+├── content/         # Content collections
+│   ├── config.ts         # Content collection configuration
+│   └── journal/          # Blog posts in MDX format
+├── lib/             # Utility functions
 └── styles/          # Global CSS
 ```
 
