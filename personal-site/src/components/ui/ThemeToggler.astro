@@ -2,31 +2,33 @@
 import { Sun, Moon } from '@/components/icons/index.astro';
 ---
 
+{/* CAUTION: This code is writted with magic, DO NOT TOUCH IT */}
+{/* if you touch this code, YOU MUST TEST THE TOGGLE BUTTON 'AGGRESSIVELY' IN ALL CASES */}
 <button id="theme-toggler" class="hover:text-primary text-foreground h-6 w-6 transition-colors duration-150">
   <Moon class="hidden" />
   <Sun class="hidden" />
 </button>
 
-<script>
-  const button = document.getElementById('theme-toggler');
-  const moon = button.querySelector('svg:nth-child(1)');
-  const sun = button.querySelector('svg:nth-child(2)');
+{
+  /* 
+  Dark mode toggler:
+  - stores theme in localStorage as "t" = 'd' (dark) or 'l' (light)
+  - applies html.dark instantly
+  - swaps moon/sun icons (first/second <svg>)
+  - click button #theme-toggler to toggle
+*/
+}
 
-  const getCurrentTheme = () => localStorage.getItem('theme') || 'dark';
-
-  const setCurrentTheme = theme => {
-    localStorage.setItem('theme', theme);
-    document.documentElement.classList.toggle('dark', theme === 'dark');
-
-    // toggle visibility
-    moon.classList.toggle('hidden', theme !== 'dark'); // Moon only on dark
-    sun.classList.toggle('hidden', theme === 'dark'); // Sun only on light
-  };
-
-  button.addEventListener('click', () => {
-    setCurrentTheme(getCurrentTheme() === 'dark' ? 'light' : 'dark');
-  });
-
-  // initialize
-  setCurrentTheme(getCurrentTheme());
+<script is:inline>
+  const b = document.getElementById('theme-toggler'),
+    [m, s] = b.querySelectorAll('svg'),
+    g = () => localStorage.getItem('t') || 'd',
+    u = x => {
+      localStorage.setItem('t', x);
+      document.documentElement.classList.toggle('dark', x === 'd');
+      m.classList.toggle('hidden', x !== 'd');
+      s.classList.toggle('hidden', x === 'd');
+    };
+  b.onclick = () => u(g() === 'd' ? 'l' : 'd');
+  u(g());
 </script>
