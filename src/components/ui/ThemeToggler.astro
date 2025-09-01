@@ -35,16 +35,29 @@ import { Sun, Moon } from '@/components/icons/index.astro';
   // b.onclick = () => u(g() === 'd' ? 'l' : 'd');
   // u(g());
 
-  // Apply theme immediately to prevent flash
-  function applyThemeOnDoc(event) {
-    const doc = event?.newDocument || document;
-    const theme = localStorage.getItem('t') || 'd';
-    doc.documentElement.classList.toggle('dark', theme === 'd');
-  }
+  const themeToggler = document.getElementById('theme-toggler');
+  const [moonIcon, sunIcon] = themeToggler.querySelectorAll('svg');
 
-  // Apply on initial load immediately
-  applyThemeOnDoc();
-  // applyThemeOnDoc();
-  // Apply before the new page content is shown (prevents flash)
-  document.addEventListener('astro:before-swap', applyThemeOnDoc);
+  const getTheme = () => localStorage.getItem('t') || 'd';
+
+  const applyTheme = (doc = document, theme = getTheme()) => {
+    doc.documentElement.classList.toggle('dark', theme === 'd');
+  };
+
+  const updateTheme = theme => {
+    localStorage.setItem('t', theme);
+    applyTheme(document, theme);
+    moonIcon.classList.toggle('hidden', theme !== 'd');
+    sunIcon.classList.toggle('hidden', theme === 'd');
+  };
+
+  themeToggler.onclick = () => {
+    updateTheme(getTheme() === 'd' ? 'l' : 'd');
+  };
+
+  updateTheme(getTheme());
+
+  document.addEventListener('astro:before-swap', e => {
+    applyTheme(e.newDocument);
+  });
 </script>
