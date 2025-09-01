@@ -23,15 +23,28 @@ import { Sun, Moon } from '@/components/icons/index.astro';
 }
 
 <script is:inline>
-  const b = document.getElementById('theme-toggler'),
-    [m, s] = b.querySelectorAll('svg'),
-    g = () => localStorage.getItem('t') || 'd',
-    u = x => {
-      localStorage.setItem('t', x);
-      document.documentElement.classList.toggle('dark', x === 'd');
-      m.classList.toggle('hidden', x !== 'd');
-      s.classList.toggle('hidden', x === 'd');
-    };
-  b.onclick = () => u(g() === 'd' ? 'l' : 'd');
-  u(g());
+  // const b = document.getElementById('theme-toggler'),
+  //   [m, s] = b.querySelectorAll('svg'),
+  //   g = () => localStorage.getItem('t') || 'd',
+  //   u = x => {
+  //     localStorage.setItem('t', x);
+  //     document.documentElement.classList.toggle('dark', x === 'd');
+  //     m.classList.toggle('hidden', x !== 'd');
+  //     s.classList.toggle('hidden', x === 'd');
+  //   };
+  // b.onclick = () => u(g() === 'd' ? 'l' : 'd');
+  // u(g());
+
+  // Apply theme immediately to prevent flash
+  function applyThemeOnDoc(event) {
+    const doc = event?.newDocument || document;
+    const theme = localStorage.getItem('t') || 'd';
+    doc.documentElement.classList.toggle('dark', theme === 'd');
+  }
+
+  // Apply on initial load immediately
+  applyThemeOnDoc();
+  // applyThemeOnDoc();
+  // Apply before the new page content is shown (prevents flash)
+  document.addEventListener('astro:before-swap', applyThemeOnDoc);
 </script>
