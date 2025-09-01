@@ -64,4 +64,11 @@ src/
 └── styles/          # Global CSS
 ```
 
+---
+
+Astro [view transitions](https://docs.astro.build/en/guides/view-transitions/) is used  
+the `<ClientRouter />` are in main `<head>` in **RootLayout.astro**.  
+the `<main>` are `transition:animate="initial"` in **PageLayout.astro**.  
+the NavBar are `transition:persist` in **NavBar.astro**.
+
 That's it.
