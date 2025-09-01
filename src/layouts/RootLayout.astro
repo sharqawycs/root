@@ -12,6 +12,7 @@ import interWoff2 from '@fontsource-variable/inter/files/inter-latin-wght-normal
 // Lora font for Shero in the nav (Logo)
 import '@fontsource/lora/latin-500-italic';
 
+const isProd = import.meta.env.PROD;
 export interface Props {
   title?: string;
   description?: string;
@@ -70,6 +71,6 @@ description += ' - sharqawycs';
 
   <body>
     <slot />
-    <SpeedInsights />
+    {isProd && <SpeedInsights />}
   </body>
 </html>
