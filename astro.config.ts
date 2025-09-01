@@ -22,17 +22,20 @@ export default defineConfig({
   site: 'https://www.sharq.tech',
   integrations: [mdx(), preact(), sitemapConfig],
 
+  // Astrso
   prefetch: {
     prefetchAll: true,
     defaultStrategy: 'viewport',
   },
 
-  compressHTML: true,
-
   build: {
     inlineStylesheets: `never`,
   },
 
+  // Compressing
+  compressHTML: true,
+
+  // Vite, build, bundling
   vite: {
     plugins: [tailwindcss(), compress(), htmlMin],
     resolve: {
@@ -56,6 +59,7 @@ export default defineConfig({
     },
   },
 
+  // Astro md
   markdown: {
     shikiConfig: {
       theme: 'github-dark',
@@ -63,9 +67,9 @@ export default defineConfig({
     },
   },
 
+  // Vercel
   adapter: vercel({
     imageService: true,
-
     webAnalytics: {
       enabled: true,
     },

@@ -15,21 +15,7 @@ const { title, description, ogImage, class: className = '' } = Astro.props as Pr
 
 <RootLayout title={title} description={description} ogImage={ogImage}>
   <NavBar />
-  <main class={cn('p-4 flex-1 page-animation w-full max-w-3xl mx-auto', className)}>
+  <main class={cn('p-4 flex-1 w-full max-w-3xl mx-auto', className)}>
     <slot />
   </main>
 </RootLayout>
-
-<style is:inline>
-  .page-animation {
-    animation: fade-in 0.2s ease-out;
-  }
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-</style>

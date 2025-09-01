@@ -2,6 +2,7 @@
 // The Root Layout with all global rules
 import '@/styles/global.css';
 import SpeedInsights from '@vercel/speed-insights/astro';
+import { ClientRouter } from 'astro:transitions';
 
 // Inter font, the main font
 import '@fontsource-variable/inter';
@@ -64,6 +65,7 @@ description += ' - sharqawycs';
     <meta name="twitter:description" content={description} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@sharqawycs" />
+    <ClientRouter />
   </head>
 
   <body>
