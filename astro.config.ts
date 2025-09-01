@@ -28,10 +28,6 @@ export default defineConfig({
     defaultStrategy: 'viewport',
   },
 
-  build: {
-    inlineStylesheets: `never`,
-  },
-
   // Compressing
   compressHTML: true,
 
