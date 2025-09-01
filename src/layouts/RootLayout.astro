@@ -66,6 +66,41 @@ description += ' - sharqawycs';
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@sharqawycs" />
     <ClientRouter />
+
+    <script is:inline>
+      // Apply theme immediately to prevent flash
+      function applyTheme() {
+        const theme = localStorage.getItem('t') || 'd';
+        document.documentElement.classList.toggle('dark', theme === 'd');
+      }
+
+      // Apply on initial load immediately
+      applyTheme();
+
+      // Apply before the new page content is shown (prevents flash)
+      document.addEventListener('astro:before-swap', event => {
+        const theme = localStorage.getItem('t') || 'd';
+        event.newDocument.documentElement.classList.toggle('dark', theme === 'd');
+      });
+
+      // Fallback: apply after swap as well
+      document.addEventListener('astro:after-swap', applyTheme);
+    </script>
+
+    <style is:global>
+      /* Faster view transitions */
+      ::view-transition-old(root),
+      ::view-transition-new(root) {
+        animation-duration: 0.2s;
+        animation-timing-function: ease-out;
+      }
+
+      /* Speed up all transitions */
+      ::view-transition-old(*),
+      ::view-transition-new(*) {
+        animation-duration: 0.15s;
+      }
+    </style>
   </head>
 
   <body>
