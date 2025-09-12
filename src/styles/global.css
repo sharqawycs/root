@@ -61,10 +61,10 @@ html {
 
   --font-inter: 'Inter Variable', system-ui, sans-serif;
   --font-lora: 'Lora', 'Times New Roman', serif;
-
+  --font-monospace: monospace;
   --font-sans: var(--font-inter);
   --font-serif: var(--font-lora);
-  --font-mono: var(--font-mono);
+  --font-mono: var(--font-monospace);
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -115,9 +115,7 @@ html {
   --sidebar-accent-foreground: #282a36;
   --sidebar-border: #e2e2e0;
   --sidebar-ring: #ff79c4;
-  --font-sans: Inter;
-  --font-serif: serif;
-  --font-mono: monospace;
+
   --radius: 0.5rem;
   --shadow-2xs: 0px 0px 0px 0px hsl(0 0% 0% / 0);
   --shadow-xs: 0px 0px 0px 0px hsl(0 0% 0% / 0);
@@ -165,9 +163,7 @@ html {
   --sidebar-accent-foreground: #f8f8f2;
   --sidebar-border: #44475a;
   --sidebar-ring: #bf92fa;
-  --font-sans: Inter;
-  --font-serif: serif;
-  --font-mono: monospace;
+
   --radius: 0.5rem;
   --shadow-2xs: 0px 0px 0px 0px hsl(0 0% 0% / 0);
   --shadow-xs: 0px 0px 0px 0px hsl(0 0% 0% / 0);
