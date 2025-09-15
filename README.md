@@ -55,7 +55,7 @@ bun run deploy:prod  # Deploy to Vercel (production)
 ```
 src/
 ├── pages/           # File-based routing
-├── layouts/         # Page layouts (PageLayout, RootLayout)
+├── layouts/         # Page layouts
 ├── components/      # Reusable components
 ├── content/         # Content collections
 │   ├── config.ts         # Content collection configuration
