@@ -2,6 +2,7 @@
 import { GitHub, X } from '@/components/icons/index.astro';
 import Separator from '@/components/ui/Separator.astro';
 import ThemeToggler from '@/components/ui/ThemeToggler.astro';
+import NavLink from './NavLink.astro';
 ---
 
 <header class="sticky top-0 z-10 w-full border-b bg-transparent backdrop-blur-md backdrop-saturate-150" transition:persist>
@@ -9,8 +10,12 @@ import ThemeToggler from '@/components/ui/ThemeToggler.astro';
     {/* Transation and duration are set from the body in global.css */}
     <a href="/" class="text-foreground hover:text-primary font-serif text-xl font-bold italic hover:underline">S.</a>
 
-    <div class="flex items-center gap-4">
-      {/* X Logo */}
+    <div class="flex items-center gap-3 sm:gap-4">
+      <NavLink href="/journal">Journal</NavLink>
+      <NavLink href="/content">Content</NavLink>
+      <NavLink href="/gallery">Gallery</NavLink>
+
+      <!-- {/* X Logo */}
       <a href="https://x.com/sharqawycs" target="_blank" rel="noopener noreferrer" aria-label="Sharqawy X profile">
         <X />
       </a>
@@ -18,7 +23,7 @@ import ThemeToggler from '@/components/ui/ThemeToggler.astro';
       {/* GH Logo */}
       <a href="https://github.com/sharqawycs" target="_blank" rel="noopener noreferrer" aria-label="Sharqawy GitHub profile">
         <GitHub />
-      </a>
+      </a> -->
 
       {/* LinkedIn Logo - No need for now */}
       {
