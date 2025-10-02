@@ -191,7 +191,6 @@ html {
   body {
     @apply mx-auto flex min-h-screen max-w-full flex-col;
     @apply text-foreground from-background to-background-end bg-gradient-to-t;
-    @apply transition-colors duration-300; /* When Toggling theme */
   }
 
   /* Bring back the default button cursor pointer */
