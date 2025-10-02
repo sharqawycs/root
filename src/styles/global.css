@@ -130,12 +130,12 @@ html {
 }
 
 .dark {
-  --background: #282a36;
-  --background-end: #1c1e26;
+  --background: #16181d;
+  --background-end: #101012;
   --foreground: #f8f8f2;
-  --card: #282a36;
+  --card: #16181d;
   --card-foreground: #f8f8f2;
-  --popover: #282a36;
+  --popover: #16181d;
   --popover-foreground: #f8f8f2;
   --primary: #bf92fa;
   --primary-foreground: #f8f8f2;
@@ -155,7 +155,7 @@ html {
   --chart-3: #8ae7fe;
   --chart-4: #4ffb7d;
   --chart-5: #ffba6c;
-  --sidebar: #282a36;
+  --sidebar: #16181d;
   --sidebar-foreground: #f8f8f2;
   --sidebar-primary: #bf92fa;
   --sidebar-primary-foreground: #f8f8f2;
