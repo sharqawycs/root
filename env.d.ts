@@ -3,7 +3,7 @@ interface ImportMetaEnv {
   readonly PUBLIC_DEFAULT_DESCRIPTION: string;
   readonly PUBLIC_OG_IMAGE: string;
   readonly PUBLIC_POSTFIX: string;
-  readonly BASE_URL: string;
+  readonly PUBLIC_BASE_URL: string;
 }
 
 interface ImportMeta {

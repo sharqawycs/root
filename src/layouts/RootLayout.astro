@@ -24,7 +24,7 @@ const env = import.meta.env;
 let {
   title = env.PUBLIC_DEFAULT_TITLE,
   description = env.PUBLIC_DEFAULT_DESCRIPTION,
-  ogImage = env.BASE_URL + env.PUBLIC_OG_IMAGE,
+  ogImage = env.PUBLIC_BASE_URL + env.PUBLIC_OG_IMAGE,
 } = Astro.props as Props;
 
 title += ' ' + env.PUBLIC_POSTFIX;
