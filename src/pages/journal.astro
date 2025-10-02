@@ -10,7 +10,7 @@ const sortedJournals = journals.sort((a: Journal, b: Journal) => b.data.date.get
 ---
 
 <PageLayout title="Journal" description="My thoughts, experiments and notes.">
-  <PageHeader subtitle="Where I write dumb stuff and random thoughts"> Journal </PageHeader>
+  <PageHeader subtitle="Where I write dumb stuff and random thoughts">Journal</PageHeader>
 
   {
     sortedJournals.length === 0 ? (
