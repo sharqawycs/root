@@ -29,7 +29,7 @@ const entry = imageFilename
 const imageModule = entry ? ((await entry[1]()) as { default: unknown }).default : null;
 ---
 
-<PageLayout title={journal.data.title} description={journal.data.description || journal.data.title} ogImage={imageModule?.src}>
+<PageLayout title={journal.data.title} description={journal.data.description || journal.data.title} ogImage={journal.data.imageSourceUrl}>
   <article>
     <PageHeader subtitle={journal.data.description} date={journal.data.date.toLocaleDateString()}>{journal.data.title}</PageHeader>
 
