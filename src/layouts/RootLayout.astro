@@ -19,14 +19,16 @@ export interface Props {
   ogImage?: string;
 }
 
+const env = import.meta.env;
+
 let {
-  title = 'Sharqawy Personal site',
-  description = 'sharqawycs - personal site of Sharqawy, CS student and builder. Projects, notes, and contact.',
-  ogImage = 'https://sharq.tech/og-image.png',
+  title = env.PUBLIC_DEFAULT_TITLE,
+  description = env.PUBLIC_DEFAULT_DESCRIPTION,
+  ogImage = env.BASE_URL + env.PUBLIC_OG_IMAGE,
 } = Astro.props as Props;
 
-title += ' - sharqawycs';
-description += ' - sharqawycs';
+title += env.PUBLIC_POSTFIX;
+description += env.PUBLIC_POSTFIX;
 ---
 
 <!doctype html>
