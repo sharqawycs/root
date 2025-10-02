@@ -1,18 +1,19 @@
 ---
-import { getCollection, type CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
 import PageLayout from '@/layouts/PageLayout.astro';
 import PageHeader from '@/components/layout/PageHeader.astro';
+import type { Journal } from '@/types/journal';
 
 export async function getStaticPaths() {
   const journals = await getCollection('journal');
-  return journals.map(journal => ({
+  return journals.map((journal: Journal) => ({
     params: { slug: journal.slug },
     props: { journal },
   }));
 }
 
 type Props = {
-  journal: CollectionEntry<'journal'>;
+  journal: Journal;
 };
 
 const { journal } = Astro.props;
