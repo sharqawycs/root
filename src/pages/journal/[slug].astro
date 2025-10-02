@@ -27,12 +27,13 @@ const entry = imageFilename
   : null;
 
 const imageModule = entry ? ((await entry[1]()) as { default: unknown }).default : null;
+const imgSrc = (imageModule as { src: string }).src || import.meta.env.PUBLIC_OG_IMAGE;
 ---
 
 <PageLayout
   title={journal.data.title}
   description={journal.data.description || journal.data.title}
-  ogImage={import.meta.env.PUBLIC_BASE_URL + imageModule?.src}>
+  ogImage={import.meta.env.PUBLIC_BASE_URL + imgSrc}>
   <article>
     <PageHeader subtitle={journal.data.description} date={journal.data.date.toLocaleDateString()}>{journal.data.title}</PageHeader>
 
