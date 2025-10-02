@@ -27,8 +27,8 @@ let {
   ogImage = env.BASE_URL + env.PUBLIC_OG_IMAGE,
 } = Astro.props as Props;
 
-title += env.PUBLIC_POSTFIX;
-description += env.PUBLIC_POSTFIX;
+title += ' ' + env.PUBLIC_POSTFIX;
+description += ' ' + env.PUBLIC_POSTFIX;
 ---
 
 <!doctype html>
