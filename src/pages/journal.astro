@@ -2,8 +2,9 @@
 import { getCollection } from 'astro:content';
 import PageLayout from '@/layouts/PageLayout.astro';
 import PageHeader from '@/components/layout/PageHeader.astro';
-import HighlightLink from '@/components/ui/HighlightLink.astro';
 import type { Journal } from '@/types/journal';
+
+import Card from '@/components/features/journal/card.astro';
 
 const journals = await getCollection('journal');
 const sortedJournals = journals.sort((a: Journal, b: Journal) => b.data.date.getTime() - a.data.date.getTime());
@@ -17,16 +18,8 @@ const sortedJournals = journals.sort((a: Journal, b: Journal) => b.data.date.get
       <p>No journals found :(</p>
     ) : (
       <div class="flex flex-col items-start gap-4">
-        {sortedJournals.map((note: Journal) => (
-          <article class="flex items-center gap-2">
-            <HighlightLink href={`/journal/${note.slug}`} class="bg-primary/80">
-              {note.data.title}
-            </HighlightLink>
-            <span>-</span>
-            <time datetime={note.data.date.toISOString()} class="text-muted-foreground">
-              {note.data.date.toLocaleDateString()}
-            </time>
-          </article>
+        {sortedJournals.map((journal: Journal) => (
+          <Card journal={journal} />
         ))}
       </div>
     )

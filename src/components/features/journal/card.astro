@@ -1,0 +1,21 @@
+---
+import HighlightLink from '@/components/ui/HighlightLink.astro';
+import type { Journal } from '@/types/journal';
+
+const { journal } = Astro.props as { journal: Journal };
+---
+
+<article class="flex items-center gap-2">
+  <HighlightLink href={`/journal/${journal.slug}`} class="bg-primary/80">
+    {journal.data.title}
+  </HighlightLink>
+  <span>-</span>
+  <time datetime={journal.data.date.toISOString()} class="text-muted-foreground">
+    {
+      journal.data.date.toLocaleDateString('en-GB', {
+        day: '2-digit',
+        month: 'short',
+      })
+    }
+  </time>
+</article>
