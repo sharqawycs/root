@@ -1,21 +1,27 @@
 ---
-import HighlightLink from '@/components/ui/HighlightLink.astro';
 import type { Journal } from '@/types/journal';
 
 const { journal } = Astro.props as { journal: Journal };
+
+const includeYear = journal.data.date.getFullYear() !== new Date().getFullYear();
 ---
 
-<article class="flex items-center gap-2">
-  <HighlightLink href={`/journal/${journal.slug}`} class="bg-primary/80">
-    {journal.data.title}
-  </HighlightLink>
-  <span>-</span>
-  <time datetime={journal.data.date.toISOString()} class="text-muted-foreground">
-    {
-      journal.data.date.toLocaleDateString('en-GB', {
-        day: '2-digit',
-        month: 'short',
-      })
-    }
-  </time>
+<article class="group border-border hover:border-foreground/20 not-prose w-full border-b py-4 transition-colors">
+  <a href={`/journal/${journal.slug}`} class="block space-y-2">
+    <div class="flex items-baseline justify-between gap-4">
+      <h3 class="text-foreground group-hover:text-primary text-lg font-semibold transition-colors">
+        {journal.data.title}
+      </h3>
+      <time datetime={journal.data.date.toISOString()} class="text-muted-foreground shrink-0 text-sm">
+        {
+          journal.data.date.toLocaleDateString('en-GB', {
+            day: '2-digit',
+            month: 'short',
+            year: includeYear ? 'numeric' : undefined,
+          })
+        }
+      </time>
+    </div>
+    {journal.data.description && <p class="text-muted-foreground text-sm leading-relaxed">{journal.data.description}</p>}
+  </a>
 </article>
