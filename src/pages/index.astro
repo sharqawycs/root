@@ -1,24 +1,29 @@
 ---
 import PageLayout from '@/layouts/PageLayout.astro';
 import PageHeader from '@/components/PageHeader.astro';
-import ContactSection from '@/components/ContactSection.astro';
+import ContactSection from '@/components/features/home/ContactSection.astro';
 ---
 
 {/* HOME PAGE '/' */}
-<PageLayout title="Home" description="Sharqawy — CS student, builder, and maker. Read my journal and view my projects.">
-  <PageHeader subtitle="CS student & builder">yo, i'm sharaawy</PageHeader>
+<PageLayout
+  class="flex flex-col justify-between"
+  title="Home"
+  description="Sharqawy — CS student, builder, and maker. Read my journal and view my projects.">
+  <div>
+    <PageHeader subtitle="CS student & builder">yo, i'm sharaawy</PageHeader>
 
-  <p>
-    i'm a cs student tryna kill fear through building and content. i build and share to get out of my own way. i like sharp tools, clean
-    design, and projects that actually do sth. this is my public space to share my work, thoughts, and everything i'm figuring out along the
-    way.
-  </p>
+    <p>
+      i'm a cs student tryna kill fear through building and content. i build and share to get out of my own way. i like sharp tools, clean
+      design, and projects that actually do sth. this is my public space to share my work, thoughts, and everything i'm figuring out along
+      the way.
+    </p>
 
-  <p class="my-4">
-    i love losing in random internet rabbit holes and learning whatever sparks my brain. i'd love building PCs with minimalist setups. i
-    find art in the everyday, from cooking to writing poetry, and i love breaking things to reverse-engineer them. debating ideas keeps me
-    sharp, always aiming for honesty and authenticity.
-  </p>
+    <p class="my-4">
+      i love losing in random internet rabbit holes and learning whatever sparks my brain. i'd love building PCs with minimalist setups. i
+      find art in the everyday, from cooking to writing poetry, and i love breaking things to reverse-engineer them. debating ideas keeps me
+      sharp, always aiming for honesty and authenticity.
+    </p>
+  </div>
 
   <ContactSection />
 </PageLayout>
