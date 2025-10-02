@@ -1,11 +1,13 @@
 ---
 import { Image as AstroImage } from 'astro:assets';
 
-const { src, alt, width, height, sourceLabel = '', sourceUrl = '#' } = Astro.props;
+const { src, alt, width = 736, height, sourceLabel = '', sourceUrl = '#' } = Astro.props;
+
+console.log('Image props:', { src, alt, width, height, sourceLabel, sourceUrl });
 ---
 
 <div class="group relative block overflow-hidden rounded-xl">
-  <AstroImage src={src} alt={alt} width={width} height={height} class="rounded-xl" />
+  <AstroImage src={src} alt={alt} width={width} height={height} />
 
   {
     sourceLabel && (
@@ -13,7 +15,7 @@ const { src, alt, width, height, sourceLabel = '', sourceUrl = '#' } = Astro.pro
         href={sourceUrl}
         target="_blank"
         rel="noopener noreferrer"
-        class="absolute right-0 bottom-8 left-0 rounded-b-xl bg-gradient-to-t from-black/70 to-transparent px-2 py-2 text-sm text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+        class="absolute right-0 bottom-0 left-0 rounded-b-xl bg-gradient-to-t from-black/70 to-transparent px-2 py-2 text-sm text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
         {sourceLabel}
       </a>
     )

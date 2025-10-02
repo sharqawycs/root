@@ -185,6 +185,7 @@ html {
     @apply prose prose-neutral dark:prose-invert prose-base; /* Prose base styles */
     @apply prose-a:font-normal prose-a:text-primary prose-a:hover:underline; /* Links */
     @apply prose-hr:border-border max-w-full; /* Horizontal rules */
+    @apply prose-img:rounded-2xl prose-img:m-0;
   }
 
   /* Last to override prose */
