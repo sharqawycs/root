@@ -3,9 +3,10 @@ import { getCollection } from 'astro:content';
 import PageLayout from '@/layouts/PageLayout.astro';
 import PageHeader from '@/components/layout/PageHeader.astro';
 import HighlightLink from '@/components/ui/HighlightLink.astro';
+import type { Journal } from '@/types/journal';
 
 const journals = await getCollection('journal');
-const sortedJournals = journals.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+const sortedJournals = journals.sort((a: Journal, b: Journal) => b.data.date.getTime() - a.data.date.getTime());
 ---
 
 <PageLayout title="Journal" description="My thoughts, experiments and notes.">
@@ -13,11 +14,11 @@ const sortedJournals = journals.sort((a, b) => new Date(b.data.date).getTime() -
 
   {
     sortedJournals.length === 0 ? (
-      <p>coming soon...</p>
+      <p>No journals found :(</p>
     ) : (
       <div class="flex flex-col items-start gap-4">
-        {sortedJournals.map(note => (
-          <article key={note.slug} class="flex items-center gap-2">
+        {sortedJournals.map((note: Journal) => (
+          <article class="flex items-center gap-2">
             <HighlightLink href={`/journal/${note.slug}`} class="bg-primary/80">
               {note.data.title}
             </HighlightLink>
