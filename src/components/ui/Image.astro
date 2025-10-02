@@ -2,8 +2,6 @@
 import { Image as AstroImage } from 'astro:assets';
 
 const { src, alt, width = 736, height, sourceLabel = '', sourceUrl = '#' } = Astro.props;
-
-console.log('Image props:', { src, alt, width, height, sourceLabel, sourceUrl });
 ---
 
 <div class="group relative block overflow-hidden rounded-xl">
