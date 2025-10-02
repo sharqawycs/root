@@ -2,6 +2,7 @@
 import RootLayout from '@/layouts/RootLayout.astro';
 import NavBar from '@/components/layout/NavBar.astro';
 import { cn } from '@/lib/utils';
+import Footer from '@/components/features/home/Footer.astro';
 
 export interface Props {
   title?: string;
@@ -18,4 +19,5 @@ const { title, description, ogImage, class: className = '' } = Astro.props as Pr
   <main class={cn('p-4 flex-1 w-full max-w-3xl mx-auto', className)} transition:animate="initial">
     <slot />
   </main>
+  <Footer />
 </RootLayout>
