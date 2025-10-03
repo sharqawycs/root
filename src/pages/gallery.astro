@@ -2,20 +2,19 @@
 import PageLayout from '@/layouts/PageLayout.astro';
 import PageHeader from '@/components/layout/PageHeader.astro';
 import GalleryImage from '@/components/ui/GalleryImage.astro';
-
-import { getImageUrl } from '@/lib/imgs';
-
-console.log(getImageUrl('cairo-road-morning'));
+import iHub from '@/assets/imgs/gallery/ihub-sunset.jpg';
+import skyBlueDay from '@/assets/imgs/gallery/sky-blue-day.jpg';
+import skyMoonNight from '@/assets/imgs/gallery/sky-moon-night.jpg';
 ---
 
 <PageLayout title="Gallery" description="A collection of my art and visuals.">
   <PageHeader subtitle="A collection of my art">Gallery</PageHeader>
 
   <GalleryImage
-    src={getImageUrl('cairo-road-morning')}
+    src={'https://fra.cloud.appwrite.io/v1/storage/buckets/imgs/files/cairo-road-morning/view?project=shar'}
     alt="ASU IHub building during sunset"
-    width={800}
-    height={600}
-    downloadUrl="https://placekitten.com/800/600"
   />
+  <GalleryImage src={iHub} alt="ASU IHub building during sunset" />
+  <GalleryImage src={skyBlueDay} alt="Blue sky with clouds during the day" />
+  <GalleryImage src={skyMoonNight} alt="Night sky with the moon and stars" />
 </PageLayout>
