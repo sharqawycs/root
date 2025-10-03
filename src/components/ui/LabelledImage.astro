@@ -1,11 +1,11 @@
 ---
 import { Image as AstroImage } from 'astro:assets';
 
-const { src, alt, width = 736, height, sourceLabel = '', sourceUrl = '#' } = Astro.props;
+const { src, alt, width = 736, height, sourceLabel = '', sourceUrl = '#', ...rest } = Astro.props;
 ---
 
-<div class="group relative block overflow-hidden rounded-xl">
-  <AstroImage src={src} alt={alt} width={width} height={height} />
+<div class="group rounded-img relative block overflow-hidden">
+  <AstroImage src={src} alt={alt} width={width} height={height} {...rest} />
 
   {
     sourceLabel && (
