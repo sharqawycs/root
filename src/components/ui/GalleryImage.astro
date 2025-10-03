@@ -29,7 +29,7 @@ const { src, alt, width = 736, height = 552, downloadUrl, ...rest } = Astro.prop
   <!-- Description overlay - bottom -->
   {
     alt && (
-      <div class="rounded-img absolute right-0 bottom-0 left-0 z-10 bg-gradient-to-t from-black/70 to-transparent px-3 pt-3 pb-1 text-sm text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+      <div class="not-prose rounded-img absolute right-0 bottom-0 left-0 z-10 bg-gradient-to-t from-black/70 to-transparent p-3 text-sm text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
         <p class="font-medium">{alt}</p>
       </div>
     )
